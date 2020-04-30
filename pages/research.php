@@ -5,7 +5,7 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $nom_page='Accueil';
+            $nom_page='Rechercher';
             $description_page='description';
             include_once("../lib/meta.php");
         ?>
@@ -15,9 +15,8 @@
 	<body>
     <?php
      _header();
-    article("Bonjour","Ceci est le message de bienvenue");
-    article("Nouveau message","L'association a été reprise ce semestre, le concept va totalement être changé mais en gardant la partie historique de pourquoi cette association a été créée quelques semestre plus tôt.");
-    _footer(); ?>
+     research_component();
+     _footer(); ?>
     </body>
 	
 </html>
