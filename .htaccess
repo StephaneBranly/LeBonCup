@@ -1,3 +1,4 @@
 DirectoryIndex ./pages/index.php
 RewriteEngine on
 RewriteRule ^index$ ./pages/index.php [L] 
+RewriteRule ^accueil$ ./pages/index.php [L] 
