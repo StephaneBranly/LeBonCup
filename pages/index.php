@@ -13,26 +13,11 @@
 	</head>
     <?php include_once("../components/components_include.php");?>
 	<body>
-    <?php _header(); ?>
-        <section>
-            <div class='content_section'>
-                <h1 class="section_name">Participer à la course ?</h1>
-                <p>Les inscriptions pour participer à la course ne sont pas encore ouvertes... mais n'hésite pas à nous envoyer un petit mail à utrace@assos.utc.fr</p>
-            </div>
-        </section>
-        <section>
-            <div class='content_section'>
-                <h1 class="section_name">Rejoignez-nous !</h1>
-                <p>Viens dès maintenant rejoindre l'association pour nous aider à organiser cet événement de folie !!! Contacte nous par mail ou par Facebook (nos facebook perso ou Raphou Duvolant) ;)<br/>Vrrrooommmmmmmm</p>
-            </div>
-        </section>
-        <section>
-            <div class='content_section'>
-                <h1 class="section_name">Création</h1>
-                <p>L'association a été créée mi septembre 2019 ! Le site mis en place début janvier 2020 !</p>
-            </div>
-        </section>
-    <?php _footer(); ?>
+    <?php
+     _header();
+    article("Bonjour","Ceci est le message de bienvenue");
+    article("Nouveau message","L'association a été reprise ce semestre, le concept va totalement être changé mais en gardant la partie historique de pourquoi cette association a été créée quelques semestre plus tôt.");
+    _footer(); ?>
     </body>
 	
 </html>

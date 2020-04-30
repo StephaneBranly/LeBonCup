@@ -1,0 +1,15 @@
+.article {
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(221, 221, 221);
+  width: 50%;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.article .section_name {
+  color: rgb(230, 122, 0);
+  border-bottom: 1px solid rgb(221, 221, 221);
+  width: 90%;
+  padding-bottom: 5px;
+  display: inline-block;
+}

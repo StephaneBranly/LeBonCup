@@ -1,7 +1,10 @@
-<link href="../components/design/footer.css" rel="stylesheet" media="all" type="text/css">
-
-<footer>
-    <div>
+<?php
+    function _footer(){
+        echo"<footer>
+        <div>
         <p>©LeBonCup 2020</p>
-    </div>
-</footer>
+        </div>
+        </footer>";
+    }
+?>
+
