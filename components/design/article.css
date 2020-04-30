@@ -5,6 +5,7 @@
   display: inline-block;
   margin-bottom: 50px;
   box-shadow: 5px 0px 10px rgb(221, 221, 221);
+  border-radius: 5px;
 }
 
 .article .section_name {
