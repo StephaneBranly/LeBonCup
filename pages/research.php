@@ -14,7 +14,7 @@
     <?php include_once("../components/components_include.php");?>
 	<body>
     <?php
-     _header();
+     _header(false);
      research_component();
      _footer(); ?>
     </body>

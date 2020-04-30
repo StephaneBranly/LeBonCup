@@ -14,7 +14,7 @@
     <?php include_once("../components/components_include.php");?>
 	<body>
     <?php
-     _header();
+     _header(true);
     article("Bonjour","Ceci est le message de bienvenue");
     article("Nouveau message","L'association a été reprise ce semestre, le concept va totalement être changé mais en gardant la partie historique de pourquoi cette association a été créée quelques semestre plus tôt.");
     _footer(); ?>
