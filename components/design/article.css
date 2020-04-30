@@ -1,5 +1,5 @@
 .article {
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(250, 250, 250);
   border: 1px solid rgb(136, 136, 136);
   width: 70%;
   display: inline-block;
@@ -9,7 +9,7 @@
 }
 
 .article .section_name {
-  color: rgb(230, 122, 0);
+  color: rgb(255, 98, 0);
   border-bottom: 1px solid rgb(221, 221, 221);
   width: 90%;
   padding-bottom: 5px;

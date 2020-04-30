@@ -8,6 +8,7 @@
   padding-bottom: 50px;
   box-shadow: 5px 0px 10px rgb(221, 221, 221);
   margin-bottom: 50px;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 #research_component #research,
