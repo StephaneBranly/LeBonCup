@@ -21,7 +21,8 @@
   box-shadow: 5px 0px 10px rgb(221, 221, 221);
 }
 
-#research_component #research {
+#research_component #research,
+#research_component #category {
   color: rgb(0, 0, 0);
   border: 1px solid rgb(210, 210, 210);
   border-radius: 5px;
@@ -31,17 +32,21 @@
     rgb(240, 240, 240)
   );
   transition: all 0.1s;
+  display: inline-block;
+  padding: 10px;
 }
 #research_component #research:hover {
   border: 1px solid rgb(255, 98, 0);
 }
 #research_component #research input {
   border: none;
-  padding: 10px;
+
   background-color: rgba(0, 0, 0, 0);
 }
-#research_component #research i {
+#research_component #research i,
+#research_component #category .icon-down-open {
   padding: 5px;
+  margin-left: 5px;
   border-left: 1px solid rgb(210, 210, 210);
 }
 #research_component #research i:hover {

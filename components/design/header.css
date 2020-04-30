@@ -60,6 +60,7 @@ header #research input {
 }
 header #research i {
   padding: 5px;
+  margin-left: 5px;
   border-left: 1px solid rgb(210, 210, 210);
 }
 header #research i:hover {
