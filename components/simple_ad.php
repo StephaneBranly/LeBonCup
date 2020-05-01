@@ -13,7 +13,7 @@
                     <div class='details'>
                         <a href='user/branlyst' target='_brank'><span class='seller'>posté par branlyst</span></a>
                         <span class='date_post'>30/04/2020 22:43</span>
-                        <span class='views'>56<i class='icon-eye'></i></span>
+                        <span class='views viewed'>56<i class='icon-eye'></i></span>
                         <span class='likes'>3<i class='icon-heart'></i></span></div>
                     </div>
                 </td>
