@@ -5,7 +5,7 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $nom_page='Rechercher';
+            $nom_page='Title annonce';
             $description_page='description';
             include_once("../lib/meta.php");
         ?>
