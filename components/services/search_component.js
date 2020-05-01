@@ -33,10 +33,14 @@ function change_category(category) {
   categories.style.display = "none";
   modify_link();
 }
-
 function modify_link() {
   var input = document.getElementById("input_search").value;
   var label_category = document.getElementById("label_category").innerHTML;
+
+  input = input.replace(new RegExp(" ", "g"), "-").toLowerCase();
+  label_category = label_category
+    .replace(new RegExp(" ", "g"), "-")
+    .toLowerCase();
   document.getElementById("search_link").href =
     "../search/" + label_category + "/" + input;
 }
