@@ -30,6 +30,7 @@
 .simple_ad table .center {
   width: 85%;
   border-left: 1px solid rgb(221, 221, 221);
+  color: rgb(0, 0, 0);
 }
 .simple_ad .center h1 {
   color: rgb(255, 98, 0);
@@ -38,9 +39,17 @@
   padding-bottom: 5px;
   display: inline-block;
   margin: 0px;
+  text-align: left;
+}
+.simple_ad .center h1 .price {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgb(221, 221, 221);
+  color: rgb(35, 35, 189);
 }
 .simple_ad table .center .details {
   text-align: right;
+  text-decoration: none;
 }
 .simple_ad table .center .details span {
   color: rgb(95, 95, 95);
@@ -48,8 +57,17 @@
   margin-left: 5px;
   padding-left: 5px;
   font-size: 0.9em;
+  text-decoration: none;
 }
+
 .simple_ad table .center .details .seller:hover {
   color: rgb(129, 129, 129);
   cursor: pointer;
+}
+.simple_ad table .center .details .likes:hover {
+  color: rgb(233, 21, 21);
+  cursor: pointer;
+}
+.simple_ad table .center .details .liked {
+  color: rgb(233, 21, 21);
 }
