@@ -31,9 +31,9 @@ function change_category(category) {
   var label_category = document.getElementById("label_category");
   label_category.innerHTML = category;
   categories.style.display = "none";
-  modify_link();
 }
-function modify_link() {
+
+function search_sthg_component() {
   var input = document.getElementById("input_search").value;
   var label_category = document.getElementById("label_category").innerHTML;
 
@@ -41,6 +41,6 @@ function modify_link() {
   label_category = label_category
     .replace(new RegExp(" ", "g"), "-")
     .toLowerCase();
-  document.getElementById("search_link").href =
-    "../search/" + label_category + "/" + input;
+  url = "../search/" + label_category + "/" + input;
+  document.location.href = url;
 }

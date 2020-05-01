@@ -2,9 +2,7 @@
     function search_component() 
     {
         echo"<section id='search_component'>
-            <div id='search'><input placeholder='Rechercher' onkeydown='setTimeout(function() {
-                modify_link();
-              }, 500);' id='input_search' type='text'/></div>
+            <div id='search'><input placeholder='Rechercher' id='input_search' type='text'/></div>
             <div id='category' onclick='show_categories(this);'><i class='icon-menu'></i><span id='label_category'>Toutes catégories</span><i class='icon-down-open'></i></div>
             <table id='categories' style='display:none'>
                 <tr>
@@ -41,6 +39,6 @@
                 <div id='slider-range'></div>
             </div>
         </section>
-        <section id='search_button_section'><a id='search_link' href=''><div id='search_button'>Rechercher <i class='icon-search'></i></div></a></section>";
+        <section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <i class='icon-search'></i></div></section>";
     }
 ?>
