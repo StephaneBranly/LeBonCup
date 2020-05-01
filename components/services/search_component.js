@@ -31,4 +31,12 @@ function change_category(category) {
   var label_category = document.getElementById("label_category");
   label_category.innerHTML = category;
   categories.style.display = "none";
+  modify_link();
+}
+
+function modify_link() {
+  var input = document.getElementById("input_search").value;
+  var label_category = document.getElementById("label_category").innerHTML;
+  document.getElementById("search_link").href =
+    "../search/" + label_category + "/" + input;
 }

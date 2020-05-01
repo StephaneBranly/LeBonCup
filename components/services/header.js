@@ -1,10 +1,10 @@
-function research_sthg(this_) {
-  var text_research = document.getElementById("text_research");
-  var input_research = document.getElementById("input_research");
+function search_sthg(this_) {
+  var text_search = document.getElementById("text_search");
+  var input_search = document.getElementById("input_search");
 
-  if (text_research.style.display != "none") {
-    text_research.style.display = "none";
-    input_research.style.display = "inline";
-    input_research.focus();
+  if (text_search.style.display != "none") {
+    text_search.style.display = "none";
+    input_search.style.display = "inline";
+    input_search.focus();
   }
 }

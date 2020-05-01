@@ -15,7 +15,7 @@
 	<body>
     <?php
      _header(false);
-     research_component();
+     search_component();
      simple_ad();
      simple_ad();
      simple_ad();

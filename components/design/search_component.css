@@ -1,4 +1,4 @@
-#research_component {
+#search_component {
   width: 70%;
   display: inline-block;
   color: white;
@@ -11,8 +11,8 @@
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-#research_component #research,
-#research_component #category {
+#search_component #search,
+#search_component #category {
   color: rgb(0, 0, 0);
   border-radius: 5px;
   background-image: linear-gradient(
@@ -24,25 +24,26 @@
   display: inline-block;
   padding: 10px;
 }
-#research_component #category:hover {
+#search_component #category:hover {
   color: rgb(255, 98, 0);
   cursor: pointer;
 }
-#research_component #research input {
+#search_component #search input {
   border: none;
 
   background-color: rgba(0, 0, 0, 0);
 }
-#research_component #category .icon-down-open {
+#search_component #category .icon-down-open {
   padding: 5px;
   margin-left: 5px;
   border-left: 1px solid rgb(210, 210, 210);
 }
 
-#research_component #categories {
-  position: relative;
+#search_component #categories {
+  position: absolute;
   top: 0px;
-  bottom: 0px;
+  left: 0px;
+  z-index: 10;
   width: 70%;
   background-image: linear-gradient(
     45deg,
@@ -53,46 +54,46 @@
   padding: 10px;
   color: black;
 }
-#research_component #categories tbody,
-#research_component #categories tr {
+#search_component #categories tbody,
+#search_component #categories tr {
   display: inline-block;
   position: relative;
   top: 0px;
   width: 100%;
 }
-#research_component #categories td {
+#search_component #categories td {
   width: 33%;
   border-left: 1px solid rgb(210, 210, 210);
 }
-#research_component #categories .a_category,
-#research_component #categories .a_subcategory {
+#search_component #categories .a_category,
+#search_component #categories .a_subcategory {
   display: inline-block;
   width: 90%;
   padding: 5px;
 }
-#research_component #categories .a_category:hover,
-#research_component #categories .a_subcategory:hover {
+#search_component #categories .a_category:hover,
+#search_component #categories .a_subcategory:hover {
   background-color: rgb(210, 210, 210);
   cursor: pointer;
 }
-#research_component #categories .a_category {
+#search_component #categories .a_category {
   color: rgb(255, 98, 0);
   border-bottom: 1px solid rgb(210, 210, 210);
   margin-bottom: 5px;
 }
-#research_component #research i:hover {
+#search_component #search i:hover {
   color: rgb(255, 98, 0);
   cursor: pointer;
 }
-#research_component #price_range {
+#search_component #price_range {
   width: 20%;
   display: inline-block;
 }
 
-#research_button_section {
+#search_button_section {
   width: 100%;
 }
-#research_button {
+#search_button {
   display: inline-block;
   background-color: rgb(35, 35, 189);
   color: white;
@@ -102,7 +103,7 @@
   top: -80px;
   border-radius: 5px;
 }
-#research_button:hover {
+#search_button:hover {
   cursor: pointer;
   background-color: rgb(22, 22, 165);
 }

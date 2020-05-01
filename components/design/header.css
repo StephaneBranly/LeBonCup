@@ -39,7 +39,7 @@ header #place_an_ad:hover {
 header #place_an_ad i {
   padding: 5px;
 }
-header #research {
+header #search {
   color: rgb(0, 0, 0);
   border: 1px solid rgb(210, 210, 210);
   border-radius: 5px;
@@ -50,20 +50,20 @@ header #research {
   );
   transition: all 0.1s;
 }
-header #research:hover {
+header #search:hover {
   border: 1px solid rgb(255, 98, 0);
 }
-header #research input {
+header #search input {
   border: none;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0);
 }
-header #research i {
+header #search i {
   padding: 5px;
   margin-left: 5px;
   border-left: 1px solid rgb(210, 210, 210);
 }
-header #research i:hover {
+header #search i:hover {
   color: rgb(255, 98, 0);
   cursor: pointer;
 }
