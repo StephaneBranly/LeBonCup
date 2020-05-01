@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<base href="http://localhost/LeBonCup/pages/"; />
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">
 	<link rel="icon" href="../ressources/images/favicon.ico" type="image/x-icon"/>
