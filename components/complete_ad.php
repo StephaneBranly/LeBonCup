@@ -14,23 +14,28 @@
             <div onclick=\"change_photo('https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Lippincott_doriangray.jpg/1200px-Lippincott_doriangray.jpg')\" class='miniature_photo' style=\"background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Lippincott_doriangray.jpg/1200px-Lippincott_doriangray.jpg');\"></div>
             <div onclick=\"change_photo('https://i.ytimg.com/vi/Q0fNom3C1vY/maxresdefault.jpg');\" class='miniature_photo' style=\"background-image: url('https://i.ytimg.com/vi/Q0fNom3C1vY/maxresdefault.jpg');\"></div>
         </div>
-        <table>
-            <tr>
-                <td class='left' >
-                <div class='details'>
-                        <a href='user/branlyst' target='_brank'><span class='seller'>posté par branlyst</span></a>
-                        <span class='date_post'>30/04/2020 22:43</span>
-                        <span class='views viewed'>56<i class='icon-eye'></i></span>
-                        <span class='likes'>3<i class='icon-heart'></i></span></div>
-                    </div>
-                <p>Description annonce tronquée à la fin</p>
-                
-                </td>
-                <td class='center'> 
-                    
-                </td>
-            </tr>
-        </table>
+        <div class='left' >
+            <div class='details'>
+                    <span class='date_post'>30/04/2020 22:43</span>
+                    <span class='views viewed'>56<i class='icon-eye'></i></span>
+                    <span class='likes'>3<i class='icon-heart'></i></span>
+                </div>
+            <p>Description annonce qui cette fois-ci ne sera pas tronquée !</p>
+        </div>
+        <div class='center'> 
+            <h1>Contacter branlyst</h1>
+            <div id='contact_tel'><i class='icon-phone'></i>voir le numéro</div>
+            <div id='contact_mail'><i class='icon-at'></i>voir l'email</div>
+            <div id='contact_facebook'><i class='icon-facebook'></i>voir le profil Facebook</div>
+            <h1>Préférence de paiement</h1>
+            <table id='preferences'>
+            <tr><td class='paiement'><i class='icon-money'></i>Espèce</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
+            <tr><td class='paiement'><i class='icon-cc-visa'></i>Virement</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
+            <tr><td class='paiement'><i class='icon-credit-card-alt'></i>PayUT</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
+            <tr><td class='paiement'><i class='icon-cc-paypal'></i>Paypal</td><td class='opinion'><i class='icon-cancel-circled2'></i></td>
+            <tr><td class='paiement'><i class='icon-beer'></i>Bière</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
+            </table>
+        </div>
         </section>
         ";
     }
