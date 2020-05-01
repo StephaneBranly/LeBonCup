@@ -45,3 +45,9 @@ function search_sthg_component() {
   url = "../search/" + label_category + "/" + input;
   document.location.href = url;
 }
+
+function enter_search_component(event) {
+  if (event.which == 13 || event.keyCode == 13) {
+    search_sthg_component();
+  }
+}
