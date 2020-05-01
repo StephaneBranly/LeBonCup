@@ -24,3 +24,4 @@
 <script type="text/javascript" src="../components/services/complete_ad.js"></script>
 <script type="text/javascript" src="../components/services/header.js"></script>
 <script type="text/javascript" src="../components/services/search_component.js"></script>
+<script type="text/javascript" src="../components/services/simple_ad.js"></script>

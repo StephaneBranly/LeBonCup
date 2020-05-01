@@ -8,7 +8,9 @@
   border-radius: 5px;
   padding: 10px;
 }
-
+.simple_ad:hover {
+  cursor: pointer;
+}
 .simple_ad table,
 .simple_ad tbody,
 .simple_ad tr {
