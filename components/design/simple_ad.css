@@ -19,9 +19,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  text-align: right;
+  vertical-align: bottom;
 }
 .simple_ad table .left .nb_photos {
-  position: relative;
   color: white;
   border-radius: 5px;
   padding: 4px;
