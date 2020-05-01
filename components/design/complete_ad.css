@@ -1,4 +1,4 @@
-.complete_ad {
+#complete_ad {
   background-color: rgb(250, 250, 250);
   border: 1px solid rgb(136, 136, 136);
   width: 70%;
@@ -8,7 +8,7 @@
   border-radius: 5px;
   padding: 10px;
 }
-.complete_ad h1 {
+#complete_ad h1 {
   color: rgb(255, 98, 0);
   border-bottom: 1px solid rgb(221, 221, 221);
   width: 90%;
@@ -18,28 +18,59 @@
   margin-bottom: 10px;
   text-align: left;
 }
-.complete_ad h1 .price {
+#complete_ad h1 .price {
   margin-right: 10px;
   padding-right: 10px;
   border-right: 1px solid rgb(221, 221, 221);
   color: rgb(35, 35, 189);
 }
 
-.complete_ad #photo {
+#complete_ad #photo {
   display: inline-block;
   width: 100%;
   height: 550px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  text-align: right;
+  vertical-align: bottom;
+  margin-bottom: 10px;
 }
-.complete_ad #photos {
+#complete_ad #photo #enlarge,
+#complete_ad #viewer_enlarge #back {
+  color: white;
+  border-radius: 5px;
+  margin: 20px;
+  padding: 4px;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#complete_ad #photo #enlarge:hover,
+#complete_ad #viewer_enlarge #back:hover {
+  background-color: rgba(255, 98, 0, 0.5);
+  cursor: pointer;
+}
+#complete_ad #viewer_enlarge {
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: right;
+}
+
+#complete_ad #photos {
   display: inline-block;
   width: 100%;
   height: 100px;
   margin-bottom: 20px;
 }
-.complete_ad #photos .miniature_photo {
+#complete_ad #photos .miniature_photo {
   display: inline-block;
   width: 15%;
   height: 100px;
@@ -49,37 +80,37 @@
   border: 1px solid rgb(136, 136, 136);
   border-radius: 5px;
 }
-.complete_ad #photos .miniature_photo:hover {
+#complete_ad #photos .miniature_photo:hover {
   border: 1px solid rgb(255, 98, 0);
   cursor: pointer;
 }
-.complete_ad table,
-.complete_ad tbody,
-.complete_ad tr {
+#complete_ad table,
+#complete_ad tbody,
+#complete_ad tr {
   width: 100%;
 }
-.complete_ad table .left {
+#complete_ad table .left {
   width: 70%;
 }
-.complete_ad table .left .nb_photos {
+#complete_ad table .left .nb_photos {
   position: relative;
   color: white;
   border-radius: 5px;
   padding: 4px;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.complete_ad table .center {
+#complete_ad table .center {
   width: 30%;
   border-left: 1px solid rgb(221, 221, 221);
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
 }
 
-.complete_ad table .left .details {
+#complete_ad table .left .details {
   text-align: right;
   text-decoration: none;
 }
-.complete_ad table .left .details span {
+#complete_ad table .left .details span {
   color: rgb(95, 95, 95);
   border-left: 1px solid rgb(136, 136, 136);
   margin-left: 5px;
@@ -88,17 +119,17 @@
   text-decoration: none;
 }
 
-.complete_ad table .left .details .seller:hover {
+#complete_ad table .left .details .seller:hover {
   color: rgb(129, 129, 129);
   cursor: pointer;
 }
-.complete_ad table .left .details .likes:hover {
+#complete_ad table .left .details .likes:hover {
   color: rgb(233, 21, 21);
   cursor: pointer;
 }
-.complete_ad table .left .details .liked {
+#complete_ad table .left .details .liked {
   color: rgb(233, 21, 21);
 }
-.complete_ad table .left .details .viewed {
+#complete_ad table .left .details .viewed {
   color: rgb(35, 35, 189);
 }
