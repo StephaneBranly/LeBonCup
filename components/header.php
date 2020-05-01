@@ -1,7 +1,7 @@
 <?php
     function _header($buttons){
     echo"<header>
-        <a href='../accueil'><div id='logo'><img  src='../ressources/images/logo.png' alt='Logo LeBonCup'/></div></a>";
+        <div id='logo' onclick=\"open_link('../accueil');\"><img  src='../ressources/images/logo.png' alt='Logo LeBonCup'/></div>";
     if($buttons==true)
     {
         echo" <a href='../deposer-une-annonce'><div id='place_an_ad'>Déposer une annonce<i class='icon-plus-circled'></i></div></a>

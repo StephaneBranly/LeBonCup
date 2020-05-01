@@ -16,6 +16,9 @@ header #logo {
   display: inline-block;
   margin-right: 50px;
 }
+header #logo:hover {
+  cursor: pointer;
+}
 header #logo img {
   height: 70px;
   display: inline-block;
