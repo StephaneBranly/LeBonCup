@@ -24,9 +24,9 @@
         </div>
         <div class='center'> 
             <h1>Contacter branlyst</h1>
-            <div id='contact_tel'><i class='icon-phone'></i>voir le numéro</div>
-            <div id='contact_mail'><i class='icon-at'></i>voir l'email</div>
-            <div id='contact_facebook'><i class='icon-facebook'></i>voir le profil Facebook</div>
+            <div id='contact_tel' onclick=\"change_content('contact_tel','0358956480');\"><i class='icon-phone'></i>voir le numéro</div>
+            <div id='contact_mail' onclick=\"change_content('contact_mail','test@mail.com');\"><i class='icon-at'></i>voir l'email</div>
+            <div id='contact_facebook' onclick=\"open_link('www.facebook.com');\"><i class='icon-facebook'></i>voir le profil Facebook</div>
             <h1>Préférence de paiement</h1>
             <table id='preferences'>
             <tr><td class='paiement'><i class='icon-money'></i>Espèce</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
