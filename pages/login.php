@@ -1,4 +1,12 @@
+
 <?php include_once("../lib/start_session.php");?>
+<?php
+ if(isset($_GET['user']))
+ {
+    $_SESSION['user'] = $_GET['user'];
+    $user=$_SESSION['user'];
+ }
+?>
 <!DOCTYPE html>
 <base href="http://localhost/LeBonCup/pages/"; />
 <html>
@@ -7,7 +15,7 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $nom_page='Title annonce';
+            $nom_page='Login user';
             $description_page='description';
             include_once("../lib/meta.php");
         ?>
@@ -17,7 +25,6 @@
 	<body>
     <?php
      _header(true);
-     complete_ad();
      _footer(); ?>
     </body>
 	
