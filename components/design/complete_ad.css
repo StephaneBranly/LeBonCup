@@ -24,7 +24,9 @@
   border-right: 1px solid rgb(221, 221, 221);
   color: rgb(35, 35, 189);
 }
-
+#complete_ad h1 #user:hover {
+  cursor: pointer;
+}
 #complete_ad #photo {
   display: inline-block;
   width: 100%;
