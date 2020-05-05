@@ -86,7 +86,7 @@
             <div id='contact_tel' onclick=\"change_content('contact_tel','0358956480');\"><i class='icon-phone'></i>voir le numéro</div>
             <div id='contact_mail' onclick=\"change_content('contact_mail','test@mail.com');\"><i class='icon-at'></i>voir l'email</div>
             <div id='contact_facebook' onclick=\"open_link('www.facebook.com');\"><i class='icon-facebook'></i>voir le profil Facebook</div>
-            <div class='private'><i class='icon-user-secret'></i>profil Facebook</div>
+            <!--<div class='private'><i class='icon-user-secret'></i>profil Facebook</div>-->
             
             <h2>Préférences de paiement</h2>
             <table id='preferences'>
