@@ -19,6 +19,8 @@
     <?php
      _header(true);
      profile();
+
+     simple_ad();
      _footer(); ?>
     </body>
 	
