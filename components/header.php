@@ -19,7 +19,7 @@
     }
     else 
     {
-        echo"<div id='login' onclick='deco(this);'><i class='icon-user-pair'></i>$user</div>";
+        echo"<div id='login'><span><i class='icon-cog'></i>$user</span><span onclick='deco(this);'><i class='icon-user-pair'></i>Se déconnecter</span></div>";
     }
     echo "</header>";
     } 

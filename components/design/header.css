@@ -75,7 +75,12 @@ header #login {
   right: 50px;
   color: rgb(95, 95, 95);
 }
-header #login:hover {
+header #login span {
+  margin-left: 5px;
+  padding-left: 5px;
+  border-left: 1px solid rgb(95, 95, 95);
+}
+header #login span:hover {
   color: rgb(129, 129, 129);
   cursor: pointer;
 }
