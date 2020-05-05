@@ -67,10 +67,6 @@
   color: rgb(129, 129, 129);
   cursor: pointer;
 }
-.simple_ad table .center .details .likes:hover {
-  color: rgb(233, 21, 21);
-  cursor: pointer;
-}
 .simple_ad table .center .details .liked {
   color: rgb(233, 21, 21);
 }
