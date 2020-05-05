@@ -19,33 +19,38 @@
 
             <h2>Moyens de contact</h2>
             <div id='contact_tel'>
-                <span class='label_input'><i class='icon-phone'></i>Téléphone :</span><input placeholder='0712345678' type='text' class='discrete'/>
-                <span class='label_input'><i class='icon-eye'></i>Visibilité :</span>
+                <div class='an_input'><input placeholder='0712345678' type='text' class='discrete'/><i class='icon-phone'></i></div>
+                <div class='an_input'>
                 <select class='visibility'>
                     <option>Tout le monde</option>
                     <option>Utilisateur connecté</option>
                     <option>Juste moi</option>
-                </select>    
+                </select>   
+                <i class='icon-eye'></i>
+                </div> 
             </div>
             <div id='contact_mail'>
-                <span class='label_input'><i class='icon-at'></i>Email :</span><input placeholder='mail@domaine.com' type='text' class='discrete'/>
-                <span class='label_input'><i class='icon-eye'></i>Visibilité :</span>
+                <div class='an_input'><input placeholder='mail@domaine.com' type='text' class='discrete'/><i class='icon-at'></i></div>
+                <div class='an_input'>
                 <select class='visibility'>
                     <option>Tout le monde</option>
                     <option>Utilisateur connecté</option>
                     <option>Juste moi</option>
                 </select>   
+                <i class='icon-eye'></i>
+                </div> 
             </div>
             <div id='contact_facebook'>
-                <span class='label_input'><i class='icon-facebook'></i>Facebook :</span><input placeholder='URL Facebook' type='text' class='discrete'/>
-                <span class='label_input'><i class='icon-eye'></i>Visibilité :</span>
+                <div class='an_input'><input placeholder='URL Facebook' type='text' class='discrete'/><i class='icon-facebook'></i></div>
+                <div class='an_input'>
                 <select class='visibility'>
                     <option>Tout le monde</option>
                     <option>Utilisateur connecté</option>
                     <option>Juste moi</option>
                 </select>   
+                <i class='icon-eye'></i>
+                </div> 
             </div>
-            <div class='private'><i class='icon-user-secret'></i>profil Facebook</div>
             
             <h2>Préférences de paiement</h2>
             <table id='preferences'>
@@ -61,15 +66,14 @@
         }
         else
         {
-            echo "<section id='profile'>
-            <h1>Profil de $user</h1>";
-
+            echo "<section id='profile'>";
             if($user==secure_session('user'))
             {
                 echo"<div id='modify'><span onclick=\"open_link('../profile/$user-edit');\"><i class='icon-pencil'></i>Editer le profil</span></div>";
             }
+            echo"<h1>Profil de $user</h1>
 
-            echo"<h2>Informations compte</h2>
+            <h2>Informations compte</h2>
             <table id='informations'>
                 <tr><td class='info_property'><i class='icon-user-pair'></i>Prénom Nom</td><td class='info_value'>Stéphane BRANLY</td>
                 <tr><td class='info_property'><i class='icon-user-pair'></i>Date création du compte</td><td class='info_value'>05-05-2020 17:25</td>
