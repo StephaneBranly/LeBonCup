@@ -7,7 +7,8 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $nom_page='View profile';
+            $user=secure_session('user');
+            $nom_page=$user;
             $description_page='description';
             include_once("../lib/meta.php");
         ?>
