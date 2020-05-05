@@ -28,11 +28,18 @@
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">
+        <script type="text/javascript">
+        function RedirectionJavascript(page){
+            url= "../"+page; 
+            setTimeout("{document.location.href=url;}", 10);
+
+        }</script>
 	</head>
     <?php include_once("../components/components_include.php");?>
-	<body>
+	<body onLoad="RedirectionJavascript('accueil')">
     <?php
      _header(true);
+     article('Redirection','Vous allez être redirigé vers l\'accueil...');
      _footer(); ?>
     </body>
 	
