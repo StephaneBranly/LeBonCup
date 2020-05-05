@@ -40,7 +40,7 @@
   color: white;
   font-size: 1.1em;
   margin: 10px;
-  width: 80%;
+  width: 40%;
   display: inline-block;
 }
 #profile .private {
@@ -69,11 +69,15 @@
 }
 
 #profile #preferences,
-#profile #preferences tbody {
+#profile #preferences tbody,
+#profile #informations,
+#profile #informations tbody {
   display: inline-block;
   width: 100%;
+  margin-left: 20px;
 }
-#profile #preferences td {
+#profile #preferences td,
+#profile #informations td {
   padding: 5px;
   background-image: linear-gradient(
     45deg,
@@ -81,10 +85,12 @@
     rgb(240, 240, 240)
   );
 }
-#profile #preferences .paiement {
+#profile #preferences .paiement,
+#profile #informations .info_property {
   text-align: left;
 }
-#profile #preferences .paiement i {
+#profile #preferences .paiement i,
+#profile #informations .info_property i {
   margin-right: 5px;
   padding-right: 5px;
   border-right: 1px solid rgb(136, 136, 136);

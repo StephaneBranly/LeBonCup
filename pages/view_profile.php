@@ -7,7 +7,7 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $user=secure_session('user');
+            $user=secure_get('user');
             $nom_page=$user;
             $description_page='description';
             include_once("../lib/meta.php");
