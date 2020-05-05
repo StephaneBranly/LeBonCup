@@ -4,4 +4,5 @@
     {
         $_SESSION['user'] = "";
     }
+    include("secure_get_post_session.php");
 ?>

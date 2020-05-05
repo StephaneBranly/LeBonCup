@@ -1,0 +1,97 @@
+#profile {
+  background-color: rgb(250, 250, 250);
+  border: 1px solid rgb(136, 136, 136);
+  width: 70%;
+  display: inline-block;
+  margin: 0px;
+  box-shadow: 5px 0px 10px rgb(221, 221, 221);
+  border-radius: 5px;
+  padding: 10px;
+}
+#profile h1 {
+  color: rgb(250, 250, 250);
+  background-color: rgb(255, 98, 0);
+  border-bottom: 1px solid rgb(221, 221, 221);
+  padding: 10px;
+  padding-bottom: 15px;
+  display: inline-block;
+  margin: 0px;
+  margin-bottom: 10px;
+  text-align: left;
+  border-radius: 5px;
+}
+#profile h2 {
+  color: rgb(255, 98, 0);
+  border-bottom: 1px solid rgb(221, 221, 221);
+  width: 90%;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin: 0px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+#profile .private,
+#profile #contact_tel,
+#profile #contact_facebook,
+#profile #contact_mail {
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1em;
+  margin: 10px;
+  width: 80%;
+  display: inline-block;
+}
+#profile .private {
+  background-color: rgb(136, 136, 136);
+}
+#profile #contact_tel {
+  background-color: rgb(7, 206, 24);
+}
+#profile #contact_mail {
+  background-color: rgb(173, 7, 206);
+}
+#profile #contact_facebook {
+  background-color: rgb(27, 7, 206);
+}
+#profile #contact_tel:hover {
+  background-color: rgb(10, 223, 28);
+  cursor: pointer;
+}
+#profile #contact_mail:hover {
+  background-color: rgb(197, 12, 235);
+  cursor: pointer;
+}
+#profile #contact_facebook:hover {
+  background-color: rgb(39, 17, 236);
+  cursor: pointer;
+}
+
+#profile #preferences,
+#profile #preferences tbody {
+  display: inline-block;
+  width: 100%;
+}
+#profile #preferences td {
+  padding: 5px;
+  background-image: linear-gradient(
+    45deg,
+    rgb(255, 255, 255),
+    rgb(240, 240, 240)
+  );
+}
+#profile #preferences .paiement {
+  text-align: left;
+}
+#profile #preferences .paiement i {
+  margin-right: 5px;
+  padding-right: 5px;
+  border-right: 1px solid rgb(136, 136, 136);
+}
+#profile #preferences .icon-ok-circled2 {
+  color: rgb(8, 180, 31);
+}
+#profile #preferences .icon-cancel-circled2 {
+  color: rgb(240, 20, 20);
+}

@@ -1,20 +1,4 @@
-
 <?php include_once("../lib/start_session.php");?>
-<?php
- if(isset($_GET['user']))
- {
-    $_SESSION['user'] = $_GET['user'];
-    $user=$_SESSION['user'];
-    if($user=="")
-    {
-        $_SESSION['connected']=false;
-    }
-    else
-    {
-        $_SESSION['connected']=true;
-    }
- }
-?>
 <!DOCTYPE html>
 <base href="http://localhost/LeBonCup/pages/"; />
 <html>
@@ -23,7 +7,7 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $nom_page='Login user';
+            $nom_page='View profile';
             $description_page='description';
             include_once("../lib/meta.php");
         ?>
@@ -33,6 +17,7 @@
 	<body>
     <?php
      _header(true);
+     profile();
      _footer(); ?>
     </body>
 	
