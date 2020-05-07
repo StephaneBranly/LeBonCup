@@ -43,12 +43,12 @@
                 $user=strtolower(SQLProtect($user,true));
                 $query = mysqli_query($connect,"SELECT `iduser`,`username` FROM `users` WHERE `iduser`='$user'");
                 $res = mysqli_fetch_array($query);
+                $date = date('Y-m-d H:i:s');
                 if (count($res) == 0)
                 {
                     $_SESSION['notification_icon']='icon-cup';
                     $_SESSION['notification_new']=true;
                     $_SESSION['notification_content']="Bienvenue $user ! Ton compte a été créé !";
-                    $date = date('Y-m-d H:i:s');
                     $query = mysqli_query($connect,"INSERT INTO `users` (iduser,username,creation_account,last_connexion,email) VALUES ('$user','$user','$date','$date','$user@etu.utc.fr')");
                     echo "<script type='text/javascript'>RedirectionJavascript('profile/$user-edit',1000);</script>";
                 }
@@ -57,7 +57,8 @@
                     $_SESSION['notification_icon']='icon-cup';
                     $_SESSION['notification_new']=true;
                     $_SESSION['notification_content']="Bonjour $user";
-                    echo "<script type='text/javascript'>RedirectionJavascript('accueil',100);</script>";
+                    $query = mysqli_query($connect,"UPDATE `users` SET `last_connexion` = '$date' WHERE iduser = '$user'");
+                    echo "<script type='text/javascript'>RedirectionJavascript('accueil',1000);</script>";
                 }
                 
             }
