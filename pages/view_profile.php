@@ -17,11 +17,19 @@
     <?php include_once("../components/components_include.php");?>
 	<body>
     <?php
-     _header(true);
-     profile();
-
-     simple_ad();
-     _footer(); ?>
+        _header(true);
+        $user=strtolower(SQLProtect($user,true));
+        $query = mysqli_query($connect,"SELECT `iduser` FROM `users` WHERE `iduser`='$user'");
+        $res = mysqli_fetch_array($query);
+        if (count($res) != 0)
+            profile($user);
+        else
+        {
+            article("Il semblerait que $user n'existe pas...","Vous allez être redirigé dans 5 secondes vers l'accueil");
+            echo "<script type='text/javascript'>RedirectionJavascript('accueil',5000);</script>";
+        }
+            
+        _footer(); ?>
     </body>
 	
 </html>

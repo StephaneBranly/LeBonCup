@@ -19,6 +19,7 @@
 <link href="../components/design/simple_ad.css" rel="stylesheet" media="all" type="text/css">
 
 <?php
+    
     include_once("../components/article.php");
     include_once("../components/complete_ad.php");
     include_once("../components/footer.php");
