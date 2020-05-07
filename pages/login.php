@@ -16,10 +16,10 @@
         <meta charset="UTF-8">
 	</head>
     <?php include_once("../components/components_include.php");?>
-	<body onLoad="RedirectionJavascript('accueil',10);">
+	<body>
     <?php
      _header(true);
-     article('Redirection','Vous allez être redirigé vers l\'accueil...');
+     article('Redirection','Vous allez être redirigé...');
      _footer(); 
     
      ?>
@@ -35,13 +35,31 @@
                 $_SESSION['notification_icon']='icon-comment';
                 $_SESSION['notification_new']=true;
                 $_SESSION['notification_content']="A bientôt $last_user";
+                echo "<script type='text/javascript'>RedirectionJavascript('accueil',100);</script>";
             }
             else
             {
                 $_SESSION['connected']=true;
-                $_SESSION['notification_icon']='icon-cup';
-                $_SESSION['notification_new']=true;
-                $_SESSION['notification_content']="Bonjour $user";
+                $user=SQLProtect($user,true);
+                $query = mysqli_query($connect,"SELECT `iduser`,`username` FROM `users` WHERE `iduser`='$user'");
+                $res = mysqli_fetch_array($query);
+                if (count($res) == 0)
+                {
+                    $_SESSION['notification_icon']='icon-cup';
+                    $_SESSION['notification_new']=true;
+                    $_SESSION['notification_content']="Bienvenue $user ! Ton compte a été créé !";
+                    $date = date('Y-m-d H:i:s');
+                    $query = mysqli_query($connect,"INSERT INTO `users` (iduser,username,creation_account,last_connexion,email) VALUES ('$user','$user','$date','$date','$user@etu.utc.fr')");
+                    echo "<script type='text/javascript'>RedirectionJavascript('profile/$user-edit',1000);</script>";
+                }
+                else
+                {
+                    $_SESSION['notification_icon']='icon-cup';
+                    $_SESSION['notification_new']=true;
+                    $_SESSION['notification_content']="Bonjour $user";
+                    echo "<script type='text/javascript'>RedirectionJavascript('accueil',100);</script>";
+                }
+                
             }
         }
     ?>
