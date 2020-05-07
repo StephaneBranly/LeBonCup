@@ -40,7 +40,7 @@
             else
             {
                 $_SESSION['connected']=true;
-                $user=SQLProtect($user,true);
+                $user=strtolower(SQLProtect($user,true));
                 $query = mysqli_query($connect,"SELECT `iduser`,`username` FROM `users` WHERE `iduser`='$user'");
                 $res = mysqli_fetch_array($query);
                 if (count($res) == 0)
