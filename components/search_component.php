@@ -17,14 +17,20 @@
                     <span class='a_subcategory' onclick=\"change_category('Vaisselle');\">Vaisselle</span>
                 </td>
                 <td>
+                    <span class='a_category' onclick=\"change_category('Vetements');\" ><i class='icon-t-shirt'></i>Vêtements</span>
+                    <span class='a_subcategory' onclick=\"change_category('Hauts');\">Hauts</span>
+                    <span class='a_subcategory' onclick=\"change_category('Bas');\">Bas</span>
+                    <span class='a_subcategory' onclick=\"change_category('Chaussures');\">Chaussures</span>
+                    <span class='a_subcategory' onclick=\"change_category('Accessoires');\">Accessoires</span>
                     <span class='a_category' onclick=\"change_category('Transport');\" ><i class='icon-bicycle'></i>Transport</span>
                     <span class='a_subcategory' onclick=\"change_category('Voiture');\" >Voiture</span>
                     <span class='a_subcategory'onclick=\"change_category('Vélo');\" >Vélo</span>
                     <span class='a_subcategory' onclick=\"change_category('Skate');\">Skate</span>
                 </td>
                 <td>
+                    <span class='a_category' onclick=\"change_category('Objets perdus');\" ><i class='icon-search'></i>Objets perdus</span>
                     <span class='a_category' onclick=\"change_category('Etudes');\" ><i class='icon-graduation-cap'></i>Etudes</span>
-                    <span class='a_subcategory' onclick=\"change_category('Cours');\" >Cours</span>
+                    <span class='a_subcategory' onclick=\"change_category('Cours particuliers');\" >Cours particuliers</span>
                     <span class='a_subcategory' onclick=\"change_category('Polycopiés');\">Polycopiés</span>
                     <span class='a_subcategory' onclick=\"change_category('Annales');\" >Annales</span>
                     <span class='a_subcategory' onclick=\"change_category('Fournitures');\" >Fournitures</span>
