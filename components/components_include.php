@@ -12,6 +12,7 @@
 <link href="../components/design/complete_ad.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/footer.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/header.css" rel="stylesheet" media="all" type="text/css">
+<link href="../components/design/notifications.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/profile.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/search_component.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/simple_ad.css" rel="stylesheet" media="all" type="text/css">
@@ -21,6 +22,7 @@
     include_once("../components/complete_ad.php");
     include_once("../components/footer.php");
     include_once("../components/header.php");
+    include_once("../components/notifications.php");
     include_once("../components/profile.php");
     include_once("../components/search_component.php");
     include_once("../components/simple_ad.php");
@@ -28,6 +30,7 @@
 
 <script type="text/javascript" src="../components/services/complete_ad.js"></script>
 <script type="text/javascript" src="../components/services/header.js"></script>
+<script type="text/javascript" src="../components/services/notifications.js"></script>
 <script type="text/javascript" src="../components/services/profile.js"></script>
 <script type="text/javascript" src="../components/services/search_component.js"></script>
 <script type="text/javascript" src="../components/services/simple_ad.js"></script>

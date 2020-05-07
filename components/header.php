@@ -4,7 +4,7 @@
         <div id='logo' onclick=\"open_link('../accueil');\"><img  src='../ressources/images/logo.png' alt='Logo LeBonCup'/></div>";
     if($buttons==true)
     {
-        echo" <a href='../deposer-une-annonce'><div id='place_an_ad'>Déposer une annonce<i class='icon-plus-circled'></i></div></a>
+        echo"<div id='place_an_ad' onclick=\"write_tmp_notification('icon-user','Vous devez etre connecté...');\">Déposer une annonce<i class='icon-plus-circled'></i></div>
         <div id='search'><input placeholder='Rechercher' onkeypress='enter_header(event);' id='input_search' type='text'/><i class='icon-search' onclick='search_sthg();'></i></div>
        ";
     }
@@ -18,5 +18,7 @@
         echo"<div id='login'><span onclick=\"view_profile('$user');\"><i class='icon-address-card-o'></i>$user</span><span onclick='deco(this);'><i class='icon-user-pair'></i>Se déconnecter</span></div>";
     }
     echo "</header>";
+
+    notifications();
     } 
 ?>

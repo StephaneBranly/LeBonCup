@@ -5,7 +5,6 @@
   display: inline-block;
   margin: 0px;
   box-shadow: 5px 0px 10px rgb(221, 221, 221);
-  border-radius: 5px;
   padding: 10px;
 }
 .simple_ad:hover {
@@ -62,11 +61,10 @@
   font-size: 0.9em;
   text-decoration: none;
 }
-
-.simple_ad table .center .details .seller:hover {
+/*.simple_ad table .center .details .seller:hover {
   color: rgb(129, 129, 129);
   cursor: pointer;
-}
+}*/
 .simple_ad table .center .details .liked {
   color: rgb(233, 21, 21);
 }
