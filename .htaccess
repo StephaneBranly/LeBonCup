@@ -4,6 +4,7 @@ ErrorDocument 404 pages/error404.php
 RewriteEngine on
 RewriteRule ^index$ pages/index.php [L] 
 RewriteRule ^accueil$ pages/index.php [L] 
+RewriteRule ^new_ad$ pages/post_an_ad.php [L] 
 RewriteRule ^search/([a-zA-Z-]+)/?([0-9a-zA-Z-]*)$ pages/search.php?cat=$1&key=$2 [L] 
 RewriteRule ^ad/([a-zA-Z-]+)/([0-9a-zA-Z-]+)-([0-9]+)$ pages/view_ad.php?id=$3 [L] 
 RewriteRule ^login/([a-zA-Z0-9-]*)$ pages/login.php?user=$1 [L] 
