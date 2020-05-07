@@ -1,20 +1,6 @@
 
 <?php include_once("../lib/start_session.php");?>
-<?php
- if(isset($_GET['user']))
- {
-    $_SESSION['user'] = $_GET['user'];
-    $user=$_SESSION['user'];
-    if($user=="")
-    {
-        $_SESSION['connected']=false;
-    }
-    else
-    {
-        $_SESSION['connected']=true;
-    }
- }
-?>
+
 <!DOCTYPE html>
 <base href="http://localhost/LeBonCup/pages/"; />
 <html>
@@ -40,7 +26,31 @@
     <?php
      _header(true);
      article('Redirection','Vous allez être redirigé vers l\'accueil...');
-     _footer(); ?>
+     _footer(); 
+    
+     ?>
+    <?php
+        if(isset($_GET['user']))
+        {
+            $last_user=secure_session('user');
+            $_SESSION['user'] = secure_get('user');
+            $user=$_SESSION['user'];
+            if($user=="")
+            {
+                $_SESSION['connected']=false;
+                $_SESSION['notification_icon']='icon-comment';
+                $_SESSION['notification_new']=true;
+                $_SESSION['notification_content']="A bientôt $last_user";
+            }
+            else
+            {
+                $_SESSION['connected']=true;
+                $_SESSION['notification_icon']='icon-cup';
+                $_SESSION['notification_new']=true;
+                $_SESSION['notification_content']="Bonjour $user";
+            }
+        }
+    ?>
     </body>
 	
 </html>

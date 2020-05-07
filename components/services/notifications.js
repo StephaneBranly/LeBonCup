@@ -1,4 +1,4 @@
-function write_tmp_notification(icon, content) {
+function write_notification(icon, content, tmp) {
   var section_notifs = document.getElementById("notifications");
   var actual_content = section_notifs.innerHTML;
   unique_id = Date.now();
@@ -11,7 +11,9 @@ function write_tmp_notification(icon, content) {
     content +
     "<p></div>" +
     actual_content;
-  setTimeout("remove_notification(" + unique_id + ");", 5000);
+  if (tmp) {
+    setTimeout("remove_notification(" + unique_id + ");", 5000);
+  }
 }
 
 function remove_notification(id) {

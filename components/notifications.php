@@ -11,8 +11,12 @@
 
     function notifications(){   
         echo"<section id='notifications'>";
-        notification(12,"Bienvenu","icon-eye");
-        notification(13,"Bienvenu","icon-pencil");
+
+        if(secure_session('notification_new'))
+        {
+            notification(0,secure_session('notification_content'),secure_session('notification_icon'));
+            $_SESSION['notification_new']=false;
+        }
         echo"</section>";
     }
 ?>
