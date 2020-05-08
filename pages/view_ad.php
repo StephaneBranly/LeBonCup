@@ -16,9 +16,27 @@
     <?php include_once("../components/components_include.php");?>
 	<body>
     <?php
-     _header(true);
-     complete_ad(1);
-     _footer(); ?>
+        _header(true);
+        $id=secure_get('id');
+        $id=strtolower(SQLProtect($id,true));
+        $query = mysqli_query($connect,"SELECT `idad`,`visibility` FROM `ads` WHERE `idad`=$id");
+        $res = mysqli_fetch_array($query);
+        if (count($res) != 0)
+        {
+            if($res['visibility']=='every_one' || ($res['visibility']=='connected_user' && secure_session('connected')==true))
+                complete_ad($id);
+            else
+            {
+                article("Vous devez être connecté pour voir l'annonce","Vous allez être redirigé dans 5 secondes vers l'accueil");
+                echo "<script type='text/javascript'>RedirectionJavascript('accueil',5000);</script>";
+            }
+        }
+        else
+        {
+            article("Il semblerait que l'annonce n'existe pas...","Vous allez être redirigé dans 5 secondes vers l'accueil");
+            echo "<script type='text/javascript'>RedirectionJavascript('accueil',5000);</script>";
+        }
+        _footer(); ?>
     </body>
 	
 </html>
