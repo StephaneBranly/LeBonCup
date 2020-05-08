@@ -24,7 +24,8 @@
                 $price=$res['price']."€";
             else
                 $price="gratuit";
-            echo "<section class='simple_ad' onclick=\"load_ad('jouets','tracteur-pour-enfant','$res[idad]');\">
+            $title_cleaned=clean_string($res['title']);
+            echo "<section class='simple_ad' onclick=\"load_ad('$res[sub_category]','$title_cleaned','$res[idad]');\">
             <table>
                 <tr>
                     <td class='left' style=\"background-image: url('../ressources/images-ad/$res[image1]');\">

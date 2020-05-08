@@ -18,6 +18,7 @@
     <?php
      _header(false);
      search_component();
+     echo clean_string("test testéé");
      simple_ad(1);
      _footer(); ?>
     </body>

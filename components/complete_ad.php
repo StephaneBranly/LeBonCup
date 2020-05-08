@@ -20,10 +20,19 @@
         
         if((($res['visibility']=='connected_user' && secure_session('connected')==true) || ($res['visibility']=='every_one')) && $res['status']=='to_sell')
         {
-            $views=$res['views']+1;
-            $query2 = mysqli_query($connect,"UPDATE `ads` 
-                    SET `views` = $views
-                    WHERE `idad`=$id");
+            $id_session="ad".$id;
+            $views=$res['views'];
+            if(secure_session('connected')==true)
+                $id_session=$id_session.secure_session('user');
+            if(secure_session($id_session)==null)
+            {
+                $views=$views+1;
+                $query2 = mysqli_query($connect,"UPDATE `ads` 
+                        SET `views` = $views
+                        WHERE `idad`=$id");
+                $_SESSION[$id_session]=true;
+            }
+            
             if($res['price'])
                 $price=$res['price']."€";
             else
