@@ -17,7 +17,7 @@
 	<body>
     <?php
      _header(true);
-     complete_ad();
+     complete_ad(1);
      _footer(); ?>
     </body>
 	

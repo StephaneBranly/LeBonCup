@@ -17,8 +17,13 @@
             $img=$res['image1'];
         else
             $img="nan.png";
+
         if((($res['visibility']=='connected_user' && secure_session('connected')==true) || ($res['visibility']=='every_one')) && $res['status']=='to_sell')
         {
+            if($res['price'])
+                $price=$res['price']."€";
+            else
+                $price="gratuit";
             echo "<section class='simple_ad' onclick=\"load_ad('jouets','tracteur-pour-enfant','$res[idad]');\">
             <table>
                 <tr>
@@ -26,7 +31,7 @@
                         <span class='nb_photos'>$nbr_images<i class='icon-camera'></i></span>
                     </td>
                     <td class='center'>
-                        <h1><span class='price'><i class='icon-tag'></i>$res[price]€</span>$res[title]</h1>
+                        <h1><span class='price'><i class='icon-tag'></i>$price</span>$res[title]</h1>
                         <p>$res[description]</p>
                         <div class='details'>
                             <span class='seller'>posté par $res[username]</span>
