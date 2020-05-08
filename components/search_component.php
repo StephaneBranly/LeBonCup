@@ -37,13 +37,13 @@
                 </td>
                 </td>
             </table>
-            <div id='price_range'>
+            <!--<div id='price_range'>
                 <p>
                 <label for='amount'>Price range:</label>
                 <input type='text' id='amount' readonly style='border:0; color:#f6931f; font-weight:bold;'>
                 </p>
                 <div id='slider-range'></div>
-            </div>
+            </div>-->
         </section>
         <section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <i class='icon-search'></i></div></section>";
     }

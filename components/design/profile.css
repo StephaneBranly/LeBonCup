@@ -34,7 +34,7 @@
 }
 
 #profile .private,
-#profile #contact_tel,
+#profile #contact_phone,
 #profile #contact_facebook,
 #profile #contact_mail {
   padding: 5px;
@@ -48,7 +48,7 @@
 #profile .private {
   background-color: rgb(136, 136, 136);
 }
-#profile #contact_tel {
+#profile #contact_phone {
   background-color: rgb(7, 206, 24);
 }
 #profile #contact_mail {
@@ -57,7 +57,7 @@
 #profile #contact_facebook {
   background-color: rgb(27, 7, 206);
 }
-#profile #contact_tel:hover {
+#profile #contact_phone:hover {
   background-color: rgb(10, 223, 28);
   cursor: pointer;
 }
@@ -121,11 +121,11 @@
     rgb(240, 240, 240)
   );
 }
-#profile #preferences .paiement,
+#profile #preferences .payment,
 #profile #informations .info_property {
   text-align: left;
 }
-#profile #preferences .paiement i,
+#profile #preferences .payment i,
 #profile #informations .info_property i {
   margin-right: 5px;
   padding-right: 5px;

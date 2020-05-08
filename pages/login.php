@@ -49,7 +49,7 @@
                     $_SESSION['notification_icon']='icon-cup';
                     $_SESSION['notification_new']=true;
                     $_SESSION['notification_content']="Bienvenue $user ! Ton compte a été créé !";
-                    $query = mysqli_query($connect,"INSERT INTO `users` (iduser,username,creation_account,last_connexion,email) VALUES ('$user','$user','$date','$date','$user@etu.utc.fr')");
+                    $query = mysqli_query($connect,"INSERT INTO `users` (iduser,username,creation_account,last_connexion,mail) VALUES ('$user','$user','$date','$date','$user@etu.utc.fr')");
                     echo "<script type='text/javascript'>RedirectionJavascript('profile/$user-edit',1000);</script>";
                 }
                 else

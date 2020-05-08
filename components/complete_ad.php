@@ -24,16 +24,16 @@
         </div>
         <div class='center'> 
             <h1>Contacter <span id='user' onclick=\"view_profile('branlyst')\">branlyst</h1>
-            <div id='contact_tel' onclick=\"change_content('contact_tel','0358956480');\"><i class='icon-phone'></i>voir le numéro</div>
+            <div id='contact_phone' onclick=\"change_content('contact_phone','0358956480');\"><i class='icon-phone'></i>voir le numéro</div>
             <div id='contact_mail' onclick=\"change_content('contact_mail','test@mail.com');\"><i class='icon-at'></i>voir l'email</div>
             <div id='contact_facebook' onclick=\"open_link('www.facebook.com');\"><i class='icon-facebook'></i>voir le profil Facebook</div>
             <h1>Préférence de paiement</h1>
             <table id='preferences'>
-            <tr><td class='paiement'><i class='icon-money'></i>Espèce</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
-            <tr><td class='paiement'><i class='icon-cc-visa'></i>Virement</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
-            <tr><td class='paiement'><i class='icon-credit-card-alt'></i>PayUT</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
-            <tr><td class='paiement'><i class='icon-cc-paypal'></i>Paypal</td><td class='opinion'><i class='icon-cancel-circled2'></i></td>
-            <tr><td class='paiement'><i class='icon-beer'></i>Bière</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
+            <tr><td class='payment'><i class='icon-money'></i>Espèce</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
+            <tr><td class='payment'><i class='icon-cc-visa'></i>Virement</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
+            <tr><td class='payment'><i class='icon-credit-card-alt'></i>PayUT</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
+            <tr><td class='payment'><i class='icon-cc-paypal'></i>Paypal</td><td class='opinion'><i class='icon-cancel-circled2'></i></td>
+            <tr><td class='payment'><i class='icon-beer'></i>Bière</td><td class='opinion'><i class='icon-ok-circled2'></i></td>
             </table>
         </div>
         </section>

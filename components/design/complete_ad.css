@@ -134,7 +134,7 @@
   color: rgb(35, 35, 189);
 }
 
-#complete_ad .center #contact_tel,
+#complete_ad .center #contact_phone,
 #complete_ad .center #contact_facebook,
 #complete_ad .center #contact_mail {
   padding: 5px;
@@ -145,7 +145,7 @@
   width: 80%;
   display: inline-block;
 }
-#complete_ad .center #contact_tel {
+#complete_ad .center #contact_phone {
   background-color: rgb(7, 206, 24);
 }
 #complete_ad .center #contact_mail {
@@ -154,7 +154,7 @@
 #complete_ad .center #contact_facebook {
   background-color: rgb(27, 7, 206);
 }
-#complete_ad .center #contact_tel:hover {
+#complete_ad .center #contact_phone:hover {
   background-color: rgb(10, 223, 28);
   cursor: pointer;
 }
@@ -180,10 +180,10 @@
     rgb(240, 240, 240)
   );
 }
-#complete_ad .center #preferences .paiement {
+#complete_ad .center #preferences .payment {
   text-align: left;
 }
-#complete_ad .center #preferences .paiement i {
+#complete_ad .center #preferences .payment i {
   margin-right: 5px;
   padding-right: 5px;
   border-right: 1px solid rgb(136, 136, 136);
