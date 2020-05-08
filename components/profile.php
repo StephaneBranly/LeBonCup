@@ -47,6 +47,7 @@
 
                     /*  CHECK HERE ALL VARIABLES BEFORE UPDATE  */
                     
+                    $_SESSION['username']=$username;
                     $query = mysqli_query($connect,"UPDATE `users` 
                     SET `username` = '$username',
                      `phone` = '$phone',
@@ -103,7 +104,7 @@
                 </div>";
 
                 echo "<div id='contact_mail'>
-                <div class='an_input'><input value='$mail' placeholder='mail@domaine.com' type='text' name='mail' class='discrete'/><i class='icon-at'></i></div>
+                <div class='an_input'><input value='$mail' placeholder='mail@domaine.com' type='text' name='mail' class='discrete'/><i class='icon-mail'></i></div>
                 <div class='an_input'>
                 <select name='visibility_mail' class='visibility'>";
                 foreach($visibility_options as $option)
@@ -181,7 +182,7 @@
                         echo "<div class='private'><i class='icon-cancel-circled'></i>$c non renseigné</div>";
                 } 
                 
-                echo "<!--<div id='contact_mail' onclick=\"change_content('contact_mail','$res[mail]');\"><i class='icon-at'></i>voir l'email</div>
+                echo "<!--<div id='contact_mail' onclick=\"change_content('contact_mail','$res[mail]');\"><i class='icon-mail'></i>voir l'email</div>
                 <div id='contact_facebook' onclick=\"open_link('www.facebook.com');\"><i class='icon-facebook'></i>voir le profil Facebook</div>
                 -->";
                 if($res['cash'])$cash='ok';else $cash='cancel';

@@ -14,7 +14,8 @@
     else 
     {
         $user=secure_session('user');
-        echo"<div id='login'><span onclick=\"view_profile('$user');\"><i class='icon-address-card-o'></i>$user</span><span onclick='deco(this);'><i class='icon-user-pair'></i>Se déconnecter</span></div>";
+        $username=secure_session('username');
+        echo"<div id='login'><span onclick=\"view_profile('$user');\"><i class='icon-address-card-o'></i>$username</span><span onclick='deco(this);'><i class='icon-user-pair'></i>Se déconnecter</span></div>";
     }
     echo "</header>";
 

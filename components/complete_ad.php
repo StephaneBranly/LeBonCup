@@ -25,7 +25,7 @@
         <div class='center'> 
             <h1>Contacter <span id='user' onclick=\"view_profile('branlyst')\">branlyst</h1>
             <div id='contact_phone' onclick=\"change_content('contact_phone','0358956480');\"><i class='icon-phone'></i>voir le numéro</div>
-            <div id='contact_mail' onclick=\"change_content('contact_mail','test@mail.com');\"><i class='icon-at'></i>voir l'email</div>
+            <div id='contact_mail' onclick=\"change_content('contact_mail','test@mail.com');\"><i class='icon-mail'></i>voir l'email</div>
             <div id='contact_facebook' onclick=\"open_link('www.facebook.com');\"><i class='icon-facebook'></i>voir le profil Facebook</div>
             <h1>Préférence de paiement</h1>
             <table id='preferences'>
