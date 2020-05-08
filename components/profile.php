@@ -45,8 +45,44 @@
                     if($beer) $beer=1; else $beer=0;
 
 
-                    /*  CHECK HERE ALL VARIABLES BEFORE UPDATE  */
-                    
+                    if(strlen ($username)>25)
+                    {
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','username doit faire moins de 25 caractères',1)</script>";
+                        $redirect=false;
+                    }
+                    if(strlen ($phone)>15)
+                    {
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le numéro doit faire moins de 15 caractères',1)</script>";
+                        $redirect=false;
+                    }
+                    if(strlen ($mail)>50)
+                    {
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le mail doit faire moins de 50 caractères',1)</script>";
+                        $redirect=false;
+                    }
+                    if(strlen ($facebook)>100)
+                    {
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le compte facebook est trop grand',1)</script>";
+                        $redirect=false;
+                    }
+                    if($phone_visibility=='only_me' && $mail_visibility=='only_me' && $facebook_visibility=='only_me')
+                    {
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Au moins un moyen de contact doit être visible',1)</script>";
+                        $redirect=false;
+                    }
+                    if(($phone_visibility!='only_me' && $phone_visibility!='every_one' && $phone_visibility!='connected_user')
+                    || ($mail_visibility!='only_me' && $mail_visibility!='every_one' && $mail_visibility!='connected_user')
+                    || ($facebook_visibility!='only_me' && $facebook_visibility!='every_one' && $facebook_visibility!='connected_user'))
+                    {
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Il y a un problème avec les visibilités des contacts...',1)</script>";
+                        $redirect=false;
+                    }
+                }   
+                else
+                    $redirect=false;
+
+                if($redirect)
+                {
                     $_SESSION['username']=$username;
                     $query = mysqli_query($connect,"UPDATE `users` 
                     SET `username` = '$username',
@@ -62,12 +98,6 @@
                      `paypal` = $paypal,
                      `beer` = $beer
                      WHERE iduser = '$user'");
-                }   
-                else
-                    $redirect=false;
-
-                if($redirect)
-                {
                     echo "<script type='text/javascript'>RedirectionJavascript('/profile/$user',100);</script>";
                     $_SESSION['notification_icon']='icon-floppy';
                     $_SESSION['notification_new']=true;
@@ -78,7 +108,7 @@
                 <form action='../profile/$user-edit' method='post'>
                 <h2>Informations compte</h2>
                 <table id='informations'>
-                    <tr><td class='info_property'><i class='icon-user-pair'></i>Username</td><td class='info_value'><input type='text' name='username' placeholder='username' value='$username'/></td>
+                    <tr><td class='info_property'><i class='icon-user-pair'></i>Username</td><td class='info_value an_input'><input maxlenght='25' type='text' name='username' placeholder='username' value='$username'/></td>
                     <tr><td class='info_property'><i class='icon-user-pair'></i>Date création du compte</td><td class='info_value'>05-05-2020 17:25</td>
                     <tr><td class='info_property'><i class='icon-clock'></i>Dernière connexion</td><td class='info_value'>05-05-2020 20:56</td>
                     <tr><td class='info_property'><i class='icon-shop'></i>Nombre d'articles disponibles</td><td class='info_value'>--</td>
@@ -93,33 +123,48 @@
                 
                 
                 echo "<div id='contact_phone'>
-                <div class='an_input'><input value='$phone' placeholder='0321303030' type='text' name='phone' class='discrete'/><i class='icon-phone'></i></div>
+                <div class='an_input'><input maxlenght='15' value='$phone' placeholder='0321303030' type='text' name='phone' class='discrete'/><i class='icon-phone'></i></div>
                 <div class='an_input'>
                 <select name='visibility_phone' class='visibility'>";
                 foreach($visibility_options as $option)
-                    echo"<option value='$option[0]' name='visibility_phone_$option[0]'>$option[1]</option>";
+                {
+                    if($option[0]==$phone_visibility)
+                        echo"<option value='$option[0]' selected name='visibility_$option[0]'>$option[1]</option>";
+                    else
+                        echo"<option value='$option[0]' name='visibility_$option[0]'>$option[1]</option>";
+                }   
                 echo "</select>   
                 <i class='icon-eye'></i>
                 </div> 
                 </div>";
 
                 echo "<div id='contact_mail'>
-                <div class='an_input'><input value='$mail' placeholder='mail@domaine.com' type='text' name='mail' class='discrete'/><i class='icon-mail'></i></div>
+                <div class='an_input'><input maxlenght='50' value='$mail' placeholder='mail@domaine.com' type='text' name='mail' class='discrete'/><i class='icon-mail'></i></div>
                 <div class='an_input'>
                 <select name='visibility_mail' class='visibility'>";
                 foreach($visibility_options as $option)
-                    echo"<option value='$option[0]' name='visibility_mail_$option[0]'>$option[1]</option>";
+                {
+                    if($option[0]==$mail_visibility)
+                        echo"<option value='$option[0]' selected name='visibility_$option[0]'>$option[1]</option>";
+                    else
+                        echo"<option value='$option[0]' name='visibility_$option[0]'>$option[1]</option>";
+                }
                 echo "</select>   
                 <i class='icon-eye'></i>
                 </div> 
                 </div>";
 
                 echo "<div id='contact_facebook'>
-                <div class='an_input'><input value='$facebook' placeholder='url_compte_facebook' type='text' name='facebook' class='discrete'/><i class='icon-facebook'></i></div>
+                <div class='an_input'><input maxlenght='100' value='$facebook' placeholder='url_compte_facebook' type='text' name='facebook' class='discrete'/><i class='icon-facebook'></i></div>
                 <div class='an_input'>
                 <select name='visibility_facebook' class='visibility'>";
                 foreach($visibility_options as $option)
-                    echo"<option value='$option[0]' name='visibility_facebook_$option[0]'>$option[1]</option>";
+                {
+                    if($option[0]==$facebook_visibility)
+                        echo"<option value='$option[0]' selected name='visibility_$option[0]'>$option[1]</option>";
+                    else
+                        echo"<option value='$option[0]' name='visibility_$option[0]'>$option[1]</option>";
+                }
                 echo "</select>   
                 <i class='icon-eye'></i>
                 </div> 
