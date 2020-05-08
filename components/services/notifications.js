@@ -3,7 +3,9 @@ function write_notification(icon, content, tmp) {
   var actual_content = section_notifs.innerHTML;
   unique_id = Date.now();
   section_notifs.innerHTML =
-    "<div class='notification' id='notification_" +
+    '<div onclick="remove_notification(' +
+    unique_id +
+    ");\" class='notification' id='notification_" +
     unique_id +
     "'><i class='" +
     icon +
@@ -12,7 +14,7 @@ function write_notification(icon, content, tmp) {
     "<p></div>" +
     actual_content;
   if (tmp) {
-    setTimeout("remove_notification(" + unique_id + ");", 5000);
+    setTimeout("remove_notification(" + unique_id + ");", tmp);
   }
 }
 

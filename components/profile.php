@@ -47,34 +47,34 @@
 
                     if(strlen ($username)>25)
                     {
-                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','username doit faire moins de 25 caractères',1)</script>";
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','username doit faire moins de 25 caractères',10000)</script>";
                         $redirect=false;
                     }
                     if(strlen ($phone)>15)
                     {
-                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le numéro doit faire moins de 15 caractères',1)</script>";
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le numéro doit faire moins de 15 caractères',10000)</script>";
                         $redirect=false;
                     }
                     if(strlen ($mail)>50)
                     {
-                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le mail doit faire moins de 50 caractères',1)</script>";
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le mail doit faire moins de 50 caractères',10000)</script>";
                         $redirect=false;
                     }
                     if(strlen ($facebook)>100)
                     {
-                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le compte facebook est trop grand',1)</script>";
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le compte facebook est trop grand',10000)</script>";
                         $redirect=false;
                     }
                     if($phone_visibility=='only_me' && $mail_visibility=='only_me' && $facebook_visibility=='only_me')
                     {
-                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Au moins un moyen de contact doit être visible',1)</script>";
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Au moins un moyen de contact doit être visible',10000)</script>";
                         $redirect=false;
                     }
                     if(($phone_visibility!='only_me' && $phone_visibility!='every_one' && $phone_visibility!='connected_user')
                     || ($mail_visibility!='only_me' && $mail_visibility!='every_one' && $mail_visibility!='connected_user')
                     || ($facebook_visibility!='only_me' && $facebook_visibility!='every_one' && $facebook_visibility!='connected_user'))
                     {
-                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Il y a un problème avec les visibilités des contacts...',1)</script>";
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Il y a un problème avec les visibilités des contacts...',10000)</script>";
                         $redirect=false;
                     }
                 }   
