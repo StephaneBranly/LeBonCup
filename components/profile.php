@@ -28,25 +28,56 @@
                 {
                     $username=SQLProtect(secure_post('username'),1);
                     $phone=SQLProtect(secure_post('phone'),1);
-                    $phone_visibility=SQLProtect(secure_post('phone_visibility'),1);
+                    $phone_visibility=SQLProtect(secure_post('visibility_phone'),1);
                     $mail=SQLProtect(secure_post('mail'),1);
-                    $mail_visibility=SQLProtect(secure_post('mail_visibility'),1);
+                    $mail_visibility=SQLProtect(secure_post('visibility_mail'),1);
                     $facebook=SQLProtect(secure_post('facebook'),1);
-                    $facebook_visibility=SQLProtect(secure_post('facebook_visibility'),1);
+                    $facebook_visibility=SQLProtect(secure_post('visibility_facebook'),1);
                     $cash=SQLProtect(secure_post('check_cash'),1);
                     $visa=SQLProtect(secure_post('check_visa'),1);
                     $payut=SQLProtect(secure_post('check_payut'),1);
                     $paypal=SQLProtect(secure_post('check_paypal'),1);
                     $beer=SQLProtect(secure_post('check_beer'),1);
-                }
+                    if($cash) $cash=1; else $cash=0;
+                    if($visa) $visa=1; else $visa=0;
+                    if($payut) $payut=1; else $payut=0;
+                    if($paypal) $paypal=1; else $paypal=0;
+                    if($beer) $beer=1; else $beer=0;
+
+
+                    /*  CHECK HERE ALL VARIABLES BEFORE UPDATE  */
+                    
+                    $query = mysqli_query($connect,"UPDATE `users` 
+                    SET `username` = '$username',
+                     `phone` = '$phone',
+                     `phone_visibility` = '$phone_visibility',
+                     `mail` = '$mail',
+                     `mail_visibility` = '$mail_visibility',
+                     `facebook` = '$facebook',
+                     `facebook_visibility` = '$facebook_visibility',
+                     `cash` = $cash,
+                     `visa` = $visa,
+                     `payut` = $payut,
+                     `paypal` = $paypal,
+                     `beer` = $beer
+                     WHERE iduser = '$user'");
+                }   
                 else
                     $redirect=false;
+
+                if($redirect)
+                {
+                    echo "<script type='text/javascript'>RedirectionJavascript('/profile/$user',100);</script>";
+                    $_SESSION['notification_icon']='icon-floppy';
+                    $_SESSION['notification_new']=true;
+                    $_SESSION['notification_content']="Modification effectuée";
+                }
                 echo "<section id='profile'>
                 <h1>Profil de $username</h1>
                 <form action='../profile/$user-edit' method='post'>
                 <h2>Informations compte</h2>
                 <table id='informations'>
-                    <tr><td class='info_property'><i class='icon-user-pair'></i>ID utilisateur</td><td class='info_value'><input type='text' name='username' placeholder='username' value='$username'/></td>
+                    <tr><td class='info_property'><i class='icon-user-pair'></i>Username</td><td class='info_value'><input type='text' name='username' placeholder='username' value='$username'/></td>
                     <tr><td class='info_property'><i class='icon-user-pair'></i>Date création du compte</td><td class='info_value'>05-05-2020 17:25</td>
                     <tr><td class='info_property'><i class='icon-clock'></i>Dernière connexion</td><td class='info_value'>05-05-2020 20:56</td>
                     <tr><td class='info_property'><i class='icon-shop'></i>Nombre d'articles disponibles</td><td class='info_value'>--</td>
