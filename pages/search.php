@@ -18,9 +18,7 @@
     <?php
      _header(false);
      search_component();
-     simple_ad();
-     simple_ad();
-     simple_ad();
+     simple_ad(1);
      _footer(); ?>
     </body>
 	
