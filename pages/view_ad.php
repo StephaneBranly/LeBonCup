@@ -6,8 +6,13 @@
 	<link rel="icon" href="../ressources/images/favicon.ico" type="image/x-icon"/>
     <head>
         <?php
+            $id=secure_get('id');
+            $id=strtolower(SQLProtect($id,true));
+            $query = mysqli_query($connect,"SELECT `idad`,`visibility`,`title` FROM `ads` WHERE `idad`=$id");
+            $res = mysqli_fetch_array($query);
+            if (count($res) != 0) $title=$res['title']; else $title = "Annonce";
             include_once("../lib/google_analytics.php");
-            $nom_page='Title annonce';
+            $nom_page=$title;
             $description_page='description';
             include_once("../lib/meta.php");
         ?>
@@ -17,10 +22,7 @@
 	<body>
     <?php
         _header(true);
-        $id=secure_get('id');
-        $id=strtolower(SQLProtect($id,true));
-        $query = mysqli_query($connect,"SELECT `idad`,`visibility` FROM `ads` WHERE `idad`=$id");
-        $res = mysqli_fetch_array($query);
+        
         if (count($res) != 0)
         {
             if($res['visibility']=='every_one' || ($res['visibility']=='connected_user' && secure_session('connected')==true))
