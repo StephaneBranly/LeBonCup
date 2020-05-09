@@ -95,7 +95,7 @@
                         if(($res[$champ_visibility]=='connected_user' && secure_session('connected')==true) 
                         || ($res[$champ_visibility]=='only_me' && (secure_session('connected')==true && secure_session('user')==$res['iduser']))
                         || ($res[$champ_visibility]=='every_one'))
-                             echo"<div id='contact_$c' onclick=\"change_content('contact_$c','$res[$c]');\"><i class='icon-$c'></i>voir le $c</div>";     
+                             echo"<div id='contact_$c' onclick=\"change_content('contact_$c','$res[$c]');  copy_to_clipboard('contact_$c','Le contact');\"><i class='icon-$c'></i>voir le $c</div>";     
                         else
                             echo "<div class='private'><i class='icon-user-secret'></i>$c non visible</div>";
 

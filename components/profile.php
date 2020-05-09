@@ -70,6 +70,13 @@
                         echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Au moins un moyen de contact doit être visible',10000)</script>";
                         $redirect=false;
                     }
+                    if(($phone=="" && $phone_visibility!='only_me')
+                    || ($mail=="" && $mail_visibility!='only_me' )
+                    || ($facebook=="" && $facebook_visibility!='only_me'))
+                    {
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Les contacts visibles doivent être remplis...',10000)</script>";
+                        $redirect=false;
+                    }
                     if(($phone_visibility!='only_me' && $phone_visibility!='every_one' && $phone_visibility!='connected_user')
                     || ($mail_visibility!='only_me' && $mail_visibility!='every_one' && $mail_visibility!='connected_user')
                     || ($facebook_visibility!='only_me' && $facebook_visibility!='every_one' && $facebook_visibility!='connected_user'))
@@ -218,7 +225,7 @@
                         if(($res[$champ_visibility]=='connected_user' && secure_session('connected')==true) 
                         || ($res[$champ_visibility]=='only_me' && (secure_session('connected')==true && secure_session('user')==$res['iduser']))
                         || ($res[$champ_visibility]=='every_one'))
-                             echo"<div id='contact_$c' onclick=\"change_content('contact_$c','$res[$c]');\"><i class='icon-$c'></i>voir le $c</div>";     
+                             echo"<div id='contact_$c' onclick=\"change_content('contact_$c','$res[$c]'); copy_to_clipboard('contact_$c','Le contact');\"><i class='icon-$c'></i>voir le $c</div>";     
                         else
                             echo "<div class='private'><i class='icon-user-secret'></i>$c non visible</div>";
 

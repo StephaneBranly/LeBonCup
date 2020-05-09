@@ -3,6 +3,16 @@ function change_content(id, content) {
   element.innerHTML = content;
 }
 
+function copy_to_clipboard(id, content) {
+  var range = document.createRange();
+  range.selectNode(document.getElementById(id));
+  window.getSelection().removeAllRanges(); // clear current selection
+  window.getSelection().addRange(range); // to select text
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges(); // to deselect
+  text = content + " a été copié";
+  write_notification("icon-doc", text, 2000);
+}
 function open_link(url) {
   document.location.href = url;
 }
