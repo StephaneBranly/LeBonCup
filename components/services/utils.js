@@ -63,3 +63,10 @@ function RedirectionJavascript(page, time) {
   url = "../" + page;
   setTimeout("{document.location.href=url;}", time);
 }
+
+function LikeAd(id) {
+  var xhr = new XMLHttpRequest();
+  url = "../components/services/like_ad.php?id=" + id;
+  xhr.open("GET", url);
+  xhr.send("");
+}

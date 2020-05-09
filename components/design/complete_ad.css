@@ -125,14 +125,14 @@
   color: rgb(129, 129, 129);
   cursor: pointer;
 }
-#complete_ad .left .details .likes:hover {
+#complete_ad .left .details #likes:hover {
   color: rgb(233, 21, 21);
   cursor: pointer;
 }
 #complete_ad .left .details .liked {
   color: rgb(233, 21, 21);
 }
-#complete_ad .left .details .viewed {
+#complete_ad .left .details #viewed {
   color: rgb(35, 35, 189);
 }
 

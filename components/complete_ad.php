@@ -74,11 +74,11 @@
             <div class='left' >
                 <div class='details'>
                         <span class='date_post'>$res[publish_date]</span>
-                        <span class='views viewed'>$views<i class='icon-eye'></i></span>";
+                        <span id='viewed'>$views<i class='icon-eye'></i></span>";
                         if($liked==0)
-                            echo "<span class='likes'>$likes<i class='icon-heart'></i></span>";
+                            echo "<span id='likes' onclick=\"LikeAd($id);\">$likes<i class='icon-heart'></i></span>";
                         else
-                            echo "<span class='likes liked'>$likes<i class='icon-heart'></i></span>";
+                            echo "<span id='likes' class='liked' onclick=\"LikeAd($id);\">$likes<i class='icon-heart'></i></span>";
                     echo "</div>
                 <p>$res[description]</p>
             </div>
