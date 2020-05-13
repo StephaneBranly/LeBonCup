@@ -76,9 +76,9 @@
                         <span class='date_post'>$res[publish_date]</span>
                         <span id='viewed'>$views<i class='icon-eye'></i></span>";
                         if($liked==0)
-                            echo "<span id='likes' onclick=\"LikeAd($id);\">$likes<i class='icon-heart'></i></span>";
+                            echo "<span id='likes' onclick=\"LikeAd($id);\"><el>$likes</el><i class='icon-heart'></i></span>";
                         else
-                            echo "<span id='likes' class='liked' onclick=\"LikeAd($id);\">$likes<i class='icon-heart'></i></span>";
+                            echo "<span id='likes' onclick=\"LikeAd($id);\"><el  class='liked'>$likes</el><i class='icon-heart liked'></i></span>";
                     echo "</div>
                 <p>$res[description]</p>
             </div>
