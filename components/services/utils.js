@@ -64,9 +64,27 @@ function RedirectionJavascript(page, time) {
   setTimeout("{document.location.href=url;}", time);
 }
 
+function readBody(xhr) {
+  var data;
+  if (!xhr.responseType || xhr.responseType === "text") {
+    data = xhr.responseText;
+  } else if (xhr.responseType === "document") {
+    data = xhr.responseXML;
+  } else {
+    data = xhr.response;
+  }
+  return data;
+}
+
 function LikeAd(id) {
   var xhr = new XMLHttpRequest();
   url = "../components/services/like_ad.php?id=" + id;
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      new_content = readBody(xhr);
+      change_content("likes", new_content);
+    }
+  };
   xhr.open("GET", url);
   xhr.send("");
 }

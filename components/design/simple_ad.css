@@ -6,6 +6,7 @@
   margin: 0px;
   box-shadow: 5px 0px 10px rgb(221, 221, 221);
   padding: 10px;
+  border-radius: 5px;
 }
 .simple_ad:hover {
   cursor: pointer;
@@ -33,6 +34,8 @@
   width: 85%;
   border-left: 1px solid rgb(221, 221, 221);
   color: rgb(0, 0, 0);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .simple_ad .center h1 {
   color: rgb(255, 98, 0);
