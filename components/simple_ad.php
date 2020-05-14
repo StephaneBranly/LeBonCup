@@ -48,7 +48,7 @@
             echo "<section class='simple_ad' onclick=\"load_ad('$res[sub_category]','$title_cleaned','$res[idad]');\">
             <table>
                 <tr>
-                    <td class='left' style=\"background-image: url('../ressources/images-ad/$res[image1]');\">
+                    <td class='left' style=\"background-image: url('../ressources/images-ad/$img');\">
                         <span class='nb_photos'>$nbr_images<i class='icon-camera'></i></span>
                     </td>
                     <td class='center'>
