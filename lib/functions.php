@@ -20,4 +20,19 @@ function clean_string($string)
      
     return ($url);
 }
+
+function remove_balise($string)
+{
+    $url = $string;
+    $url = preg_replace('^<[\\\a-zA-Z]>?^', '', $url);
+     
+    return ($url);
+}
+
+function show_clean_string($string)
+{ 
+    $url = $string;
+    $url = preg_replace('^\\\^', '', $url);     
+    return ($url);
+}
 ?>

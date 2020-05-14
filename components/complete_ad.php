@@ -56,8 +56,10 @@
                 $price=$res['price']."€";
             else
                 $price="gratuit";
+            $title = show_clean_string($res['title']);
+            $description = show_clean_string($res['description']);
             echo "<section id='complete_ad'>
-            <h1><span class='price'><i class='icon-tag'></i>$price</span>$res[title]</h1>
+            <h1><span class='price'><i class='icon-tag'></i>$price</span>$title</h1>
             <div id='photo' style=\"background-image: url('../ressources/images-ad/$img');\">
                 <span id='enlarge' onclick='enlarge_photo();'><i class='icon-resize-full'></i></span>
             </div>
@@ -80,7 +82,7 @@
                         else
                             echo "<span id='likes' onclick=\"LikeAd($id);\"><el  class='liked'>$likes</el><i class='icon-heart liked'></i></span>";
                     echo "</div>
-                <p>$res[description]</p>
+                <p>$description</p>
             </div>
             <div class='center'> 
                 <h1>Contacter <span id='user' onclick=\"view_profile('$res[iduser]')\">$res[username]</span></h1>";

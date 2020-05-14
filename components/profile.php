@@ -26,12 +26,12 @@
 
                 if(isset($_POST['username']))
                 {
-                    $username=SQLProtect(secure_post('username'),1);
-                    $phone=SQLProtect(secure_post('phone'),1);
+                    $username=SQLProtect(remove_balise(secure_post('username')),1);
+                    $phone=SQLProtect(remove_balise(secure_post('phone')),1);
                     $phone_visibility=SQLProtect(secure_post('visibility_phone'),1);
-                    $mail=SQLProtect(secure_post('mail'),1);
+                    $mail=SQLProtect(remove_balise(secure_post('mail')),1);
                     $mail_visibility=SQLProtect(secure_post('visibility_mail'),1);
-                    $facebook=SQLProtect(secure_post('facebook'),1);
+                    $facebook=SQLProtect(remove_balise(secure_post('facebook')),1);
                     $facebook_visibility=SQLProtect(secure_post('visibility_facebook'),1);
                     $cash=SQLProtect(secure_post('check_cash'),1);
                     $visa=SQLProtect(secure_post('check_visa'),1);

@@ -14,8 +14,8 @@
 
         if(!empty($_POST))
         {
-            $title=SQLProtect(secure_post('title'),1);
-            $description=SQLProtect(secure_post('description'),1);
+            $title=SQLProtect(remove_balise(secure_post('title')),1);
+            $description=SQLProtect(remove_balise(secure_post('description')),1);
             $visibility=SQLProtect(secure_post('visibility'),1);
             $price=SQLProtect(secure_post('price'),0);
             
@@ -24,9 +24,9 @@
                 echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le titre doit faire entre 1 et 25 caractères',10000)</script>";
                 $redirect=false;
             }
-            if(strlen ($description)>500)
+            if(strlen ($description)>3000)
             {
-                echo "<script type='text/javascript'>write_notification('icon-cancel-circled','La description doit faire moins de 500 caractères',10000)</script>";
+                echo "<script type='text/javascript'>write_notification('icon-cancel-circled','La description doit faire moins de 3000 caractères',10000)</script>";
                 $redirect=false;
             }
             if(strlen($visibility)>30)
@@ -48,6 +48,8 @@
                 $id = mysqli_insert_id($connect);
 
                 $extensions = array('png','jpg','jpeg');
+                $inputImages = array("f1","f1","f3");
+
                 $dirDestination = "..\\ressources\\images-ad\\";
                 $maxSize = 5000000;
 
@@ -90,6 +92,9 @@
                     SET `image1` = '$nameDestination1'
                     WHERE `idad`=$id");
                     $title_cleaned = $title_cleaned=clean_string($title);
+                    $_SESSION['notification_icon']='icon-floppy';
+                    $_SESSION['notification_new']=true;
+                    $_SESSION['notification_content']="L'annonce a bien été ajoutée !";
                     echo "<script type='text/javascript'>load_ad('autres','$title_cleaned','$id');</script>";
                 }
                 else
@@ -103,7 +108,7 @@
 
         echo "<section id='post_ad'>
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
-            <h1><input name='title' placeholder='Titre annonce' value='$title' type='text'/></h1>
+            <h1><input name='title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
             <h2>Photos</h2>
             <input name='f1' type='file'/>
             <input name='f2' type='file'/>
@@ -123,7 +128,7 @@
                     <option name='connected_user'value='connected_user'>Utilisateur connecté</option>";
                 echo"</select>  <i class='icon-eye'></i>
             </div>
-            <textarea name='description' placeholder='Description annonce'/>$description</textarea>
+            <textarea name='description' placeholder='Description annonce' maxlenght='3000'/>$description</textarea>
             
           
             <button type='submit' id='button_submit'>PUBLIER<i class='icon-paper-plane'></i></button>
