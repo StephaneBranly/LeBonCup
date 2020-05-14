@@ -45,9 +45,9 @@
                     if($beer) $beer=1; else $beer=0;
 
 
-                    if(strlen ($username)>25)
+                    if(strlen ($username)>25 || $username=="")
                     {
-                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','username doit faire moins de 25 caractères',10000)</script>";
+                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le username doit faire entre 1 et 25 caractères',10000)</script>";
                         $redirect=false;
                     }
                     if(strlen ($phone)>15)
