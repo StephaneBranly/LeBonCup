@@ -92,7 +92,7 @@
                     SET `image1` = '$nameDestination1'
                     WHERE `idad`=$id");
                     $title_cleaned = $title_cleaned=clean_string($title);
-                    $_SESSION['notification_icon']='icon-floppy';
+                    $_SESSION['notification_icon']='icon-note';
                     $_SESSION['notification_new']=true;
                     $_SESSION['notification_content']="L'annonce a bien été ajoutée !";
                     echo "<script type='text/javascript'>load_ad('autres','$title_cleaned','$id');</script>";

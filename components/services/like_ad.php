@@ -24,7 +24,13 @@
             $likes=$res_likes[0];
             echo "<el class='$liked'>$likes</el><i class='icon-heart $liked'></i>";
         }
-        else echo "0";
+        else echo "<el>0</el><i class='icon-heart'></i>";
     }
-    else echo "0";
+    else
+    {
+        $query4 = mysqli_query($connect, "SELECT COUNT(*) FROM `users_ad-views-likes` WHERE `idad`= $id AND `liked`=1");
+        $res_likes = mysqli_fetch_array($query4);
+        $likes=$res_likes[0];
+        echo "<el>$likes</el><i class='icon-heart'></i><script type='text/javascript'>write_notification('icon-cancel-circled','Vous devez être connecté pour liker une annonce...',10000);</script>";
+    } 
 ?>
