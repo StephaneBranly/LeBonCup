@@ -110,6 +110,13 @@
                     $_SESSION['notification_new']=true;
                     $_SESSION['notification_content']="Modification effectuée";
                 }
+
+                $query_count_ads = mysqli_query($connect,"SELECT COUNT(*) FROM `ads` WHERE `seller`='$user' AND `status`='to_sell'");
+                $nbr_ads_array = mysqli_fetch_array($query_count_ads);
+                $nbr_ads=$nbr_ads_array[0];
+                $query_count_ads_sold = mysqli_query($connect,"SELECT COUNT(*) FROM `ads` WHERE `seller`='$user' AND `status`='sold'");
+                $nbr_ads_sold_array = mysqli_fetch_array($query_count_ads_sold);
+                $nbr_ads_sold=$nbr_ads_sold_array[0];
                 echo "<section id='profile'>
                 <h1>Profil de $username</h1>
                 <form action='../profile/$user-edit' method='post'>
@@ -118,8 +125,8 @@
                     <tr><td class='info_property'><i class='icon-user-pair'></i>Username</td><td class='info_value an_input'><input maxlenght='25' type='text' name='username' placeholder='username' value='$username'/></td>
                     <tr><td class='info_property'><i class='icon-user-pair'></i>Date création du compte</td><td class='info_value'>05-05-2020 17:25</td>
                     <tr><td class='info_property'><i class='icon-clock'></i>Dernière connexion</td><td class='info_value'>05-05-2020 20:56</td>
-                    <tr><td class='info_property'><i class='icon-shop'></i>Nombre d'articles disponibles</td><td class='info_value'>--</td>
-                    <tr><td class='info_property'><i class='icon-thumbs-up'></i>Nombre d'articles vendus</td><td class='info_value'>--</td>
+                    <tr><td class='info_property'><i class='icon-shop'></i>Nombre d'annonces disponibles</td><td class='info_value'>$nbr_ads</td>
+                    <tr><td class='info_property'><i class='icon-thumbs-up'></i>Nombre d'annonces finies</td><td class='info_value'>$nbr_ads_sold</td>
                 </table>
 
                 <h2>Moyens de contact</h2>";
@@ -202,14 +209,20 @@
                 {
                     echo"<div id='modify'><span onclick=\"open_link('../profile/$user-edit');\"><i class='icon-pencil'></i>Editer le profil</span></div>";
                 }
+                $query_count_ads = mysqli_query($connect,"SELECT COUNT(*) FROM `ads` WHERE `seller`='$user' AND `status`='to_sell'");
+                $nbr_ads_array = mysqli_fetch_array($query_count_ads);
+                $nbr_ads=$nbr_ads_array[0];
+                $query_count_ads_sold = mysqli_query($connect,"SELECT COUNT(*) FROM `ads` WHERE `seller`='$user' AND `status`='sold'");
+                $nbr_ads_sold_array = mysqli_fetch_array($query_count_ads_sold);
+                $nbr_ads_sold=$nbr_ads_sold_array[0];
                 echo"<h1>Profil de $res[username]</h1>
                 <h2>Informations compte</h2>
                 <table id='informations'>
                     <tr><td class='info_property'><i class='icon-user-pair'></i>ID utilisateur</td><td class='info_value'>$res[iduser]</td>
                     <tr><td class='info_property'><i class='icon-user-pair'></i>Date création du compte</td><td class='info_value'>$res[creation_account]</td>
                     <tr><td class='info_property'><i class='icon-clock'></i>Dernière connexion</td><td class='info_value'>$res[last_connexion]</td>
-                    <tr><td class='info_property'><i class='icon-shop'></i>Nombre d'articles disponibles</td><td class='info_value'>??</td>
-                    <tr><td class='info_property'><i class='icon-thumbs-up'></i>Nombre d'articles vendus</td><td class='info_value'>??</td>
+                    <tr><td class='info_property'><i class='icon-shop'></i>Nombre d'annonces disponibles</td><td class='info_value'>$nbr_ads</td>
+                    <tr><td class='info_property'><i class='icon-thumbs-up'></i>Nombre d'annonces finies</td><td class='info_value'>$nbr_ads_sold</td>
                 </table>
 
                 <h2>Moyens de contact</h2>";
