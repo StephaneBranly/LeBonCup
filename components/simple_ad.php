@@ -46,7 +46,7 @@
             }
             $title_cleaned=clean_string($res['title']);
             $description=clean_string($res['description']);
-            echo "<section class='simple_ad' onclick=\"load_ad('$res[sub_category]','$title_cleaned','$res[idad]');\">
+            echo "<section class='simple_ad' onclick=\"load_ad('$res[category]','$title_cleaned','$res[idad]');\">
             <table>
                 <tr>
                     <td class='left' style=\"background-image: url('../ressources/images-ad/$img');\">

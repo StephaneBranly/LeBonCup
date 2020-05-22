@@ -17,6 +17,7 @@
             $title=SQLProtect(remove_balise(secure_post('title')),1);
             $description=nl2br(SQLProtect(remove_balise(secure_post('description')),1));
             $visibility=SQLProtect(secure_post('visibility'),1);
+            $category=strtolower(SQLProtect(secure_post('category'),1));
             $price=SQLProtect(secure_post('price'),0);
             
             if(strlen ($title)>30 || $title=="")
@@ -43,8 +44,8 @@
             {
                 $date = date('Y-m-d H:i:s');
                 $user=secure_session('user');
-                $query = mysqli_query($connect,"INSERT INTO `ads` (seller,title,sub_category,description,visibility,price,publish_date,last_refresh) 
-                VALUES ('$user','$title','autres','$description','$visibility',$price,'$date','$date')");
+                $query = mysqli_query($connect,"INSERT INTO `ads` (seller,title,category,description,visibility,price,publish_date,last_refresh) 
+                VALUES ('$user','$title','$category','$description','$visibility',$price,'$date','$date')");
                 $id = mysqli_insert_id($connect);
 
                 $extensions = array('png','jpg','jpeg');
@@ -53,6 +54,8 @@
                 $dirDestination = "..\\ressources\\images-ad\\";
                 $maxSize = 5000000;
 
+                $namefiles = array('f1','f2','f3');
+                
                 $namef1 = $_FILES['f1']['name'];
                 $image1Name = pathinfo($namef1);
                 $nameDestination1="";
@@ -95,7 +98,7 @@
                     $_SESSION['notification_icon']='icon-note';
                     $_SESSION['notification_new']=true;
                     $_SESSION['notification_content']="L'annonce a bien été ajoutée !";
-                    echo "<script type='text/javascript'>load_ad('autres','$title_cleaned','$id');</script>";
+                    echo "<script type='text/javascript'>load_ad('$category','$title_cleaned','$id');</script>";
                 }
                 else
                 {
@@ -133,11 +136,13 @@
                 $query = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent` IS NULL ORDER BY `category` ASC");
                 while($res = mysqli_fetch_array($query))
                 {
-                    echo"<option class='a_category' value='$res[idcat]'><i class='$res[icon]'></i>$res[category]</option>";
+                    $category_cleaned = clean_string($res['category']);
+                    echo"<option class='a_category' value='$category_cleaned'><i class='$res[icon]'></i>$res[category]</option>";
                     $query2 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent`=$res[idcat] ORDER BY `category` ASC");
                     while($res2 = mysqli_fetch_array($query2))
                     {
-                        echo"<option class='a_subcategory' value='$res2[idcat]'>$res2[category]</option>";
+                        $category_cleaned = clean_string($res2['category']);
+                        echo"<option class='a_subcategory' value='$category_cleaned'>$res2[category]</option>";
                     }
                 }
             echo"</select><i class='icon-menu'></i>
