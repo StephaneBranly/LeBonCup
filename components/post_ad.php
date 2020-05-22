@@ -15,7 +15,7 @@
         if(!empty($_POST))
         {
             $title=SQLProtect(remove_balise(secure_post('title')),1);
-            $description=SQLProtect(remove_balise(secure_post('description')),1);
+            $description=nl2br(SQLProtect(remove_balise(secure_post('description')),1));
             $visibility=SQLProtect(secure_post('visibility'),1);
             $price=SQLProtect(secure_post('price'),0);
             
@@ -127,6 +127,20 @@
                     <option name='every_one' value='every_one' selected>Tout le monde</option>
                     <option name='connected_user'value='connected_user'>Utilisateur connecté</option>";
                 echo"</select>  <i class='icon-eye'></i>
+            </div>
+            <div class='an_input'>
+                <select name='category' class='category'>";
+                $query = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent` IS NULL ORDER BY `category` ASC");
+                while($res = mysqli_fetch_array($query))
+                {
+                    echo"<option class='a_category' value='$res[idcat]'><i class='$res[icon]'></i>$res[category]</option>";
+                    $query2 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent`=$res[idcat] ORDER BY `category` ASC");
+                    while($res2 = mysqli_fetch_array($query2))
+                    {
+                        echo"<option class='a_subcategory' value='$res2[idcat]'>$res2[category]</option>";
+                    }
+                }
+            echo"</select><i class='icon-menu'></i>
             </div>
             <textarea name='description' placeholder='Description annonce' maxlenght='3000'/>$description</textarea>
             

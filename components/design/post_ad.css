@@ -115,3 +115,8 @@
 #post_ad #button_submit i {
   padding: 5px;
 }
+
+#post_ad .category .a_category {
+  color: rgb(255, 98, 0);
+  font-weight: bold;
+}
