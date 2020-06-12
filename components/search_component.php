@@ -38,20 +38,3 @@
         <section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <span id='numberResults'></span><i class='icon-search'></i></div></section>";
     }
 ?>
-
-
-<!-- REQUETE SQL
-SELECT * FROM `ads` 
-WHERE (`description` LIKE '%aae%' OR `title` LIKE '%operation%') 
-AND `status` = 'to_sell'
-AND
-ORDER BY `last_refresh` DESC
-
-
-SELECT * FROM `ads` 
-INNER JOIN `categories` ON ads.category = categories.category
-WHERE (ads.description LIKE '%a%' OR ads.title LIKE '%operation%') AND 
-(categories.idcat= 9 OR categories.parent = 9) AND
-ads.status = 'to_sell' 
-ORDER BY ads.last_refresh DESC 
---->

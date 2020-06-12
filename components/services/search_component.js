@@ -35,7 +35,9 @@ function change_category(category) {
 
 function search_sthg_component() {
   var input = document.getElementById("input_search").value;
-  var label_category = document.getElementById("label_category").innerHTML;
+  var el = document.getElementById("category");
+  var label_category = el.options[el.selectedIndex].innerHTML;
+
   input = input.sansAccent();
   label_category = label_category.sansAccent();
   input = input.replace(new RegExp(" ", "g"), "-").toLowerCase();

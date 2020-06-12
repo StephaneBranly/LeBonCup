@@ -2,6 +2,7 @@
     include('../../lib/start_session.php');
     $text=secure_get('text');
     $idcat=secure_get('idcat');
+    
     if($idcat==1)
     $query = mysqli_query($connect, 
     "SELECT * FROM `ads` 

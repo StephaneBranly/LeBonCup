@@ -16,10 +16,34 @@
     <?php include_once("../components/components_include.php");?>
 	<body>
     <?php
-     _header(false);
-     search_component();
-     simple_ad(1);
-     _footer(); ?>
+        _header(false);
+        search_component();
+
+        $category=secure_get('cat');
+        $category = preg_replace('#-#', ' ', $category);
+        $queryCat = mysqli_query($connect,"SELECT * FROM `categories` WHERE `category` = '$category'");
+        $resCat = mysqli_fetch_array($queryCat);
+        $idCat = $resCat['idcat'];
+        $text=secure_get('text');
+        if($idCat==1)
+            $query = mysqli_query($connect,"SELECT * FROM `ads` 
+            INNER JOIN `categories` ON ads.category = categories.category
+            WHERE (ads.description LIKE '%$text%' OR ads.title LIKE '%$text%') AND 
+            ads.status = 'to_sell' 
+            ORDER BY ads.last_refresh DESC ");
+        else
+            $query = mysqli_query($connect,"SELECT * FROM `ads` 
+            INNER JOIN `categories` ON ads.category = categories.category
+            WHERE (ads.description LIKE '%$text%' OR ads.title LIKE '%$text%') AND 
+            (categories.idcat= $idCat OR categories.parent = $idCat) AND
+            ads.status = 'to_sell' 
+            ORDER BY ads.last_refresh DESC ");
+        while($res = mysqli_fetch_array($query))
+        {
+            simple_ad($res['idad']);
+        }
+        
+        _footer(); ?>
     </body>
 	
 </html>
