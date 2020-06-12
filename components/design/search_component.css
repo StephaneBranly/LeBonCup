@@ -11,8 +11,7 @@
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
-#search_component #search,
-#search_component #category {
+#search_component #search {
   color: rgb(0, 0, 0);
   border-radius: 5px;
   background-image: linear-gradient(
@@ -24,63 +23,12 @@
   display: inline-block;
   padding: 10px;
 }
-#search_component #category:hover {
-  color: rgb(255, 98, 0);
-  cursor: pointer;
-}
-#search_component #search input {
+#search_component #search input,
+#search_component #search {
   border: none;
-
   background-color: rgba(0, 0, 0, 0);
 }
-#search_component #category .icon-down-open {
-  padding: 5px;
-  margin-left: 5px;
-  border-left: 1px solid rgb(210, 210, 210);
-}
 
-#search_component #categories {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: 10;
-  width: 70%;
-  background-image: linear-gradient(
-    45deg,
-    rgb(255, 255, 255),
-    rgb(240, 240, 240)
-  );
-  border-radius: 5px;
-  padding: 10px;
-  color: black;
-}
-#search_component #categories tbody,
-#search_component #categories tr {
-  display: inline-block;
-  position: relative;
-  top: 0px;
-  width: 100%;
-}
-#search_component #categories td {
-  width: 33%;
-  border-left: 1px solid rgb(210, 210, 210);
-}
-#search_component #categories .a_category,
-#search_component #categories .a_subcategory {
-  display: inline-block;
-  width: 90%;
-  padding: 5px;
-}
-#search_component #categories .a_category:hover,
-#search_component #categories .a_subcategory:hover {
-  background-color: rgb(210, 210, 210);
-  cursor: pointer;
-}
-#search_component #categories .a_category {
-  color: rgb(255, 98, 0);
-  border-bottom: 1px solid rgb(210, 210, 210);
-  margin-bottom: 5px;
-}
 #search_component #search i:hover {
   color: rgb(255, 98, 0);
   cursor: pointer;
@@ -106,4 +54,44 @@
 #search_button:hover {
   cursor: pointer;
   background-color: rgb(22, 22, 165);
+}
+
+#search_component .label_input {
+  width: 40%;
+  border: 0px solid rgba(0, 0, 0, 0);
+  font-size: 1.1em;
+  margin: 10px;
+  color: white;
+  display: inline-block;
+}
+#search_component .an_input {
+  color: rgb(0, 0, 0);
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 5px;
+  background-image: linear-gradient(
+    45deg,
+    rgb(255, 255, 255),
+    rgb(240, 240, 240)
+  );
+  transition: all 0.1s;
+  text-align: right;
+  display: inline-block;
+}
+#search_component .an_input:hover {
+  border: 1px solid rgb(255, 98, 0);
+}
+#search_component .an_input input,
+#search_component .an_input select {
+  border: none;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+#search_component .an_input i {
+  padding: 5px;
+  margin-left: 5px;
+  border-left: 1px solid rgb(210, 210, 210);
+}
+#search_component .category .a_category {
+  color: rgb(255, 98, 0);
+  font-weight: bold;
 }

@@ -4,21 +4,29 @@
         global $connect;
         echo"<section id='search_component'>
             <div id='search'><input placeholder='Rechercher' id='input_search' type='text' onkeypress='enter_search_component(event);' /></div>
-            <div id='category' onclick='show_categories(this);'><i class='icon-menu'></i><span id='label_category'>Toutes catégories</span><i class='icon-down-open'></i></div>
-            <table id='categories' style='display:none'>
-                <tr><td>";
-                $query = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent` IS NULL ORDER BY `category` ASC");
-                while($res = mysqli_fetch_array($query))
+            <div class='an_input'>
+            <select name='category' class='category'>";
+            $query = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent` IS NULL ORDER BY `category` ASC");
+            while($res = mysqli_fetch_array($query))
+            {
+                $category_cleaned = clean_string($res['category']);
+                echo"<option class='a_category' value='$category_cleaned'><i class='$res[icon]'></i>$res[category]</option>";
+                $query2 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent`=$res[idcat] ORDER BY `category` ASC");
+                while($res2 = mysqli_fetch_array($query2))
                 {
-                    echo"<span class='a_category' onclick=\"change_category('$res[category]');\"><i class='$res[icon]'></i>$res[category]</span>";
-                    $query2 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent`=$res[idcat] ORDER BY `category` ASC");
-                    while($res2 = mysqli_fetch_array($query2))
-                    {
-                        echo"<span class='a_subcategory' onclick=\"change_category('$res2[category]');\">$res2[category]</span>";
-                    }
+                    $category_cleaned = clean_string($res2['category']);
+                    echo"<option class='a_subcategory' value='$category_cleaned'>$res2[category]</option>";
                 }
-                echo"</td></tr>
-            </table>
+            }
+        echo"</select><i class='icon-menu'></i></div>
+            <div class='an_input'>
+                <select  id='filter'>
+                    <option name='new'>Les plus récentes</option>
+                    <option name='old'>Les plus anciennes</option>
+                    <option name='asc'>Prix croissant</option>
+                    <option name='des'>Prix décroissant</option>
+                </select>
+            </div>
             <!--<div id='price_range'>
                 <p>
                 <label for='amount'>Price range:</label>
@@ -30,3 +38,20 @@
         <section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <i class='icon-search'></i></div></section>";
     }
 ?>
+
+
+<!-- REQUETE SQL
+SELECT * FROM `ads` 
+WHERE (`description` LIKE '%aae%' OR `title` LIKE '%operation%') 
+AND `status` = 'to_sell'
+AND
+ORDER BY `last_refresh` DESC
+
+
+SELECT * FROM `ads` 
+INNER JOIN `categories` ON ads.category = categories.category
+WHERE (ads.description LIKE '%a%' OR ads.title LIKE '%operation%') AND 
+(categories.idcat= 9 OR categories.parent = 9) AND
+ads.status = 'to_sell' 
+ORDER BY ads.last_refresh DESC 
+--->
