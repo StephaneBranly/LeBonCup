@@ -5,12 +5,12 @@
     
     if($idcat==1)
     $query = mysqli_query($connect, 
-    "SELECT * FROM `ads` 
+    "SELECT COUNT(*) FROM `ads` 
     WHERE (ads.description LIKE '%$text%' OR ads.title LIKE '%$text%') AND 
     ads.status = 'to_sell' ");
     else
     $query = mysqli_query($connect, 
-    "SELECT * FROM `ads` 
+    "SELECT COUNT(*) FROM `ads` 
     INNER JOIN `categories` ON ads.category = categories.category
     WHERE (ads.description LIKE '%$text%' OR ads.title LIKE '%$text%') AND 
     (categories.idcat= $idcat OR categories.parent = $idcat) AND

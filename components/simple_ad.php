@@ -46,6 +46,8 @@
             }
             $title_cleaned=clean_string($res['title']);
             $description=clean_string($res['description']);
+            $show_title=show_clean_string($res['title']);
+            $show_descripton=show_clean_string($res['description']);
             echo "<section class='simple_ad' onclick=\"load_ad('$res[category]','$title_cleaned','$res[idad]');\">
             <table>
                 <tr>
@@ -53,8 +55,8 @@
                         <span class='nb_photos'>$nbr_images<i class='icon-camera'></i></span>
                     </td>
                     <td class='center'>
-                        <h1><span class='price'><i class='icon-tag'></i>$price</span>$res[title]</h1>
-                        <p>$res[description]</p>
+                        <h1><span class='price'><i class='icon-tag'></i>$price</span>$show_title</h1>
+                        <p>$show_descripton</p>
                         <div class='details'>
                             <span class='seller'>posté par $res[username]</span>
                             <span class='date_post'>$res[publish_date]</span>";
