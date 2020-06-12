@@ -2,7 +2,10 @@
     function _header($buttons){
     echo"<header>
         <div id='logo' onclick=\"open_link('../accueil');\"><img  src='../ressources/images/logo.png' alt='Logo LeBonCup'/></div>";
-    echo"<div id='place_an_ad' onclick=\"open_link('../new_ad');\">Déposer une annonce<i class='icon-plus-circled'></i></div>";
+    if(secure_session('connected')==true)
+        echo"<div id='place_an_ad' onclick=\"open_link('../new_ad');\">Déposer une annonce<i class='icon-plus-circled'></i></div>";
+    else
+        echo"<div id='place_an_ad' onclick=\"write_notification('icon-comment','Vous devez être connecté pour ajouter une annonce','5000');\">Déposer une annonce<i class='icon-plus-circled'></i></div>";
     if($buttons==true)
     {
         echo"<div id='search'><input placeholder='Rechercher' onkeypress='enter_header(event);' id='input_search' type='text'/><i class='icon-search' onclick='search_sthg();'></i></div>";
