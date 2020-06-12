@@ -88,3 +88,19 @@ function LikeAd(id) {
   xhr.open("GET", url);
   xhr.send("");
 }
+
+function updateNumberResults() {
+  text = document.getElementById("input_search").value;
+  idcat = document.getElementById("category").value;
+  var xhr = new XMLHttpRequest();
+  url =
+    "../components/services/count_results.php?text=" + text + "&idcat=" + idcat;
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      new_content = readBody(xhr);
+      change_content("numberResults", new_content);
+    }
+  };
+  xhr.open("GET", url);
+  xhr.send("");
+}
