@@ -49,14 +49,16 @@
      $res_count = mysqli_fetch_array($query);
      $sum_sold=$res_count[0];
 
-    echo "<section>
-        $nbr_users comptes créés !<br/>
-        $nbr_ads_to_sell annonces disponibles !<br/>
-        $nbr_ads_sold annonces vendues !<br/>
-        $nbr_ads_views annonces vues !<br/>
-        $nbr_ads_likes annonces likées !<br/>
-        $sum_sold € dépensés !<br/>
-    </section>";
+
+     $description = "<b>$nbr_users</b> comptes créés !<br/>
+     <b>$nbr_ads_to_sell</b> annonces disponibles !<br/>
+     <b>$nbr_ads_sold</b> achats conclus !<br/>
+     <b>$nbr_ads_views</b> annonces vues !<br/>
+     <b>$nbr_ads_likes</b> annonces en favories !<br/>
+     <b>$sum_sold €</b> dépensés !";
+    
+
+    article("LeBonCup en quelques chiffres",$description);
     article("Bonjour","Ceci est le message de bienvenue");
     article("Nouveau message","L'association a été reprise ce semestre, le concept va totalement être changé mais en gardant la partie historique de pourquoi cette association a été créée quelques semestre plus tôt.");
     _footer(); ?>

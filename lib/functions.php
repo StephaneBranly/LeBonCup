@@ -23,7 +23,7 @@ function clean_string($string)
 function remove_balise($string)
 {
     $url = $string;
-    $url = preg_replace('^<[\\\a-zA-Z]>?^', '', $url);
+    $url = preg_replace('#<[^>]+>#', ' ', $url);
      
     return ($url);
 }

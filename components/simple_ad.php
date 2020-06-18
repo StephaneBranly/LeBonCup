@@ -48,6 +48,8 @@
             $description=clean_string($res['description']);
             $show_title=show_clean_string($res['title']);
             $show_descripton=show_clean_string($res['description']);
+            $show_descripton=remove_balise($show_descripton);
+            $show_descripton=substr($show_descripton,0,100)."...";
             echo "<section class='simple_ad' onclick=\"load_ad('$res[category]','$title_cleaned','$res[idad]');\">
             <table>
                 <tr>
