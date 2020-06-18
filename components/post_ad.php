@@ -56,43 +56,63 @@
 
                 $namefiles = array('f1','f2','f3');
                 
-                $namef1 = $_FILES['f1']['name'];
-                $image1Name = pathinfo($namef1);
                 $nameDestination1="";
-                if($namef1!="")
+                $nameDestination2="";
+                $nameDestination3="";
+                foreach($namefiles as $name)
                 {
-                    $extension1 = strtolower($image1Name['extension']);         
-                    if(in_array($extension1, $extensions))
+                    $namef1 = $_FILES[$name]['name'];
+                    $image1Name = pathinfo($namef1);
+                    if($namef1!="")
                     {
-                        $nameDestination1 = secure_session('user')."_".date("YmdHis")."_".$id."_img1.".$extension1;
-                        if(filesize($_FILES['f1']['tmp_name']) <= $maxSize)
+                        $extension1 = strtolower($image1Name['extension']);         
+                        if(in_array($extension1, $extensions))
                         {
-                            if(move_uploaded_file($_FILES["f1"]["tmp_name"], $dirDestination.$nameDestination1))
+                            $nametmp = secure_session('user')."_".date("YmdHis")."_".$id."_img".$name.".".$extension1;
+                            if(filesize($_FILES[$name]['tmp_name']) <= $maxSize)
                             {
-                                echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Fichier déplacé',10000)</script>";   
-                            } 
-                            else 
+                                if(move_uploaded_file($_FILES[$name]["tmp_name"], $dirDestination.$nametmp))
+                                {
+                                    echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Fichier déplacé',10000)</script>";
+                                    if($nameDestination1=="")
+                                    {
+                                        $nameDestination1=$nametmp;
+                                    }
+                                    else
+                                    {
+                                        if($nameDestination2=="")
+                                        {
+                                            $nameDestination2=$nametmp;
+                                        }
+                                        else
+                                        {
+                                            $nameDestination3=$nametmp;
+                                        }
+                                    }
+                                } 
+                                else 
+                                {
+                                    echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Il y a eu une erreur lors de la publication de la photo...',10000)</script>";
+                                    $redirect=false;
+                                }
+                            }
+                            else
                             {
-                                echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Il y a eu une erreur lors de la publication de la photo 1...',10000)</script>";
+                                echo "<script type='text/javascript'>write_notification('icon-cancel-circled','La photo est trop volumineuse...',10000)</script>";
                                 $redirect=false;
                             }
                         }
                         else
                         {
-                            echo "<script type='text/javascript'>write_notification('icon-cancel-circled','La photo est trop volumineuse...',10000)</script>";
+                            echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Les images doivent avoir une extension .png, .jpg ou .jpeg',10000)</script>";
                             $redirect=false;
                         }
-                    }
-                    else
-                    {
-                        echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Les images doivent avoir une extension .png, .jpg ou .jpeg',10000)</script>";
-                        $redirect=false;
                     }
                 }
                 if($redirect)
                 {
                     $query2 = mysqli_query($connect,"UPDATE `ads` 
-                    SET `image1` = '$nameDestination1'
+                    SET `image1` = '$nameDestination1', `image2` = '$nameDestination2', `image3` = '$nameDestination3'
                     WHERE `idad`=$id");
                     $title_cleaned = $title_cleaned=clean_string($title);
                     $_SESSION['notification_icon']='icon-note';
