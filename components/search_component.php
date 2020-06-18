@@ -29,8 +29,8 @@
         echo"</select><i class='icon-folder-open-empty'></i></div>
             <div class='an_input'>
                 <select  id='filter' onChange='updateResults();'>
-                    <option value='last_refresh-ASC'>Les plus récentes</option>
-                    <option value='last_refresh-DESC'>Les plus anciennes</option>
+                    <option value='last_refresh-DESC'>Les plus récentes</option>
+                    <option value='last_refresh-ASC'>Les plus anciennes</option>
                     <option value='price-ASC'>Prix croissant</option>
                     <option value='price-DESC'>Prix décroissant</option>
                 </select><i class='icon-menu'></i>
@@ -42,9 +42,10 @@
                 </p>
                 <div id='slider-range'></div>
             </div>-->";
-        if(secure_session("connected"))
+        /* if(secure_session("connected"))
             echo "<div class='an_input'><input type='checkbox' onchange='updateResults();'/><i class='icon-heart'></i></div>";
-        echo"</section>
+        */
+            echo"</section>
         <!--<section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <span id='numberResults'></span><i class='icon-search'></i></div></section>-->";
 
         echo "<script type='text/javascript'>

@@ -103,8 +103,6 @@ function updateNumberResults() {
   };
   xhr.open("GET", url);
   xhr.send("");
-
-  window.history.pushState("page2", "Title", "/page2.php");
 }
 
 function updateResults() {
@@ -129,4 +127,7 @@ function updateResults() {
   };
   xhr.open("GET", url);
   xhr.send("");
+  //location = window.location.href;
+  //page_url = location + "/search/" + idcat + "/" + text;
+  //window.history.pushState("Rechercher", "Rechercher", page_url);
 }
