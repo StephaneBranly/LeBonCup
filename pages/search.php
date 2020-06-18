@@ -18,8 +18,8 @@
     <?php
         _header(false);
         search_component();
-
-        $category=secure_get('cat');
+        echo "<x id='results'></x>";
+        /*$category=secure_get('cat');
         $category = preg_replace('#-#', ' ', $category);
         $queryCat = mysqli_query($connect,"SELECT * FROM `categories` WHERE `category` = '$category'");
         $resCat = mysqli_fetch_array($queryCat);
@@ -42,7 +42,7 @@
         {
             simple_ad($res['idad']);
         }
-        
+        */
         _footer(); ?>
     </body>
 	

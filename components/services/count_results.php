@@ -1,5 +1,5 @@
 <?php
-    include('../../lib/start_session.php');
+    include_once('../../lib/start_session.php');
     $text=secure_get('text');
     $idcat=secure_get('idcat');
     
@@ -17,6 +17,5 @@
     ads.status = 'to_sell' ");
     $res_count = mysqli_fetch_array($query);
     $count=$res_count[0];
-    if($count!=NULL)
-        echo "(".$count.")";
+    return $count;
 ?>

@@ -103,4 +103,30 @@ function updateNumberResults() {
   };
   xhr.open("GET", url);
   xhr.send("");
+
+  window.history.pushState("page2", "Title", "/page2.php");
+}
+
+function updateResults() {
+  content_loading = "<i class='icon-spinner animate-spin big-icon'></i>";
+  change_content("results", content_loading);
+  text = document.getElementById("input_search").value;
+  idcat = document.getElementById("category").value;
+  filter = document.getElementById("filter").value;
+  var xhr = new XMLHttpRequest();
+  url =
+    "../components/services/update_results.php?text=" +
+    text +
+    "&idcat=" +
+    idcat +
+    "&filter=" +
+    filter;
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      new_content = readBody(xhr);
+      change_content("results", new_content);
+    }
+  };
+  xhr.open("GET", url);
+  xhr.send("");
 }
