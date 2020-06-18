@@ -5,7 +5,7 @@
         $text=secure_get('text');
         $category_get=secure_get('cat');
         echo"<section id='search_component'>
-            <div id='search'><input placeholder='Rechercher' id='input_search' value='$text' type='text' onkeypress='enter_search_component(event); updateResults();'/><i class='icon-search'></i></div>
+            <div id='search'><input placeholder='Rechercher' id='input_search' value='$text' type='text' onKeyDown='enter_search_component(event); updateResults();'/><i class='icon-search'></i></div>
             <div class='an_input'>       
             <select name='category' id='category' class='category' onChange='updateResults();'>";
             $query = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent` IS NULL ORDER BY `category` ASC");
@@ -42,9 +42,9 @@
                 </p>
                 <div id='slider-range'></div>
             </div>-->";
-        /* if(secure_session("connected"))
-            echo "<div class='an_input'><input type='checkbox' onchange='updateResults();'/><i class='icon-heart'></i></div>";
-        */
+        if(secure_session("connected"))
+            echo "<div class='an_input'><input type='checkbox' onchange='updateResults();' id='like_filter'/><i class='icon-heart'></i></div>";
+        
             echo"</section>
         <!--<section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <span id='numberResults'></span><i class='icon-search'></i></div></section>-->";
 

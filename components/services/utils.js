@@ -106,17 +106,20 @@ function updateNumberResults() {
 }
 
 function updateResults() {
-  content_loading = "<i class='icon-spinner animate-spin big-icon'></i>";
-  change_content("results", content_loading);
   text = document.getElementById("input_search").value;
   idcat = document.getElementById("category").value;
   filter = document.getElementById("filter").value;
+  if (document.getElementById("like_filter"))
+    like_filter = document.getElementById("like_filter").checked;
+  else like_filter = false;
   var xhr = new XMLHttpRequest();
   url =
     "../components/services/update_results.php?text=" +
     text +
     "&idcat=" +
     idcat +
+    "&like_filter=" +
+    like_filter +
     "&filter=" +
     filter;
   xhr.onreadystatechange = function() {
@@ -127,7 +130,4 @@ function updateResults() {
   };
   xhr.open("GET", url);
   xhr.send("");
-  //location = window.location.href;
-  //page_url = location + "/search/" + idcat + "/" + text;
-  //window.history.pushState("Rechercher", "Rechercher", page_url);
 }
