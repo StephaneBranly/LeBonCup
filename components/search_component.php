@@ -43,7 +43,7 @@
                 <div id='slider-range'></div>
             </div>-->";
         if(secure_session("connected"))
-            echo "<div class='an_input'><input type='checkbox' onchange='updateResults();' id='like_filter'/><i class='icon-heart'></i></div>";
+            echo "<div class='an_input' id='like'><input type='checkbox' onchange='updateResults();' id='like_filter'/><i class='icon-heart'></i></div>";
         
             echo"</section>
         <!--<section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <span id='numberResults'></span><i class='icon-search'></i></div></section>-->";

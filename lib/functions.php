@@ -16,7 +16,7 @@ function clean_string($string)
     $url = preg_replace('#Ù|Ú|Û|Ü#', 'U', $url);
     $url = preg_replace('#ý|ÿ#', 'y', $url);
     $url = preg_replace('#Ý#', 'Y', $url);
-    $url = preg_replace('# #', '-', $url);     
+    $url = preg_replace('# |\'#', '-', $url);     
     return ($url);
 }
 
