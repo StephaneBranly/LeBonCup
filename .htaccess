@@ -5,7 +5,7 @@ RewriteEngine on
 RewriteRule ^index$ pages/index.php [L] 
 RewriteRule ^accueil$ pages/index.php [L] 
 RewriteRule ^new_ad$ pages/post_an_ad.php [L] 
-RewriteRule ^search/([a-zA-Z-]+)/?([0-9a-zA-Z-]*)$ pages/search.php?cat=$1&text=$2 [L] 
+RewriteRule ^search/([a-zA-Z-]+)/?([^/]*)$ pages/search.php?cat=$1&text=$2 [L] 
 RewriteRule ^ad/([a-zA-Z-]+)/([0-9a-zA-Z-]+)-([0-9]+)$ pages/view_ad.php?id=$3 [L] 
 RewriteRule ^login/([a-zA-Z0-9_-]*)$ pages/login.php?user=$1 [L] 
 RewriteRule ^profile/([a-zA-Z0-9_-]*)-edit$ pages/view_profile.php?user=$1&edit=1 [L] 
