@@ -1,6 +1,6 @@
 <?php
     include('../../lib/start_session.php');
-    $id=secure_get('id');
+    $id=SQLProtect(secure_get('id'),0);
     $id=strtolower(SQLProtect($id,true));
     if($id!=null && secure_session('connected')==true)
     {

@@ -1,7 +1,7 @@
 <?php
     include_once('../../lib/start_session.php');
-    $text=secure_get('text');
-    $idcat=secure_get('idcat');
+    $text=SQLProtect(secure_get('text'),1);
+    $idcat=SQLProtect(secure_get('idcat'),0);
     
     if($idcat==1)
     $query = mysqli_query($connect, 

@@ -1,10 +1,10 @@
 <?php
     include_once('../../lib/start_session.php');
     include('../../components/simple_ad.php');
-    $filter=secure_get('filter');
-    $idcat=secure_get('idcat');
-    $text=secure_get('text');
-    $like_filter=secure_get('like_filter');
+    $filter=SQLProtect(secure_get('filter'),1);
+    $idcat=SQLProtect(secure_get('idcat'),1);
+    $text=SQLProtect(secure_get('text'),1);
+    $like_filter=SQLProtect(secure_get('like_filter'),1);
     list($filter_column, $filter_order) = split('[-]', $filter);
     $filter_order=strtoupper($filter_order);
 
