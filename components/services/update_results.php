@@ -2,7 +2,7 @@
     include_once('../../lib/start_session.php');
     include('../../components/simple_ad.php');
     $filter=SQLProtect(secure_get('filter'),1);
-    $idcat=SQLProtect(secure_get('idcat'),1);
+    $idcat=SQLProtect(secure_get('idcat'),0);
     $text=SQLProtect(secure_get('text'),1);
     $like_filter=SQLProtect(secure_get('like_filter'),1);
     list($filter_column, $filter_order) = split('[-]', $filter);
