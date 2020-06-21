@@ -21,7 +21,8 @@
                 $view='me';
                 $contact=$res['dest'];
             }
-            $message= array("dest" =>$res['dest'],"username" =>$res['dest'],"view" => $view,"text" => $res['text']);
+            $text_message=show_clean_string($res['text']);
+            $message= array("dest" =>$res['dest'],"username" =>$res['dest'],"view" => $view,"text" => $text_message);
             $session_id="private_messages_".$contact;
             $old_messages = secure_session($session_id);
             if($old_messages==null)
