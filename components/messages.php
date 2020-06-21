@@ -4,13 +4,17 @@
         echo "<section id='messages'>
         <div id='head_messages' onclick='switch_messages();'>Messages privés <i class='icon-comment'></i></div>
         <div id='content_messages'>
-            <div class='contact' onclick=\"open_contact('stephane_branly');\"><i class='icon-user'></i>stephane_branly</div>
-            <!--<div id='active_contact'><i class='icon-left-open'></i><i class='icon-user'></i>stephane_branly</div>
-            <div class='me'><span>Bonjour, comment vas-tu ?</span></div>
-            <div class='friend'><span>Bien et toi ?</span></div>
-            <div class='me'><span>Bonjour, comment vas-tu ?</span></div>-->
+            
         </div>
         </section>";
-    }
 
+        echo "<script type='text/javascript'>
+        window.onload = function () {
+            check_new_messages();
+            update_list_contacts();
+            list_contacts();
+            refresh_page();
+         }
+        </script>";
+    }
 ?>

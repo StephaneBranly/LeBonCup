@@ -32,10 +32,11 @@
             $user=$_SESSION['user'];
             if($user=="")
             {
+                session_destroy();
                 $_SESSION['connected']=false;
                 $_SESSION['notification_icon']='icon-comment';
                 $_SESSION['notification_new']=true;
-                $_SESSION['notification_content']="A bientôt $last_username";
+                $_SESSION['notification_content']="A bientôt $last_username";                
                 echo "<script type='text/javascript'>RedirectionJavascript('accueil',100);</script>";
             }
             else
