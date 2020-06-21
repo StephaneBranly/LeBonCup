@@ -9,15 +9,20 @@ function switch_messages() {
 
 function open_contact(contact, username) {
   content_html = "";
+  if (contact == actual_page[1]) was_on_contact = true;
+  else was_on_contact = false;
   actual_page = ["contact", contact];
   var xhr = new XMLHttpRequest();
   url = "../components/services/get_messages.php?contact=" + contact;
   xhr.onreadystatechange = function() {
-    content_html =
-      "<div id='active_contact'><i onclick='list_contacts();' class='icon-left-open'></i><i class='icon-user'></i>" +
-      contact +
-      "</div><div id='messages_list'>";
     content = document.getElementById("content_messages");
+    element = document.getElementById("messages_list");
+    if (!was_on_contact)
+      content_html =
+        "<div id='active_contact'><i onclick='list_contacts();' class='icon-left-open'></i><i class='icon-user'></i>" +
+        contact +
+        "</div><div id='messages_list'>";
+    else content_html = "";
     if (xhr.readyState == 4) messages = JSON.parse(xhr.responseText);
     else messages = [];
     for (i in messages)
@@ -27,12 +32,16 @@ function open_contact(contact, username) {
         "'><span>" +
         messages[i].text +
         "</span></div>";
-
-    content_html +=
-      "</div><span style='display:none' id='idcontact'>" + contact + "</span>";
-    content_html +=
-      "<div id='send_message'><input id='content_text' onkeypress='enter_send_message(event);' type='text'/><i class='icon-paper-plane' onclick='send_message();'></i></div>";
-    content.innerHTML = content_html;
+    if (!was_on_contact) {
+      content_html +=
+        "</div><span style='display:none' id='idcontact'>" +
+        contact +
+        "</span>";
+      content_html +=
+        "<div id='send_message'><input id='content_text' onkeypress='enter_send_message(event);' type='text'/><i class='icon-paper-plane' onclick='send_message();'></i></div>";
+      content.innerHTML = content_html;
+    } else element.innerHTML = content_html;
+    element.scrollTop = element.scrollHeight;
   };
   xhr.open("GET", url);
   xhr.send("");
@@ -86,20 +95,23 @@ function check_new_messages() {
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       response = readBody(xhr);
-      if (response == "1") refresh_page();
+      if (response == "1") {
+        update_list_contacts(false);
+        refresh_page();
+      } else setTimeout("check_new_messages();", 5000);
     }
   };
   xhr.open("GET", url);
   xhr.send("");
 }
 
-function update_list_contacts() {
+function update_list_contacts(show) {
   var xhr = new XMLHttpRequest();
   url = "../components/services/get_list_contacts.php";
   xhr.onreadystatechange = function() {
     if (xhr.readyState == 4) {
       vlist_contacts = JSON.parse(xhr.responseText);
-      list_contacts();
+      if (show) list_contacts();
     }
   };
   xhr.open("GET", url);

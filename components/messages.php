@@ -10,9 +10,7 @@
 
         echo "<script type='text/javascript'>
         window.onload = function () {
-            check_new_messages();
-            update_list_contacts();
-            list_contacts();
+            update_list_contacts(true);
             refresh_page();
          }
         </script>";
