@@ -61,7 +61,7 @@
                         <h1><span class='price'><i class='icon-tag'></i>$price</span>$show_title</h1>
                         <p>$show_descripton</p>
                         <div class='details'>
-                            <span class='seller'>posté par $res[username]</span>
+                            <span class='seller'>postée par $res[username]</span>
                             <span class='date_post'>$res[publish_date]</span>";
                             if(secure_session($id_session)==null)
                                 echo "<span class='views'>$res[views]<i class='icon-eye'></i></span>";

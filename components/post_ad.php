@@ -25,9 +25,9 @@
                 echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Le titre doit faire entre 1 et 25 caractères',10000)</script>";
                 $redirect=false;
             }
-            if(strlen ($description)>3000)
+            if(strlen($description)>3000 || $description=="")
             {
-                echo "<script type='text/javascript'>write_notification('icon-cancel-circled','La description doit faire moins de 3000 caractères',10000)</script>";
+                echo "<script type='text/javascript'>write_notification('icon-cancel-circled','La description doit faire entre 1 et 3000 caractères',10000)</script>";
                 $redirect=false;
             }
             if(strlen($visibility)>30)
@@ -52,7 +52,7 @@
                 $inputImages = array("f1","f1","f3");
 
                 $dirDestination = "..\\ressources\\images-ad\\";
-                $maxSize = 5000000;
+                $maxSize = 50000000;
 
                 $namefiles = array('f1','f2','f3');
                 

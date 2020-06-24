@@ -34,4 +34,9 @@ function show_clean_string($string)
     $url = preg_replace('^\\\^', '', $url);     
     return ($url);
 }
+
+function is_admin()
+{
+    return(secure_session('user')=='branlyst' && secure_session('connected'));
+}
 ?>
