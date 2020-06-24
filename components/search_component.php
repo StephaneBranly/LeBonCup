@@ -49,9 +49,7 @@
         <!--<section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <span id='numberResults'></span><i class='icon-search'></i></div></section>-->";
 
         echo "<script type='text/javascript'>
-        window.onload = function () {
-            updateResults();
-         }
+            setTimeout('{updateResults();}', 10);
         </script>";
     }
 ?>

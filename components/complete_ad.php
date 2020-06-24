@@ -18,7 +18,7 @@
         else
             $img="nan.png";
         
-        if((($res['visibility']=='connected_user' && secure_session('connected')==true) || ($res['visibility']=='every_one')) && $res['status']=='to_sell')
+        if(((($res['visibility']=='connected_user' && secure_session('connected')==true) || ($res['visibility']=='every_one')) && $res['status']=='to_sell') || (secure_session('connected') && secure_session('user')==$res['seller']))
         {
             $id_session="ad".$id;
             if(secure_session('connected')==true)
@@ -58,8 +58,31 @@
                 $price="gratuit";
             $title = show_clean_string($res['title']);
             $description = show_clean_string($res['description']);
+           
+            if(secure_session('connected') && secure_session('user')==$res['seller'])
+            {
+                $category_link=clean_string($res['category']);
+                $title_link=clean_string($res['title']);
+                echo"<form id='update_ad' method='post' action='../ad/$category_link/$title_link-$id'>
+                <select name='status'>
+                    <option value='to_sell'>A vendre - Refresh</option>
+                    <option value='sold'>Vendue</option>
+                    <option value='deleted'>Supprimée</option>
+                </select>
+                <button type='submit'>Mettre à jour<i class='icon-params'></i></button></form>";
+                if(!empty($_POST))
+                {
+                    $status=secure_post('status');
+                    $date = date('Y-m-d H:i:s');
+                    $query6 = mysqli_query($connect,"UPDATE `ads` 
+                        SET `last_refresh` = '$date', `status` = '$status' 
+                        WHERE `idad`=$id");
+                    echo "<script type='text/javascript'>write_notification('icon-params','L\'annonce a correctement été mise à jour',10000)</script>";
+                }
+            }
             echo "<section id='complete_ad'>
             <h1><span class='price'><i class='icon-tag'></i>$price</span>$title</h1>
+            
             <div id='photo' style=\"background-image: url('../ressources/images-ad/$img');\">
                 <span id='enlarge' onclick='enlarge_photo();'><i class='icon-resize-full'></i></span>
             </div>

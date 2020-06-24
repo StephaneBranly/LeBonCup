@@ -70,6 +70,7 @@
 }*/
 .simple_ad table .center .details .liked {
   color: rgb(233, 21, 21);
+  fill: rgb(233, 21, 21);
 }
 .simple_ad table .center .details .viewed {
   color: rgb(35, 35, 189);

@@ -15,14 +15,14 @@
         echo "<script type='text/javascript'>
         window.onload = function () {
             ";
-            echo "var actual_page = ['$status_pm', '$contact'];";
+            echo "var actual_page = ['$status_pm', '$contact'];
+            check_new_messages();";
 
             if($status_pm=='list')
                 echo "update_list_contacts(true);";
             else
                 echo "update_list_contacts(false); open_contact('$contact', '$contact');";
-            echo"check_new_messages();
-         }
+        echo " }
         </script>";
     }
 ?>
