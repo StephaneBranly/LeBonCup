@@ -19,6 +19,7 @@
 <link href="../components/design/profile.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/search_component.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/simple_ad.css" rel="stylesheet" media="all" type="text/css">
+<link href="../components/design/suggestion.css" rel="stylesheet" media="all" type="text/css">
 
 <?php
     
@@ -32,6 +33,7 @@
     include_once("../components/profile.php");
     include_once("../components/search_component.php");
     include_once("../components/simple_ad.php");
+    include_once("../components/suggestion.php");
 ?>
 
 <script type="text/javascript" src="../components/services/complete_ad.js"></script>

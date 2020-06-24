@@ -8,8 +8,8 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $nom_page='A propos';
-            $description_page='description';
+            $nom_page='ADMIN';
+            $description_page='';
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">
@@ -25,6 +25,7 @@
         {
             $icon = SQLProtect(secure_post('icon'),1);
             $content = remove_balise(SQLProtect(secure_post('content'),1));
+            $content="admin : ".$content;
             $iduser = SQLProtect(secure_post('iduser'),1);
             $date = date('Y-m-d H:i:s');
             if($iduser=="tout_le_monde")
@@ -47,14 +48,18 @@
                     echo "<option value='$res[iduser]'>$res[iduser]</option>";
             echo"</select>
             <select name='icon'>";
-            $list_icon=array("icon-chat");
+            $list_icon=array("icon-chat","icon-mail","icon-user","icon-lightbulb","icon-cog","icon-gift","icon-ok-circled","icon-attention","icon-cafe");
             foreach($list_icon as $icon)
                 echo "<option value='$icon'>$icon</option>";
             echo "</select>
-            <input type='text' name='content' maxlenght='200'/>
+            <input type='text' name='content' maxlenght='190'/>
             <button type='submit'>Envoyer notification<i class='icon-paper-plane'></i></button>
+            <div>";
+            foreach($list_icon as $icon)
+                echo "$icon : <i class='$icon'></i><br/>";
+            echo"</div>
         </form>
-        
+        <a href='../admin/home'>Retour</a>
         </section>";
     }
      else 

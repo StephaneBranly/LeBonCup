@@ -5,8 +5,39 @@
   width: 70%;
   display: inline-block;
   padding: 10px;
+  color: white;
 }
 
 #admin h1 {
   color: white;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed white;
+}
+
+#admin input,
+#admin button {
+  background-color: rgb(255, 200, 200);
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 5px;
+}
+#admin input:hover,
+#admin button:hover {
+  background-color: rgb(240, 58, 58);
+}
+
+#admin a {
+  color: rgb(255, 200, 200);
+}
+
+#admin .suggestion {
+  border: 1px solid white;
+  margin: 5px;
+}
+#admin .suggestion h2 {
+  margin: 5px;
+  color: white;
+  border-bottom: 1px dashed white;
+  background-color: rgba(0, 0, 0, 0.2);
 }

@@ -8,8 +8,8 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $nom_page='A propos';
-            $description_page='description';
+            $nom_page='ADMIN';
+            $description_page='';
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">
@@ -20,13 +20,23 @@
      _header(true);
     if(is_admin())
      {
+
         echo"<section id='admin'>
-        <h1>Surface admin</h1>
-        <a href='../admin/send_notification'>Envoyer une notification</a>
-        <a href='../admin/view_suggestions'>Voir les suggestions</a>
-        
+        <h1>Suggestions :</h1>";
+       
+        $query = mysqli_query($connect,"SELECT * FROM `suggestions` ORDER BY `date` DESC");
+        while($res = mysqli_fetch_array($query))
+        {
+            if($res['iduser']=="")
+                $user="anonyme";
+            else $user=$res['iduser'];
+            $content=show_clean_string($res['content']);
+            echo "<div class='suggestion'><h2>$res[title]</h2><p>$content</p><p>par $user le $res[date]</div>";
+
+        }
+        echo"<a href='../admin/home'>Retour</a>
         </section>";
-     }
+    }
      else 
      article("Accès interdit","Il semblerait que vous n'avez pas le droit d'accèder à cette page... merci de retourner à l'accueil :)");
     _footer(); 
