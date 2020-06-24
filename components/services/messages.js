@@ -6,6 +6,12 @@ function switch_messages() {
   else content.display = "inline-block";
 }
 
+function start_conversation(contact, username) {
+  content = document.getElementById("content_messages").style;
+  content.display = "inline-block";
+  open_contact(contact, username);
+}
+
 function open_contact(contact, username) {
   actual_page = ["contact", contact];
   url = "../components/services/get_messages.php?contact=" + contact;
@@ -17,20 +23,22 @@ function open_contact(contact, username) {
 
   $.get(url, {}).done(function(data) {
     messages = JSON.parse(data);
-    messages = Array.from(messages);
-    messages.forEach(objectMessage => {
-      content_html +=
-        " <div class='" +
-        objectMessage.view +
-        "'><span>" +
-        objectMessage.text +
-        "</span></div>";
-    });
+    if (messages != null) {
+      messages = Array.from(messages);
+      messages.forEach(objectMessage => {
+        content_html +=
+          " <div class='" +
+          objectMessage.view +
+          "'><span>" +
+          objectMessage.text +
+          "</span></div>";
+      });
+    }
 
     content_html +=
       "</div><span style='display:none' id='idcontact'>" + contact + "</span>";
     content_html +=
-      "<div id='send_message'><input id='content_text' onkeypress='enter_send_message(event);' type='text'/><i class='icon-paper-plane' onclick='send_message();'></i></div>";
+      "<div id='send_message'><input id='content_text' onkeypress='enter_send_message(event);' type='text' maxlenght='150'/><i class='icon-paper-plane' onclick='send_message();'></i></div>";
     content.innerHTML = content_html;
     element = document.getElementById("messages_list");
 

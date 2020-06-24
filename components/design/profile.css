@@ -36,7 +36,8 @@
 #profile .private,
 #profile #contact_phone,
 #profile #contact_facebook,
-#profile #contact_mail {
+#profile #contact_mail,
+#profile #contact_pm {
   padding: 5px;
   border-radius: 5px;
   color: white;
@@ -57,6 +58,9 @@
 #profile #contact_facebook {
   background-color: rgb(27, 7, 206);
 }
+#profile #contact_pm {
+  background-color: rgb(255, 98, 0);
+}
 #profile #contact_phone:hover {
   background-color: rgb(10, 223, 28);
   cursor: pointer;
@@ -67,6 +71,10 @@
 }
 #profile #contact_facebook:hover {
   background-color: rgb(39, 17, 236);
+  cursor: pointer;
+}
+#profile #contact_pm:hover {
+  background-color: rgb(241, 105, 20);
   cursor: pointer;
 }
 #profile .label_input {

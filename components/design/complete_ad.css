@@ -139,7 +139,8 @@
 #complete_ad .center .private,
 #complete_ad .center #contact_phone,
 #complete_ad .center #contact_facebook,
-#complete_ad .center #contact_mail {
+#complete_ad .center #contact_mail,
+#complete_ad .center #contact_pm {
   padding: 5px;
   border-radius: 5px;
   color: white;
@@ -160,6 +161,9 @@
 #complete_ad .center #contact_facebook {
   background-color: rgb(27, 7, 206);
 }
+#complete_ad .center #contact_pm {
+  background-color: rgb(255, 98, 0);
+}
 #complete_ad .center #contact_phone:hover {
   background-color: rgb(10, 223, 28);
   cursor: pointer;
@@ -172,7 +176,10 @@
   background-color: rgb(39, 17, 236);
   cursor: pointer;
 }
-
+#complete_ad .center #contact_pm:hover {
+  background-color: rgb(241, 105, 20);
+  cursor: pointer;
+}
 #complete_ad .center #preferences,
 #complete_ad .center #preferences tbody {
   display: inline-block;
