@@ -98,7 +98,7 @@
             echo "</div>
             <div class='left' >
                 <div class='details'>
-                        <span class='date_post'>$res[publish_date]</span>
+                        <span class='date_post'>$res[last_refresh]</span>
                         <span id='viewed'>$views<i class='icon-eye'></i></span>";
                         if($liked==0)
                             echo "<span id='likes' onclick=\"LikeAd($id);\"><el>$likes</el><i class='icon-heart'></i></span>";

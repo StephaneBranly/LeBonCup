@@ -59,8 +59,7 @@
     
 
     article("LeBonCup en quelques chiffres",$description);
-    article("Bonjour","Ceci est le message de bienvenue");
-    article("Nouveau message","L'association a été reprise ce semestre, le concept va totalement être changé mais en gardant la partie historique de pourquoi cette association a été créée quelques semestre plus tôt.");
+    article("Reprise de LeBonCup","Reprise de l'association ce semestre. <br/>A partir de ce site, vous pourrez vendre, acheter, échanger, donner ! <br/><br/>N'hésitez pas à participer à la vie du site en ajoutant du contenu. <br/>Si jamais vous avez des suggestions, vous pouvez les faire <a class='link' href='../suggestion'>ici</a> !");
     _footer(); ?>
     </body>
 	

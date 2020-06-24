@@ -13,16 +13,11 @@
         </section>";
         $status_pm = secure_session('status_pm');
         echo "<script type='text/javascript'>
-        window.onload = function () {
-            ";
-            echo "var actual_page = ['$status_pm', '$contact'];
-            check_new_messages();";
-
-            if($status_pm=='list')
-                echo "update_list_contacts(true);";
-            else
-                echo "update_list_contacts(false); open_contact('$contact', '$contact');";
-        echo " }
-        </script>";
+        var actual_page = ['$status_pm', '$contact'];";
+        if($status_pm=='list')
+            echo "setTimeout(\"{ check_new_messages(); update_list_contacts(true); }\",100);";
+        else
+            echo "setTimeout(\"{ check_new_messages(); update_list_contacts(false); open_contact('$contact', '$contact'); }\",100);";
+        echo "</script>";
     }
 ?>

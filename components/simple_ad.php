@@ -62,7 +62,7 @@
                         <p>$show_descripton</p>
                         <div class='details'>
                             <span class='seller'>postée par $res[username]</span>
-                            <span class='date_post'>$res[publish_date]</span>";
+                            <span class='date_post'>$res[last_refresh]</span>";
                             if(secure_session($id_session)==null)
                                 echo "<span class='views'>$res[views]<i class='icon-eye'></i></span>";
                             else

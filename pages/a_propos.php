@@ -20,7 +20,7 @@
 
      
     
-     $description_a_propos = "Site créé par Stéphane BRANLY<br/>";
+     $description_a_propos = "Site créé par Stéphane BRANLY<br/>Code disponible en Opensource sur <a class='link' href='https://github.com/StephaneBranly/LeBonCup'>Github</a>.<br/>Plus d'informations sur l'association LeBonCup sur le <a class='link' href='https://assos.utc.fr/assos/leboncup'>portail des assos</a>.<br/>Icones issues de <a class='link' href='http://fontello.com/'>fontello.com</a>.";
     article("A propos",$description_a_propos);
     _footer(); ?>
     </body>
