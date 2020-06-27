@@ -10,7 +10,7 @@
         <?php
             include_once("../lib/google_analytics.php");
             $nom_page='Login user';
-            $description_page='description';
+            $description_page="Page de connexion du site de LeBonCup";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">

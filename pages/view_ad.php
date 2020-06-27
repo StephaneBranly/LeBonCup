@@ -13,7 +13,7 @@
             if (count($res) != 0) $title=$res['title']; else $title = "Annonce";
             include_once("../lib/google_analytics.php");
             $nom_page=$title;
-            $description_page='description';
+            $description_page="Section du site de l'association LeBonCup permettant de visualiser une annonce.";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">

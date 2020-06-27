@@ -8,7 +8,7 @@
         <?php
             include_once("../lib/google_analytics.php");
             $nom_page='Mentions légales';
-            $description_page='description';
+            $description_page="Section mentions légales du site de l'association LeBonCup";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">

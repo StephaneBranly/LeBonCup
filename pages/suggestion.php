@@ -8,7 +8,7 @@
         <?php
             include_once("../lib/google_analytics.php");
             $nom_page="Faire une suggestion";
-            $description_page='';
+            $description_page="Section du site de l'association LeBonCup permettant de faire une suggestion.";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">

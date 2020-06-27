@@ -2,7 +2,7 @@
     function _footer(){
         echo"<footer>
         <div>
-        <p>LeBonCup-Beta 2020 - <span class='link' onclick=\"open_link('../a-propos');\">A propos</span> - <span class='link' onclick=\"open_link('../mentions-legales');\">Mentions légales</span></p>
+        <p>LeBonCup-Beta 2020 - <a class='link' href='../a-propos'>A propos</a> - <a class='link' href='../mentions-legales'>Mentions légales</a></p>
         </div>
         </footer>";
 

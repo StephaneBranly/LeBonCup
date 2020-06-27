@@ -9,7 +9,7 @@
             include_once("../lib/google_analytics.php");
             $user=secure_get('user');
             $nom_page=$user;
-            $description_page='description';
+            $description_page="Section du site de l'association LeBonCup permettant de visualiser un profil.";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">

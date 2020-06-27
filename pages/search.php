@@ -8,7 +8,7 @@
         <?php
             include_once("../lib/google_analytics.php");
             $nom_page='Rechercher';
-            $description_page='description';
+            $description_page="Section du site de l'association LeBonCup permettant d'effectuer une recherche.";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">

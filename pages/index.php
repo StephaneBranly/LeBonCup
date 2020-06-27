@@ -8,7 +8,7 @@
         <?php
             include_once("../lib/google_analytics.php");
             $nom_page='Accueil';
-            $description_page='description';
+            $description_page="Page d'accueil du site LeBonCup, site ayant pour but de permettre la revente d'objets d'occasions, de services, etc, afin de favoriser la seconde main.";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">

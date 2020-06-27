@@ -7,7 +7,7 @@
         <?php
             include_once("../lib/google_analytics.php");
             $nom_page='Error 404';
-            $description_page='description';
+            $description_page="Page d'erreur";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">
