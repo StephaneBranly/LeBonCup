@@ -123,8 +123,8 @@
                 <h2>Informations compte</h2>
                 <table id='informations'>
                     <tr><td class='info_property'><i class='icon-user-pair'></i>Username</td><td class='info_value an_input'><input maxlenght='25' type='text' name='username' placeholder='username' value='$username'/></td>
-                    <tr><td class='info_property'><i class='icon-user-pair'></i>Date création du compte</td><td class='info_value'>05-05-2020 17:25</td>
-                    <tr><td class='info_property'><i class='icon-clock'></i>Dernière connexion</td><td class='info_value'>05-05-2020 20:56</td>
+                    <tr><td class='info_property'><i class='icon-user-pair'></i>Date création du compte</td><td class='info_value'>$res[creation_account]</td>
+                    <tr><td class='info_property'><i class='icon-clock'></i>Dernière connexion</td><td class='info_value'>$res[last_connexion]</td>
                     <tr><td class='info_property'><i class='icon-shop'></i>Nombre d'annonces disponibles</td><td class='info_value'>$nbr_ads</td>
                     <tr><td class='info_property'><i class='icon-thumbs-up'></i>Nombre d'annonces finies</td><td class='info_value'>$nbr_ads_sold</td>
                 </table>

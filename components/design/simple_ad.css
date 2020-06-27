@@ -1,77 +1,98 @@
-.simple_ad {
-  background-color: rgb(250, 250, 250);
-  border: 1px solid rgb(136, 136, 136);
-  width: 70%;
-  display: inline-block;
-  margin: 0px;
-  box-shadow: 5px 0px 10px rgb(221, 221, 221);
-  padding: 10px;
-  border-radius: 5px;
-}
-.simple_ad:hover {
-  cursor: pointer;
-}
-.simple_ad table,
-.simple_ad tbody,
-.simple_ad tr {
-  width: 100%;
-}
-.simple_ad table .left {
-  width: 15%;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: right;
-  vertical-align: bottom;
-}
-.simple_ad table .left .nb_photos {
-  color: white;
-  border-radius: 5px;
-  padding: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.simple_ad table .center {
-  width: 85%;
-  border-left: 1px solid rgb(221, 221, 221);
-  color: rgb(0, 0, 0);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.simple_ad .center h1 {
-  color: rgb(255, 98, 0);
-  border-bottom: 1px solid rgb(221, 221, 221);
-  width: 90%;
-  padding-bottom: 5px;
-  display: inline-block;
-  margin: 0px;
-  text-align: left;
-}
-.simple_ad .center h1 .price {
-  margin-right: 10px;
-  padding-right: 10px;
-  border-right: 1px solid rgb(221, 221, 221);
-  color: rgb(35, 35, 189);
-}
-.simple_ad table .center .details {
-  text-align: right;
-  text-decoration: none;
-}
-.simple_ad table .center .details span {
-  color: rgb(95, 95, 95);
-  border-left: 1px solid rgb(136, 136, 136);
-  margin-left: 5px;
-  padding-left: 5px;
-  font-size: 0.9em;
-  text-decoration: none;
-}
-/*.simple_ad table .center .details .seller:hover {
+@media all {
+  .simple_ad {
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(136, 136, 136);
+    width: 70%;
+    display: inline-block;
+    margin: 0px;
+    box-shadow: 5px 0px 10px rgb(221, 221, 221);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .simple_ad:hover {
+    cursor: pointer;
+  }
+  .simple_ad table,
+  .simple_ad tbody,
+  .simple_ad tr {
+    width: 100%;
+  }
+  .simple_ad table .left {
+    width: 15%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: right;
+    vertical-align: bottom;
+  }
+  .simple_ad table .left .nb_photos {
+    color: white;
+    border-radius: 5px;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .simple_ad table .center {
+    width: 85%;
+    border-left: 1px solid rgb(221, 221, 221);
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .simple_ad .center h1 {
+    color: rgb(255, 98, 0);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    width: 90%;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin: 0px;
+    text-align: left;
+  }
+  .simple_ad .center h1 .price {
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid rgb(221, 221, 221);
+    color: rgb(35, 35, 189);
+  }
+  .simple_ad table .center .details {
+    text-align: right;
+    text-decoration: none;
+  }
+  .simple_ad table .center .details span {
+    color: rgb(95, 95, 95);
+    border-left: 1px solid rgb(136, 136, 136);
+    margin-left: 5px;
+    padding-left: 5px;
+    font-size: 0.9em;
+    text-decoration: none;
+  }
+  /*.simple_ad table .center .details .seller:hover {
   color: rgb(129, 129, 129);
   cursor: pointer;
 }*/
-.simple_ad table .center .details .liked {
-  color: rgb(233, 21, 21);
-  fill: rgb(233, 21, 21);
+  .simple_ad table .center .details .liked {
+    color: rgb(233, 21, 21);
+    fill: rgb(233, 21, 21);
+  }
+  .simple_ad table .center .details .viewed {
+    color: rgb(35, 35, 189);
+  }
 }
-.simple_ad table .center .details .viewed {
-  color: rgb(35, 35, 189);
+@media all and (max-device-width: 480px) {
+  .simple_ad {
+    width: 100%;
+    padding: 0px;
+  }
+  .simple_ad table .center {
+    width: 65%;
+    font-size: 0.8em;
+  }
+  .simple_ad table .center .details {
+    font-size: 0.5em;
+  }
+  .simple_ad .center h1 {
+    font-size: 1em;
+  }
+  .simple_ad table .left {
+    width: 30%;
+  }
 }
