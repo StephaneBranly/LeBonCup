@@ -97,15 +97,23 @@
 }
 @media all and (max-device-width: 480px) {
   header #search {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   header #search input {
     width: 50%;
-    font-size: 1em;
+    font-size: xx-large;
   }
   header #place_an_ad {
     margin-right: 0px;
+    font-size: xx-large;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-right: 0px solid rgba(0, 0, 0, 0);
+    border-left: 0px solid rgba(0, 0, 0, 0);
   }
 }
 @media all and (min-device-width: 480px) {

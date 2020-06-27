@@ -34,9 +34,9 @@
 @media all and (max-device-width: 480px) {
   .article {
     width: 100%;
-    font-size: 0.9em;
+    font-size: x-large;
   }
   .article .section_name {
-    font-size: 0.9em;
+    font-size: xx-large;
   }
 }

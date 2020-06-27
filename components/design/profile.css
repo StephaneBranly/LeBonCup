@@ -195,7 +195,7 @@
   #profile {
     width: 100%;
     padding: 0px;
-    font-size: 0.9em;
+    font-size: x-large;
     padding-top: 10px;
   }
   #profile #preferences,
@@ -209,7 +209,7 @@
     padding: 0px;
   }
   #profile #button_submit {
-    font-size: 1.2em;
+    font-size: xx-large;
     margin-bottom: 15px;
   }
   #profile .private,
@@ -225,7 +225,7 @@
   }
   #profile .an_input input,
   #profile .an_input select {
-    font-size: 1em;
+    font-size: x-large;
   }
   #profile #preferences input {
     width: 20px;

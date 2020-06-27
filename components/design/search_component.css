@@ -122,17 +122,22 @@
   #number_results {
     width: 100%;
     padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: xx-large;
   }
   #search_component .an_input,
   #search_component #search {
     display: block;
-    margin: 5px;
+    margin: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   #search_component .an_input input,
   #search_component .an_input select {
-    font-size: 1em;
+    font-size: x-large;
   }
   #search_component #input_search {
-    font-size: 1em;
+    font-size: x-large;
   }
 }

@@ -83,16 +83,16 @@
     padding: 0px;
   }
   .simple_ad table .center {
-    width: 65%;
-    font-size: 0.8em;
+    width: 70%;
+    font-size: x-large;
   }
   .simple_ad table .center .details {
-    font-size: 0.5em;
+    font-size: large;
   }
   .simple_ad .center h1 {
-    font-size: 1em;
+    font-size: xx-large;
   }
   .simple_ad table .left {
-    width: 30%;
+    width: 27%;
   }
 }

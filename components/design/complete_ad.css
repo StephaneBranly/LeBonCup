@@ -252,15 +252,16 @@
   #complete_ad {
     width: 100%;
     padding: 0px;
+    padding-top: 15px;
   }
   #complete_ad .left {
     display: block;
     width: 100%;
-    font-size: 0.9em;
+    font-size: x-large;
   }
   #complete_ad .center {
     display: block;
-    font-size: 0.9em;
+    font-size: x-large;
     width: 100%;
   }
 }

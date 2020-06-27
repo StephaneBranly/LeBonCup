@@ -139,14 +139,17 @@
   #post_ad select,
   #post_ad textarea,
   #post_ad button {
-    font-size: 1.1em;
+    font-size: xx-large;
+    margin: 5px;
   }
   #post_ad .an_input,
   #post_ad button {
     margin: 0px;
     margin-bottom: 15px;
   }
-
+  #post_ad button {
+    margin-top: 15px;
+  }
   #post_ad h1 {
     display: block;
   }
