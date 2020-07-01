@@ -96,7 +96,9 @@
     color: rgb(255, 98, 0);
     font-weight: bold;
   }
-
+  #search_component .category .a_subcategory {
+    color: rgb(0, 0, 0);
+  }
   #number_results {
     background-color: rgb(35, 35, 189);
     color: white;

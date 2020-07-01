@@ -129,6 +129,9 @@
     color: rgb(255, 98, 0);
     font-weight: bold;
   }
+  #post_anad .category .a_subcategory {
+    color: rgb(0, 0, 0);
+  }
 }
 @media all and (max-device-width: 480px) {
   #post_anad {

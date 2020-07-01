@@ -12,18 +12,30 @@
             while($res = mysqli_fetch_array($query))
             {
                 $category_cleaned = strtolower(clean_string($res['category']));
-                if($category_cleaned == $category_get)
-                    echo"<option selected class='a_category' value='$res[idcat]'><i class='$res[icon]'></i>$res[category]</option>";
-                else
-                    echo"<option class='a_category' value='$res[idcat]'><i class='$res[icon]'></i>$res[category]</option>";
                 $query2 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent`=$res[idcat] ORDER BY `category` ASC");
-                while($res2 = mysqli_fetch_array($query2))
+
+                if($category_cleaned!="Toutes-categories")
                 {
-                    $category_cleaned = strtolower(clean_string($res2['category']));
-                    if($category_cleaned == $category_get)
-                        echo"<option selected class='a_subcategory' value='$res2[idcat]'>$res2[category]</option>";
+                    if(mysqli_num_rows($query2))
+                    {
+                        echo "<optgroup class='a_category' label=\"$res[category]\">";
+                        while($res2 = mysqli_fetch_array($query2))
+                        {
+                            $category_cleaned = strtolower(clean_string($res2['category']));
+                            if($category_cleaned == $category_get)
+                                echo"<option selected class='a_subcategory' value='$res2[idcat]'>$res2[category]</option>";
+                            else
+                                echo"<option class='a_subcategory' value='$res2[idcat]'>$res2[category]</option>";
+                        }
+                        echo "</optgroup>";
+                    }
                     else
-                        echo"<option class='a_subcategory' value='$res2[idcat]'>$res2[category]</option>";
+                    {
+                        if($category_cleaned == $category_get)
+                            echo"<option selected class='a_category' value='$res[idcat]'><i class='$res[icon]'></i>$res[category]</option>";
+                        else
+                            echo"<option class='a_category' value='$res[idcat]'><i class='$res[icon]'></i>$res[category]</option>";
+                    }
                 }
             }
         echo"</select><i class='icon-folder-open-empty'></i></div>
