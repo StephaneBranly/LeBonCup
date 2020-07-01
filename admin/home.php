@@ -24,6 +24,7 @@
         echo"<section id='admin'>
         <h1>Surface admin</h1>
         <a href='../admin/send_notification'>Envoyer une notification</a><br/>
+        <a href='../admin/send_email'>Envoyer un mail</a><br/>
         <a href='../admin/view_suggestions'>Voir les suggestions</a><br/>
         <a href='../admin/stats'>Voir les stats</a><br/>
         
