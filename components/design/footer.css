@@ -1,0 +1,22 @@
+@media all {
+  footer {
+    box-shadow: -5px 0px 10px rgb(221, 221, 221);
+    background-color: rgb(250, 250, 250);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  footer .link {
+    color: rgb(255, 98, 0);
+  }
+  footer .link:hover {
+    cursor: pointer;
+    color: rgb(35, 35, 189);
+  }
+}
+@media all and (max-device-width: 480px) {
+  footer {
+    font-size: x-large;
+  }
+}

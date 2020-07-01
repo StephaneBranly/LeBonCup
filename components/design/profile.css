@@ -1,0 +1,233 @@
+@media all {
+  #profile {
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(136, 136, 136);
+    width: 70%;
+    display: inline-block;
+    margin: 0px;
+    box-shadow: 5px 0px 10px rgb(221, 221, 221);
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+  #profile h1 {
+    color: rgb(250, 250, 250);
+    background-color: rgb(255, 98, 0);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    padding: 10px;
+    padding-bottom: 15px;
+    display: inline-block;
+    margin: 0px;
+    margin-bottom: 10px;
+    text-align: left;
+    border-radius: 5px;
+  }
+  #profile h2 {
+    color: rgb(255, 98, 0);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    width: 90%;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin: 0px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  #profile .private,
+  #profile #contact_phone,
+  #profile #contact_facebook,
+  #profile #contact_mail,
+  #profile #contact_pm {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1em;
+    margin: 10px;
+    width: 40%;
+    display: inline-block;
+  }
+  #profile .private {
+    background-color: rgb(136, 136, 136);
+  }
+  #profile #contact_phone {
+    background-color: rgb(7, 206, 24);
+  }
+  #profile #contact_mail {
+    background-color: rgb(173, 7, 206);
+  }
+  #profile #contact_facebook {
+    background-color: rgb(27, 7, 206);
+  }
+  #profile #contact_pm {
+    background-color: rgb(255, 98, 0);
+  }
+  #profile #contact_phone:hover {
+    background-color: rgb(10, 223, 28);
+    cursor: pointer;
+  }
+  #profile #contact_mail:hover {
+    background-color: rgb(197, 12, 235);
+    cursor: pointer;
+  }
+  #profile #contact_facebook:hover {
+    background-color: rgb(39, 17, 236);
+    cursor: pointer;
+  }
+  #profile #contact_pm:hover {
+    background-color: rgb(241, 105, 20);
+    cursor: pointer;
+  }
+  #profile .label_input {
+    width: 40%;
+    border: 0px solid rgba(0, 0, 0, 0);
+    font-size: 1.1em;
+    margin: 10px;
+    color: white;
+    display: inline-block;
+  }
+  #profile .an_input {
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 5px;
+    background-image: linear-gradient(
+      45deg,
+      rgb(255, 255, 255),
+      rgb(240, 240, 240)
+    );
+    transition: all 0.1s;
+    text-align: right;
+    display: inline-block;
+  }
+  #profile .an_input:hover {
+    border: 1px solid rgb(255, 98, 0);
+  }
+  #profile .an_input input,
+  #profile .an_input select {
+    border: none;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #profile .an_input i {
+    padding: 5px;
+    margin-left: 5px;
+    border-left: 1px solid rgb(210, 210, 210);
+  }
+  #profile #preferences,
+  #profile #preferences tbody,
+  #profile #informations,
+  #profile #informations tbody {
+    display: inline-block;
+    width: 100%;
+    margin-left: 20px;
+  }
+  #profile #preferences td,
+  #profile #informations td {
+    padding: 5px;
+    background-image: linear-gradient(
+      45deg,
+      rgb(255, 255, 255),
+      rgb(240, 240, 240)
+    );
+  }
+  #profile #preferences .payment,
+  #profile #informations .info_property {
+    text-align: left;
+  }
+  #profile #preferences .payment i,
+  #profile #informations .info_property i {
+    margin-right: 5px;
+    padding-right: 5px;
+    border-right: 1px solid rgb(136, 136, 136);
+  }
+  #profile #preferences .icon-ok-circled2 {
+    color: rgb(8, 180, 31);
+  }
+  #profile #preferences .icon-cancel-circled2 {
+    color: rgb(240, 20, 20);
+  }
+
+  #profile #button_submit {
+    color: rgb(255, 255, 255);
+    border: 1px solid rgba(201, 80, 5, 0);
+    padding: 10px;
+    border-radius: 5px;
+    background-image: linear-gradient(
+      45deg,
+      rgb(255, 113, 25),
+      rgb(255, 98, 0)
+    );
+    transition: all 0.1s;
+    margin-right: 10px;
+  }
+  #profile #button_submit:hover {
+    cursor: pointer;
+    background-image: linear-gradient(
+      45deg,
+      rgb(255, 98, 0),
+      rgb(255, 113, 25)
+    );
+    border: 1px solid rgb(14, 14, 14);
+  }
+  #profile #button_submit i {
+    padding: 5px;
+  }
+
+  #profile #modify {
+    color: rgb(95, 95, 95);
+    width: 100%;
+    text-align: right;
+  }
+  #profile #modify span {
+    margin-left: 5px;
+    padding-left: 5px;
+    border-left: 1px solid rgb(95, 95, 95);
+  }
+  #profile #modify span:hover {
+    color: rgb(129, 129, 129);
+    cursor: pointer;
+  }
+  #profile #modify i {
+    margin-right: 5px;
+  }
+}
+@media all and (max-device-width: 480px) {
+  #profile {
+    width: 100%;
+    padding: 0px;
+    font-size: x-large;
+    padding-top: 10px;
+  }
+  #profile #preferences,
+  #profile #preferences tbody,
+  #profile #informations,
+  #profile #informations tbody {
+    margin-left: 0px;
+  }
+  #profile #preferences td,
+  #profile #informations td {
+    padding: 0px;
+  }
+  #profile #button_submit {
+    font-size: xx-large;
+    margin-bottom: 15px;
+  }
+  #profile .private,
+  #profile #contact_phone,
+  #profile #contact_facebook,
+  #profile #contact_mail,
+  #profile #contact_pm {
+    width: 90%;
+    display: inline-block;
+  }
+  #profile .an_input {
+    margin: 10px;
+  }
+  #profile .an_input input,
+  #profile .an_input select {
+    font-size: x-large;
+  }
+  #profile #preferences input {
+    width: 20px;
+  }
+}
