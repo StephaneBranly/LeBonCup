@@ -1,16 +1,21 @@
+php_value upload_max_filesize 50M
+php_value post_max_size 50M
+
 DirectoryIndex ./pages/index.php
 ErrorDocument 404 /pages/error404.php 
 
 RewriteEngine on
-RewriteRule ^index$ pages/index.php [L] 
-RewriteRule ^mentions-legales$ pages/mentions_legales.php [L] 
-RewriteRule ^a-propos$ pages/a_propos.php [L] 
-RewriteRule ^accueil$ pages/index.php [L] 
-RewriteRule ^new_ad$ pages/post_an_ad.php [L] 
-RewriteRule ^suggestion$ pages/suggestion.php [L] 
+RewriteRule ^index/?$ pages/index.php [L] 
+RewriteRule ^mentions-legales/?$ pages/mentions_legales.php [L] 
+RewriteRule ^a-propos/?$ pages/a_propos.php [L] 
+RewriteRule ^accueil/?$ pages/index.php [L] 
+RewriteRule ^new_ad/?$ pages/post_an_ad.php [L] 
+RewriteRule ^suggestion/?$ pages/suggestion.php [L] 
 RewriteRule ^search/([a-zA-Z-]+)/?([^/]*)$ pages/search.php?cat=$1&text=$2 [L] 
 RewriteRule ^ad/([a-zA-Z-]+)/([^/]+)-([0-9]+)$ pages/view_ad.php?id=$3 [L] 
-RewriteRule ^login/([a-zA-Z0-9_-]*)$ pages/login.php?user=$1 [L] 
+RewriteRule ^login/(?)ticket=(.)*$ pages/log.php?ticket=$1 [L] 
+RewriteRule ^login/?$ pages/log.php?section=login [L] 
+RewriteRule ^logout/?$ pages/log.php?section=logout [L] 
 RewriteRule ^profile/([a-zA-Z0-9_-]*)-edit$ pages/view_profile.php?user=$1&edit=1 [L] 
 RewriteRule ^profile/([a-zA-Z0-9_-]*)$ pages/view_profile.php?user=$1 [L] 
 RewriteRule ^admin/([a-zA-Z0-9_-]*)$ admin/$1.php [L] 

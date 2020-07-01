@@ -11,14 +11,3 @@ function enter_header(event) {
     search_sthg();
   }
 }
-
-function login(event) {
-  var input_login = document.getElementById("input_login").value;
-  url = "../login/" + input_login;
-  document.location.href = url;
-}
-
-function deco(event) {
-  url = "../login/";
-  document.location.href = url;
-}
