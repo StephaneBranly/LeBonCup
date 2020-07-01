@@ -51,7 +51,7 @@
                 $extensions = array('png','jpg','jpeg');
                 $inputImages = array("f1","f1","f3");
 
-                $dirDestination = "..\\ressources\\images-ad\\";
+                $dirDestination = "../ressources/images-ad/";
                 $maxSize = 50000000;
 
                 $namefiles = array('f1','f2','f3');

@@ -1,6 +1,3 @@
-php_value upload_max_filesize 50M
-php_value post_max_size 50M
-
 DirectoryIndex ./pages/index.php
 ErrorDocument 404 /pages/error404.php 
 
