@@ -9,7 +9,7 @@
     <head>
         <?php
             include_once("../lib/google_analytics.php");
-            $nom_page='A propos';
+            $nom_page='ADMIN';
             $description_page='description';
             include_once("../lib/meta.php");
         ?>
