@@ -1,5 +1,5 @@
 <?php
-    function post_ad()
+    function post_anad()
     {
         
         if(secure_session('connected'))
@@ -129,7 +129,7 @@
            
         }
 
-        echo "<section id='post_ad'>
+        echo "<section id='post_anad'>
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
             <h1><input name='title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
             <h2>Photos</h2>

@@ -1,5 +1,5 @@
 @media all {
-  #post_ad {
+  #post_anad {
     background-color: rgb(250, 250, 250);
     border: 1px solid rgb(136, 136, 136);
     width: 70%;
@@ -10,7 +10,7 @@
     padding: 10px;
     margin-bottom: 15px;
   }
-  #post_ad h1 {
+  #post_anad h1 {
     color: rgb(250, 250, 250);
     background-color: rgb(255, 98, 0);
     border-bottom: 1px solid rgb(221, 221, 221);
@@ -22,14 +22,14 @@
     text-align: left;
     border-radius: 5px;
   }
-  #post_ad h1 input {
+  #post_anad h1 input {
     background-color: rgba(0, 0, 0, 0);
     padding: 10px;
     color: white;
     font-size: 1.3em;
     border: 0px solid rgba(0, 0, 0, 0);
   }
-  #post_ad h2 {
+  #post_anad h2 {
     color: rgb(255, 98, 0);
     border-bottom: 1px solid rgb(221, 221, 221);
     width: 90%;
@@ -41,7 +41,7 @@
     text-align: left;
   }
 
-  #post_ad .label_input {
+  #post_anad .label_input {
     width: 40%;
     border: 0px solid rgba(0, 0, 0, 0);
     font-size: 1.1em;
@@ -49,7 +49,7 @@
     color: white;
     display: inline-block;
   }
-  #post_ad .an_input {
+  #post_anad .an_input {
     color: rgb(0, 0, 0);
     border: 1px solid rgb(210, 210, 210);
     border-radius: 5px;
@@ -62,21 +62,21 @@
     text-align: right;
     display: inline-block;
   }
-  #post_ad .an_input:hover {
+  #post_anad .an_input:hover {
     border: 1px solid rgb(255, 98, 0);
   }
-  #post_ad .an_input input,
-  #post_ad .an_input select {
+  #post_anad .an_input input,
+  #post_anad .an_input select {
     border: none;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0);
   }
-  #post_ad .an_input i {
+  #post_anad .an_input i {
     padding: 5px;
     margin-left: 5px;
     border-left: 1px solid rgb(210, 210, 210);
   }
-  #post_ad textarea {
+  #post_anad textarea {
     color: rgb(0, 0, 0);
     border: 1px solid rgb(210, 210, 210);
     border-radius: 5px;
@@ -96,10 +96,10 @@
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  #post_ad textarea:hover {
+  #post_anad textarea:hover {
     border: 1px solid rgb(255, 98, 0);
   }
-  #post_ad #button_submit {
+  #post_anad #button_submit {
     color: rgb(255, 255, 255);
     border: 1px solid rgba(201, 80, 5, 0);
     padding: 10px;
@@ -112,7 +112,7 @@
     transition: all 0.1s;
     margin-right: 10px;
   }
-  #post_ad #button_submit:hover {
+  #post_anad #button_submit:hover {
     cursor: pointer;
     background-image: linear-gradient(
       45deg,
@@ -121,36 +121,36 @@
     );
     border: 1px solid rgb(14, 14, 14);
   }
-  #post_ad #button_submit i {
+  #post_anad #button_submit i {
     padding: 5px;
   }
 
-  #post_ad .category .a_category {
+  #post_anad .category .a_category {
     color: rgb(255, 98, 0);
     font-weight: bold;
   }
 }
 @media all and (max-device-width: 480px) {
-  #post_ad {
+  #post_anad {
     width: 100%;
     padding: 0px;
   }
-  #post_ad input,
-  #post_ad select,
-  #post_ad textarea,
-  #post_ad button {
+  #post_anad input,
+  #post_anad select,
+  #post_anad textarea,
+  #post_anad button {
     font-size: xx-large;
     margin: 5px;
   }
-  #post_ad .an_input,
-  #post_ad button {
+  #post_anad .an_input,
+  #post_anad button {
     margin: 0px;
     margin-bottom: 15px;
   }
-  #post_ad button {
+  #post_anad button {
     margin-top: 15px;
   }
-  #post_ad h1 {
+  #post_anad h1 {
     display: block;
   }
 }
