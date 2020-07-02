@@ -195,8 +195,10 @@
   #profile {
     width: 100%;
     padding: 0px;
-    font-size: x-large;
+    font-size: xx-large;
     padding-top: 10px;
+    border-radius: 0px;
+    border: 0px solid rgba(0, 0, 0, 0);
   }
   #profile #preferences,
   #profile #preferences tbody,
@@ -219,6 +221,9 @@
   #profile #contact_pm {
     width: 90%;
     display: inline-block;
+    font-size: xxx-large;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   #profile .an_input {
     margin: 10px;
@@ -229,5 +234,10 @@
   }
   #profile #preferences input {
     width: 20px;
+  }
+  #profile #preferences {
+    padding-left: 30px;
+    font-size: xxx-large;
+    margin-bottom: 15px;
   }
 }

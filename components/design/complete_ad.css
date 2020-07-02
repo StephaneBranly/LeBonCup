@@ -253,15 +253,58 @@
     width: 100%;
     padding: 0px;
     padding-top: 15px;
+    border-radius: 0px;
+    border: 0px solid rgba(0, 0, 0, 0);
   }
   #complete_ad .left {
     display: block;
     width: 100%;
-    font-size: x-large;
+    font-size: xx-large;
+    padding: 0px;
+    border: 0px solid rgba(0, 0, 0, 0);
   }
   #complete_ad .center {
     display: block;
     font-size: x-large;
     width: 100%;
+  }
+  #complete_ad .center #preferences {
+    padding-left: 40px;
+    font-size: xxx-large;
+  }
+  #complete_ad .center .private,
+  #complete_ad .center #contact_phone,
+  #complete_ad .center #contact_facebook,
+  #complete_ad .center #contact_mail,
+  #complete_ad .center #contact_pm {
+    font-size: xxx-large;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  #complete_ad .left p {
+    padding: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: xx-large;
+  }
+  #complete_ad .left .details span {
+    font-size: xxx-large;
+    padding-left: 30px;
+  }
+  #complete_ad .left .details .date_post {
+    display: none;
+  }
+  #complete_ad h1 {
+    font-size: xxx-large;
+  }
+  #update_ad {
+    width: 95%;
+    border-radius: 0px;
+    border: 0px solid rgba(0, 0, 0, 0);
+    font-size: xxx-large;
+  }
+  #update_ad button,
+  #update_ad select {
+    font-size: xxx-large;
   }
 }

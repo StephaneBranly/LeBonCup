@@ -38,16 +38,17 @@
 @media all and (max-device-width: 480px) {
   #notifications {
     position: fixed;
-    top: 100px;
+    top: 0px;
     right: 0px;
     min-width: 100%;
     max-width: 100%;
   }
   #notifications .notification p {
     width: 80%;
+    font-size: xxx-large;
   }
   #notifications .notification i {
-    font-size: large;
+    font-size: xxx-large;
     display: inline-block;
     padding: 0px;
   }

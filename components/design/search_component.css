@@ -134,12 +134,21 @@
     margin: 0px;
     margin-top: 5px;
     margin-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px;
   }
   #search_component .an_input input,
   #search_component .an_input select {
-    font-size: x-large;
+    font-size: xx-large;
   }
   #search_component #input_search {
-    font-size: x-large;
+    font-size: xx-large;
+  }
+  #number_results {
+    border-radius: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: xx-large;
   }
 }

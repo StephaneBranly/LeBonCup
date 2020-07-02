@@ -100,20 +100,29 @@
     margin-bottom: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-radius: 0px;
   }
+  header #search i {
+    font-size: xxx-large;
+  }
+
   header #search input {
     width: 50%;
-    font-size: xx-large;
+    font-size: xxx-large;
   }
   header #place_an_ad {
     margin-right: 0px;
-    font-size: xx-large;
+    font-size: xxx-large;
     margin-top: 30px;
     margin-bottom: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 0px;
     border-right: 0px solid rgba(0, 0, 0, 0);
     border-left: 0px solid rgba(0, 0, 0, 0);
+  }
+  header #login span {
+    font-size: xx-large;
   }
 }
 @media all and (min-device-width: 480px) {
