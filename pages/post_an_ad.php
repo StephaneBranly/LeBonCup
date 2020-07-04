@@ -30,7 +30,7 @@
     else
     {
         _header(true);
-        post_ad();
+        post_anad();
     }
     
      _footer(); ?>

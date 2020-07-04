@@ -136,10 +136,10 @@
                     else
                         echo "<div class='private'><i class='icon-cancel-circled'></i>$c non renseigné</div>";
                 } 
-                if(secure_session('connected'))
+                /*if(secure_session('connected'))
                     echo "<div id='contact_pm' onclick=\"start_conversation('$res[iduser]','$res[iduser]')\"><i class='icon-comment-alt'></i>Envoyer un message privé</div>";
                 else
-                    echo "<div class='private'><i class='icon-cancel-circled'></i>Connectez vous pour envoyer un message privé</div>";
+                    echo "<div class='private'><i class='icon-cancel-circled'></i>Connectez vous pour envoyer un message privé</div>";*/
                 echo "<h1>Préférence de paiement</h1>";
                 if($res['cash'])$cash='ok';else $cash='cancel';
                 if($res['visa'])$visa='ok';else $visa='cancel';

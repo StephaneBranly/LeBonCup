@@ -6,8 +6,8 @@
         </div>
         </footer>";
 
-        if(secure_session("connected"))
-            messages();
+        //if(secure_session("connected"))
+        //    messages();
     }
 ?>
 

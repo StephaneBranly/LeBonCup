@@ -110,11 +110,13 @@
     width: 100%;
     padding: 0px;
     padding-top: 10px;
+    border-radius: 0px;
+    border: 0px solid rgba(0, 0, 0, 0);
   }
   #suggestion input,
   #suggestion textarea,
   #suggestion button {
-    font-size: xx-large;
+    font-size: 40px;
   }
   #suggestion button {
     margin-bottom: 15px;

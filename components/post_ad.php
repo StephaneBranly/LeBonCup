@@ -1,5 +1,5 @@
 <?php
-    function post_ad()
+    function post_anad()
     {
         
         if(secure_session('connected'))
@@ -129,7 +129,7 @@
            
         }
 
-        echo "<section id='post_ad'>
+        echo "<section id='post_anad'>
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
             <h1><input name='title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
             <h2>Photos</h2>
@@ -157,12 +157,22 @@
                 while($res = mysqli_fetch_array($query))
                 {
                     $category_cleaned = clean_string($res['category']);
-                    echo"<option class='a_category' value='$category_cleaned'><i class='$res[icon]'></i>$res[category]</option>";
                     $query2 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent`=$res[idcat] ORDER BY `category` ASC");
-                    while($res2 = mysqli_fetch_array($query2))
+
+                    if($category_cleaned!="Toutes-categories")
                     {
-                        $category_cleaned = clean_string($res2['category']);
-                        echo"<option class='a_subcategory' value='$category_cleaned'>$res2[category]</option>";
+                        if(mysqli_num_rows($query2))
+                        {
+                            echo "<optgroup class='a_category' label=\"$res[category]\">";
+                            while($res2 = mysqli_fetch_array($query2))
+                            {
+                                $category_cleaned = clean_string($res2['category']);
+                                echo"<option class='a_subcategory' value='$category_cleaned'>$res2[category]</option>";
+                            }
+                            echo "</optgroup>";
+                        }
+                        else
+                        echo"<option class='a_category' value='$category_cleaned'><i class='$res[icon]'></i>$res[category]</option>";
                     }
                 }
             echo"</select><i class='icon-menu'></i>

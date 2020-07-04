@@ -4,7 +4,7 @@
         echo"<div class='notification' id='notification_$id'
         onclick='remove_notification($id)'>
             <i class='$icon'></i>
-            <p>$content<p>
+            <p>$content</p>
         </div>";
     }
 

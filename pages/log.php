@@ -32,7 +32,7 @@
         if(isset($_GET['ticket']) || secure_get('section') == 'login')
         {
             $user = $cas->authenticate();
-            if ($user == -1) {
+            if ($user == -1 || $user=="") {
                 $cas->login();
             }
             else {
@@ -67,18 +67,21 @@
                 }
             }
         }
-        else if (secure_get('section')== 'logout')
+        else if (secure_get('section')=='logout')
         {
-            $cas = new Cas($casUrl, $myUrl);
-            $cas->logout();
-            $last_user=secure_session('user');
-            $last_username=secure_session('username');
-            $_SESSION['user'] = secure_get('user');
-            $user=$_SESSION['user'];
-            session_destroy();
-            $_SESSION['connected']=false;
-            $_SESSION['notification_icon']='icon-comment';
-            $_SESSION['notification_content']="A bientôt $last_username";                
+            if(secure_session('connected'))
+            {
+                $cas = new Cas($casUrl, $myUrl);
+                $cas->logout();
+                $last_user=secure_session('user');
+                $last_username=secure_session('username');
+                $_SESSION['user'] = secure_get('user');
+                $user=$_SESSION['user'];
+                session_destroy();
+                $_SESSION['connected']=false;
+                $_SESSION['notification_icon']='icon-comment';
+                $_SESSION['notification_content']="A bientôt $last_username"; 
+            }              
             echo "<script type='text/javascript'>RedirectionJavascript('accueil',100);</script>";
         }
         ?>

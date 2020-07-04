@@ -195,8 +195,10 @@
   #profile {
     width: 100%;
     padding: 0px;
-    font-size: x-large;
+    font-size: 40px;
     padding-top: 10px;
+    border-radius: 0px;
+    border: 0px solid rgba(0, 0, 0, 0);
   }
   #profile #preferences,
   #profile #preferences tbody,
@@ -209,7 +211,7 @@
     padding: 0px;
   }
   #profile #button_submit {
-    font-size: xx-large;
+    font-size: 50px;
     margin-bottom: 15px;
   }
   #profile .private,
@@ -219,15 +221,33 @@
   #profile #contact_pm {
     width: 90%;
     display: inline-block;
+    font-size: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   #profile .an_input {
     margin: 10px;
   }
   #profile .an_input input,
   #profile .an_input select {
-    font-size: x-large;
+    font-size: 40px;
   }
   #profile #preferences input {
     width: 20px;
+  }
+  #profile #preferences {
+    padding-left: 30px;
+    font-size: 45px;
+    margin-bottom: 15px;
+  }
+  #profile h1 {
+    display: block;
+    border-radius: 0px;
+  }
+  #profile #modify span {
+    font-size: 35px;
+    background-color: rgba(255, 98, 0, 0.2);
+    padding: 15px;
+    border-radius: 10px;
   }
 }

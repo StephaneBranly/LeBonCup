@@ -17,6 +17,6 @@
 }
 @media all and (max-device-width: 480px) {
   footer {
-    font-size: x-large;
+    font-size: 35px;
   }
 }

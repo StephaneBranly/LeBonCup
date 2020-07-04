@@ -81,18 +81,35 @@
   .simple_ad {
     width: 100%;
     padding: 0px;
+    border-radius: 0px;
+    border: 0px solid rgba(0, 0, 0, 0);
+  }
+  .simple_ad table .center,
+  .simple_ad table .left {
+    height: 200px;
   }
   .simple_ad table .center {
-    width: 70%;
-    font-size: x-large;
+    width: 60%;
+    font-size: 30px;
+    vertical-align: top;
+    padding-top: 10px;
   }
   .simple_ad table .center .details {
-    font-size: large;
+    font-size: 45px;
+  }
+  .simple_ad table .center p,
+  .simple_ad table .center .details .seller,
+  .simple_ad table .center .details .date_post {
+    display: none;
+  }
+  .simple_ad .center h1 .price {
+    display: block;
   }
   .simple_ad .center h1 {
-    font-size: xx-large;
+    border: 0px solid rgba(0, 0, 0, 0);
+    font-size: 45px;
   }
   .simple_ad table .left {
-    width: 27%;
+    width: 37%;
   }
 }

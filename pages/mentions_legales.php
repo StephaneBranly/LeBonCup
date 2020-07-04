@@ -21,11 +21,29 @@
 
      
     
-     $description_mentions_legales = "Le site http://assos.utc.fr/leboncup/ et l'ensemble des éléments qui le constituent (notamment les dessins, modèles, photos, illustrations, images, chartes graphiques, textes, logos, marques…) sont la propriété exclusive de LeBonCup.<br/><br/>
-     En conséquence, il vous est interdit d'utiliser, de représenter ou de reproduire intégralement ou partiellement, par quelque procédé que ce soit, de distribuer, de publier, de transmettre, de modifier ou de vendre tout ou partie du contenu du site ou de créer des oeuvres derivées à partir de celui-ci.<br/><br/>
-     La marque de LeBonCup et les logos liés à LeBonCup , deposés ou non, affichés sur le site http://assos.utc.fr/leboncup/ demeureront la propriété exclusive de LeBonCup.<br/><br/>
-     Toute reproduction, distribution, transmission, modification ou utilisation de ces éléments sans accord expresse et préalable de LeBonCup, pour quelque motif que ce soit, est interdite.<br/><br/>
-     LeBonCup décline toute responsabilité en cas d’utilisation ou d’exploitation illégale des éléments (notamment dessins, photos, modèles, illustrations, images, chartes graphiques, textes, logos, marques et autres signes distinctifs) contenus sur le site.<br/>";
+     $description_mentions_legales = "MIT License<br/><br/>
+
+     Copyright (c) 2020 Stephane_Branly<br/><br/>
+     
+     Permission is hereby granted, free of charge, to any person obtaining a copy
+     of this software and associated documentation files (the 'Software'), to deal
+     in the Software without restriction, including without limitation the rights
+     to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+     copies of the Software, and to permit persons to whom the Software is
+     furnished to do so, subject to the following conditions:<br/><br/>
+     
+     The above copyright notice and this permission notice shall be included in all
+     copies or substantial portions of the Software.<br/><br/>
+     
+     THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+     SOFTWARE.<br/><br/>
+     
+     LeBonCup décline toute responsabilité du contenu des annonces postées par les utilisateurs. Nous restons néanmoins disponible pour le modérer.";
     article("Mentions légales",$description_mentions_legales);
     _footer(); ?>
     </body>
