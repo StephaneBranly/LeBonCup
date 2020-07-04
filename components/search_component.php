@@ -61,7 +61,12 @@
         <!--<section id='search_button_section'><div onclick='search_sthg_component();' id='search_button'>Rechercher <span id='numberResults'></span><i class='icon-search'></i></div></section>-->";
 
         echo "<script type='text/javascript'>
-            setTimeout('{updateResults();}', 10);
-        </script>";
+            setTimeout('{updateResults();}', 10);";
+            if(secure_session('add_an_ad')==null)
+            {
+                echo "write_notification('icon-thumbs-up','Ajoute toi aussi des annonces pour enrichir la plateforme !','10000')";
+                $_SESSION['add_an_ad']='1';
+            }
+        echo "</script>";
     }
 ?>
