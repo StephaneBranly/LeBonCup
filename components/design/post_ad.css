@@ -169,5 +169,6 @@
   }
   #post_anad h1 {
     display: block;
+    border-radius: 0px;
   }
 }
