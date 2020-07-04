@@ -159,8 +159,13 @@
     border-radius: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
-  #post_anad button {
+  #post_anad #button_submit {
+    margin: 0px;
     margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    width: auto;
+    padding: 15px;
   }
   #post_anad h1 {
     display: block;
