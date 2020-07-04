@@ -259,25 +259,25 @@
   #complete_ad .left {
     display: block;
     width: 100%;
-    font-size: xx-large;
+    font-size: 40px;
     padding: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
   #complete_ad .center {
     display: block;
-    font-size: x-large;
+    font-size: 35px;
     width: 100%;
   }
   #complete_ad .center #preferences {
     padding-left: 40px;
-    font-size: xxx-large;
+    font-size: 40px;
   }
   #complete_ad .center .private,
   #complete_ad .center #contact_phone,
   #complete_ad .center #contact_facebook,
   #complete_ad .center #contact_mail,
   #complete_ad .center #contact_pm {
-    font-size: xxx-large;
+    font-size: 45px;
     padding-top: 15px;
     padding-bottom: 15px;
   }
@@ -285,26 +285,26 @@
     padding: 0px;
     padding-left: 30px;
     padding-right: 30px;
-    font-size: xx-large;
+    font-size: 35px;
   }
   #complete_ad .left .details span {
-    font-size: xxx-large;
+    font-size: 35px;
     padding-left: 30px;
   }
   #complete_ad .left .details .date_post {
     display: none;
   }
   #complete_ad h1 {
-    font-size: xxx-large;
+    font-size: 50px;
   }
   #update_ad {
     width: 95%;
     border-radius: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
-    font-size: xxx-large;
+    font-size: 60px;
   }
   #update_ad button,
   #update_ad select {
-    font-size: xxx-large;
+    font-size: 60px;
   }
 }

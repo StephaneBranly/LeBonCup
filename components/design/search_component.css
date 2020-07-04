@@ -121,12 +121,8 @@
     width: 100%;
     padding: 0px;
   }
-  #number_results {
-    width: 100%;
-    padding: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: xx-large;
+  #search_component i {
+    font-size: 45px;
   }
   #search_component .an_input,
   #search_component #search {
@@ -140,15 +136,21 @@
   }
   #search_component .an_input input,
   #search_component .an_input select {
-    font-size: xx-large;
+    font-size: 45px;
   }
   #search_component #input_search {
-    font-size: xx-large;
+    font-size: 45px;
   }
   #number_results {
+    width: 100%;
+    padding: 0px;
     border-radius: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: xx-large;
+    font-size: 40px;
+  }
+  #search_component #search input {
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }

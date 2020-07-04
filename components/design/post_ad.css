@@ -140,12 +140,16 @@
     border-radius: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
+  #post_anad i {
+    font-size: 45px;
+  }
   #post_anad input,
   #post_anad select,
   #post_anad textarea,
   #post_anad button {
-    font-size: xxx-large;
+    font-size: 50px;
     margin: 5px;
+    border-radius: 0px;
   }
   #post_anad .an_input,
   #post_anad button {

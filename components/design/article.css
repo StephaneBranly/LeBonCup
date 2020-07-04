@@ -34,11 +34,13 @@
 @media all and (max-device-width: 480px) {
   .article {
     width: 100%;
-    font-size: xx-large;
     border-radius: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
   .article .section_name {
-    font-size: xxx-large;
+    font-size: 40px;
+  }
+  .article p {
+    font-size: 30px;
   }
 }

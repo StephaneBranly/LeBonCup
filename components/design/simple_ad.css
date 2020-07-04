@@ -90,12 +90,12 @@
   }
   .simple_ad table .center {
     width: 60%;
-    font-size: x-large;
+    font-size: 30px;
     vertical-align: top;
     padding-top: 10px;
   }
   .simple_ad table .center .details {
-    font-size: xxx-large;
+    font-size: 45px;
   }
   .simple_ad table .center p,
   .simple_ad table .center .details .seller,
@@ -107,8 +107,7 @@
   }
   .simple_ad .center h1 {
     border: 0px solid rgba(0, 0, 0, 0);
-
-    font-size: xxx-large;
+    font-size: 45px;
   }
   .simple_ad table .left {
     width: 37%;
