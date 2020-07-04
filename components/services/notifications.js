@@ -11,7 +11,7 @@ function write_notification(icon, content, tmp) {
     icon +
     "'></i><p>" +
     content +
-    "<p></div>" +
+    "</p></div>" +
     actual_content;
   if (tmp) {
     setTimeout("remove_notification(" + unique_id + ");", tmp);
