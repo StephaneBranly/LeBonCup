@@ -135,9 +135,8 @@
 }
 @media all and (max-device-width: 480px) {
   #post_anad {
-    width: 100%;
+    width: 97%;
     padding: 0px;
-    border-radius: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
   #post_anad i {
@@ -169,6 +168,5 @@
   }
   #post_anad h1 {
     display: block;
-    border-radius: 0px;
   }
 }

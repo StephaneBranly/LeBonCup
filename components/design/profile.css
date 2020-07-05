@@ -193,11 +193,10 @@
 }
 @media all and (max-device-width: 480px) {
   #profile {
-    width: 100%;
+    width: 97%;
     padding: 0px;
     font-size: 40px;
     padding-top: 10px;
-    border-radius: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
   #profile #preferences,
@@ -242,7 +241,6 @@
   }
   #profile h1 {
     display: block;
-    border-radius: 0px;
   }
   #profile #modify span {
     font-size: 35px;

@@ -250,10 +250,9 @@
 }
 @media all and (max-device-width: 480px) {
   #complete_ad {
-    width: 100%;
+    width: 97%;
     padding: 0px;
     padding-top: 15px;
-    border-radius: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
   #complete_ad .left {
@@ -298,8 +297,7 @@
     font-size: 50px;
   }
   #update_ad {
-    width: 100%;
-    border-radius: 0px;
+    width: 97%;
     border: 0px solid rgba(0, 0, 0, 0);
     font-size: 60px;
     padding: 0px;
@@ -309,5 +307,6 @@
   #update_ad button,
   #update_ad select {
     font-size: 45px;
+    display: block;
   }
 }
