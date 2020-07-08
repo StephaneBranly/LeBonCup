@@ -18,7 +18,10 @@
     {
         $user=secure_session('user');
         $username=secure_session('username');
-        echo"<div id='login'><span onclick=\"view_profile('$user');\"><i class='icon-address-card-o'></i>$username</span><span onclick=\"RedirectionJavascript('logout',0);\"><i class='icon-user-pair'></i>Se déconnecter</span></div>";
+        echo"<div id='login'>";
+        if(is_admin())
+            echo  "<span onclick=\"RedirectionJavascript('admin',0);\"><i class='icon-gauger'></i>ADMIN</span>";
+        echo"<span onclick=\"view_profile('$user');\"><i class='icon-address-card-o'></i>$username</span><span onclick=\"RedirectionJavascript('logout',0);\"><i class='icon-user-pair'></i>Se déconnecter</span></div>";
     }
     echo "</header>";
 
