@@ -13,6 +13,7 @@
 <link href="../components/design/complete_ad.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/footer.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/header.css" rel="stylesheet" media="all" type="text/css">
+<link href="../components/design/last_ads.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/messages.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/notifications.css" rel="stylesheet" media="all" type="text/css">
 <link href="../components/design/post_ad.css" rel="stylesheet" media="all" type="text/css">
@@ -27,6 +28,7 @@
     include_once("../components/complete_ad.php");
     include_once("../components/footer.php");
     include_once("../components/header.php");
+    include_once("../components/last_ads.php");
     include_once("../components/messages.php");
     include_once("../components/notifications.php");
     include_once("../components/post_ad.php");
