@@ -12,9 +12,9 @@
 
 @media all and (min-device-width: 480px) {
   body {
-    background-size: 130px;
+    /*background-size: 130px;
     background-image: url("../images/bg.png");
-    background-repeat: repeat;
+    background-repeat: repeat;*/
     padding-bottom: 300px;
     font-size: 1em;
   }
