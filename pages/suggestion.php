@@ -17,6 +17,8 @@
     <?php include_once("../components/components_include.php");?>
 	
     <?php
+        $_SESSION['last_uri'] = $_SERVER['REQUEST_URI'];
+
     _header(true);
     suggestion();
     _footer(); 

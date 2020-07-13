@@ -17,6 +17,8 @@
     <?php include_once("../components/components_include.php");?>
 	<body>
     <?php
+        $_SESSION['last_uri'] = $_SERVER['REQUEST_URI'];
+
         _header(false);
         search_component();
         echo "<x id='results'></x>";

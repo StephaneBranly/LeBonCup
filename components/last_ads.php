@@ -32,6 +32,5 @@
             <span class='ad_price'><i class='icon-tag'></i>$price</span></section>";
         }
         echo "<section class='view_all' onclick=\"RedirectionJavascript('search/toutes-categories/');\"><div></div><span class='text'><i class='icon-doc'></i>Tout voir</span></section>";
-
     }
 ?>

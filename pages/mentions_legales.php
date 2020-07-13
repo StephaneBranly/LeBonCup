@@ -18,6 +18,7 @@
 	<body>
     <?php
      _header(true);
+     $_SESSION['last_uri'] = $_SERVER['REQUEST_URI'];
 
      
     

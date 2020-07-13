@@ -18,6 +18,8 @@
     <?php include_once("../components/components_include.php");?>
 	<body>
     <?php
+        $_SESSION['last_uri'] = $_SERVER['REQUEST_URI'];
+
         _header(true);
         $user=strtolower(SQLProtect($user,true));
         $query = mysqli_query($connect,"SELECT `iduser` FROM `users` WHERE `iduser`='$user'");
