@@ -19,6 +19,10 @@
     height: 100px;
   }
   .view_all div {
+    background-image: url("../../ressources/images/view_all.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100px;
   }
   .view_all {
