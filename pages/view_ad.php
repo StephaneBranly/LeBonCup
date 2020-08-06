@@ -9,14 +9,30 @@
         <?php
             $id=secure_get('id');
             $id=strtolower(SQLProtect($id,true));
-            $query = mysqli_query($connect,"SELECT `idad`,`visibility`,`title` FROM `ads` WHERE `idad`=$id");
+            $query = mysqli_query($connect,"SELECT * FROM `ads` WHERE `idad`=$id");
             $res = mysqli_fetch_array($query);
-            if (count($res) != 0) $title=$res['title']; else $title = "Annonce";
+            if (count($res) != 0) 
+            {
+                $title=$res['title'];
+                    $nbr_images=0;
+                if($res['image1'])
+                    $nbr_images++;
+                if($res['image2'])
+                    $nbr_images++;
+                if($res['image3'])
+                    $nbr_images++;
+                if($nbr_images)
+                    $img=$res['image1'];
+                else
+                    $img="nan.png";
+                echo "<meta property='og:image'  content='https://assos.utc.fr/leboncup/ressources/images-ad/$img'/>";
+             }
+              else $title = "Annonce";
             include_once("../lib/google_analytics.php");
             $nom_page=$title;
             $description_page="Section du site de l'association LeBonCup permettant de visualiser une annonce.";
             include_once("../lib/meta.php");
-        ?>
+              ?>
         <meta charset="UTF-8">
 	</head>
     <?php include_once("../components/components_include.php");?>
