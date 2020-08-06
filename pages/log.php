@@ -63,7 +63,11 @@
                     $_SESSION['notification_icon']='icon-cup';
                     $_SESSION['notification_content']="Bonjour $res[username]";
                     $query = mysqli_query($connect,"UPDATE `users` SET `last_connexion` = '$date' WHERE iduser = '$user'");
-                    echo "<script type='text/javascript'>RedirectionJavascript('accueil',2000);</script>";
+                    $last_page='../..'.secure_session('last_uri');
+                    if(secure_session('last_uri'))
+                        echo "<script type='text/javascript'>setTimeout(\"{document.location.href='$last_page';};\", 2000);</script>";
+                    else
+                        echo "<script type='text/javascript'>RedirectionJavascript('accueil',2000);</script>";
                 }
             }
         }
