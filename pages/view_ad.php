@@ -24,7 +24,7 @@
                 if($nbr_images)
                     $img=$res['image1'];
                 else
-                    $img="nan.png";
+                    $img="nan_".$res['category'].".png";
                 echo "<meta property='og:image'  content='https://assos.utc.fr/leboncup/ressources/images-ad/$img'/>";
              }
               else $title = "Annonce";

@@ -21,7 +21,7 @@
             if($nbr_images)
                 $img=$res['image1'];
             else
-                $img="nan.png";
+                $img="nan_".$res['category'].".png";
             if($res['price'])
                 $price=$res['price']."€";
             else
