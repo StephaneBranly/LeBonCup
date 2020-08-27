@@ -131,6 +131,16 @@
   #post_anad .category .a_subcategory {
     color: rgb(0, 0, 0);
   }
+  #post_anad .preview_image {
+    width: 20%;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 98, 0);
+  }
 }
 @media all and (max-device-width: 480px) {
   #post_anad {
