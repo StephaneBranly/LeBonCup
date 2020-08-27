@@ -16,7 +16,7 @@
         if($nbr_images)
             $img=$res['image1'];
         else
-            $img="nan.png";
+            $img="nan_".$res['category'].".png";
 
         if((($res['visibility']=='connected_user' && secure_session('connected')==true) || ($res['visibility']=='every_one')) && $res['status']=='to_sell')
         {

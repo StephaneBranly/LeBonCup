@@ -28,36 +28,55 @@
 
         if(!empty($_POST))
         {
-            $mail = SQLProtect(secure_post('mail'),1);
-            
-            $to = $mail;
+            $iduser = SQLProtect(secure_post('iduser'),1);
 
-            $subject = "LeBonCup - Rejoins-nous pour vendre, acheter, échanger et donner !";
+            $subject = "LeBonCup - ".secure_post('title');
 
             $headers = "From: leboncup@assos.utc.fr \r\n";
             $headers .= "Reply-To: stephane.branly@etu.utc.fr \r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
             
-            $message = "<h1>LeBonCup</h1>
-                        <h2>Le concept</h2>
-                        <p>Je pense que tu ne connais pas encore LeBonCup mais ne t'inquiète pas, il sera bientôt dans tes favoris. Il s'agit d'une association utcéenne qui facilite les ventes, achats, échanges, dons de biens et services grâce à son site ! Une plateforme dédiée entièrement à cela et en cours d'élaboration !</p>
-                        <h2>Rejoins-nous !</h2>
-                        <p>Je t'envoie un message car je pense que tu peux contribuer au site qui est pour l'instant en version bêta !</p>
-                        <p>Tu peux poster une annonce ou regarder celles déjà existantes ! Il y a plusieurs catégories disponibles comme le covoiturage, les objets perdus, les polys, les studios, les vêtements, etc !
-                        <p>Rejoins-nous rapidement sur <a href='https://assos.utc.fr/leboncup'>le site LeBonCup</a></p>
-                        <br/><p>Remonte tes suggestions sur le lien <a href='https://assos.utc.fr/leboncup/suggestion'>suggestion</a></p>
-                        <br/><br/>Merci de ne pas répondre à ce mail";
-            
-            mail($to, $subject, $message, $headers);
+            $message=nl2br(remove_balise(secure_post('content')),1);
+            $message=$message."<br/><br/><br/><i>Merci de ne pas répondre à ce mail</i> | <a href='https://assos.utc.fr/leboncup'>LeBonCup</a>";
 
-            echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à $mail','5000');</script>";
+            if($iduser=="tout_le_monde")
+            {
+                $query = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
+                while($res = mysqli_fetch_array($query))
+                    if($res['mail']!='')
+                    {
+                        $message_copy=$message;
+                        $message_copy=str_replace("[username]",$res['username'], $message_copy);
+                        mail($res['mail'], $subject, $message_copy, $headers);
+                    }
+                echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à tout le monde','5000');</script>";  
+            }
+            else
+            {
+                $query = mysqli_query($connect,"SELECT * FROM `users` WHERE `iduser`='$iduser'");
+                $res = mysqli_fetch_array($query);
+                if($res['mail']!='')
+                {
+                    $message_copy=$message;
+                    $message_copy=str_replace("[username]",$res['username'], $message_copy);
+                    mail($res['mail'], $subject, $message_copy, $headers);
+                    echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à $res[mail]','5000');</script>";
+                }
+            }
         }
         echo"<section id='admin'>
         <h1>Envoie de mail</h1>
         <form action='../admin/send_email' method='post'>
-            <input type='text' name='mail' maxlenght='100'/>
-            <button type='submit'>Envoyer mail<i class='icon-paper-plane'></i></button>    
+            <select name='iduser'>
+                <option value='tout_le_monde' selected>Tout le monde</option>";
+                $query = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
+                while($res = mysqli_fetch_array($query))
+                    echo "<option value='$res[iduser]'>$res[iduser]</option>";
+            echo"</select>
+            <h2>Titre</h2><input type='text' name='title' maxlenght='190'/><br/>
+            <h2>Contenu</h2><textarea type='text' name='content' maxlenght='1000'/></textarea><br/>
+            <button type='submit'>Envoyer mail<i class='icon-paper-plane'></i></button>
         </form>
         <a href='../admin/home'>Retour</a>
         </section>";

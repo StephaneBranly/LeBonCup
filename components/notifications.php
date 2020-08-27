@@ -16,7 +16,7 @@
             notification(0,secure_session('notification_content'),secure_session('notification_icon'));
             $_SESSION['notification_new']=false;
         }
-        if(secure_session("connected"))
+        if(secure_session("connected") && strpos($_SERVER['REQUEST_URI'], "/pages/log.php")===false)
         {
             $user=secure_session("user");
             $query = mysqli_query($connect,"SELECT * FROM `notifications`  WHERE iduser = '$user' AND `viewed` = 0 ORDER BY `date` DESC");

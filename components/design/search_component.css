@@ -120,6 +120,8 @@
   #search_component {
     width: 100%;
     padding: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
   #search_component i {
@@ -143,9 +145,8 @@
     font-size: 45px;
   }
   #number_results {
-    width: 100%;
+    width: 97%;
     padding: 0px;
-    border-radius: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 40px;

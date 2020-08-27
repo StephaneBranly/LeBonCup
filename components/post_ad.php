@@ -15,6 +15,7 @@
         if(!empty($_POST))
         {
             $title=SQLProtect(remove_balise(secure_post('title')),1);
+            $title = preg_replace('#/#', '|', $title);
             $description=nl2br(SQLProtect(remove_balise(secure_post('description')),1));
             $visibility=SQLProtect(secure_post('visibility'),1);
             $category=strtolower(SQLProtect(secure_post('category'),1));
@@ -137,6 +138,12 @@
             <input name='f2' type='file'/>
             <input name='f3' type='file'/>
 
+            <!--
+            <div id='image_f1' class='preview_image'><input id='input_f1' name='f1' onchange=\"updateImage('f1');\" type='file'/></div>
+            <div id='image_f2' class='preview_image'><input id='input_f2' name='f2' onchange=\"updateImage('f2');\" type='file'/></div>
+            <div id='image_f3' class='preview_image'><input id='input_f3' name='f3' onchange=\"updateImage('f3');\" type='file'/></div>
+            -->
+        
             <h2>Détails de l'annonce</h2>
             <div class='an_input'><input type='number' min='0' name='price' value='$price'/><i class='icon-euro'></i></div>
             <div class='an_input'>

@@ -8,7 +8,7 @@
 
 - Clone the repository
 - Update the file `/lib/sql_connect.php`
-- Create a database with the same structure as model.sql"
+- Create a database with the same structure as `model.sql`
 
 ## Licence
 

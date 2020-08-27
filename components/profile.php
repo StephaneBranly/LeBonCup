@@ -105,7 +105,7 @@
                      `paypal` = $paypal,
                      `beer` = $beer
                      WHERE iduser = '$user'");
-                    echo "<script type='text/javascript'>RedirectionJavascript('/profile/$user',100);</script>";
+                    echo "<script type='text/javascript'>RedirectionJavascript('profile/$user',100);</script>";
                     $_SESSION['notification_icon']='icon-floppy';
                     $_SESSION['notification_new']=true;
                     $_SESSION['notification_content']="Modification effectuée";

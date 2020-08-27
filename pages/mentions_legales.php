@@ -18,6 +18,7 @@
 	<body>
     <?php
      _header(true);
+     $_SESSION['last_uri'] = $_SERVER['REQUEST_URI'];
 
      
     
@@ -43,7 +44,7 @@
      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
      SOFTWARE.<br/><br/>
      
-     LeBonCup décline toute responsabilité du contenu des annonces postées par les utilisateurs. Nous restons néanmoins disponible pour le modérer.";
+     LeBonCup décline toutes responsabilités du contenu des annonces postées par les utilisateurs. Nous restons néanmoins disponibles pour le modérer.";
     article("Mentions légales",$description_mentions_legales);
     _footer(); ?>
     </body>
