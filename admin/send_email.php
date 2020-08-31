@@ -37,7 +37,7 @@
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
             
-            $message=nl2br(remove_balise(secure_post('content')),1);
+            $message=secure_post('content'),1;
             $message=$message."<br/><br/><br/><i>Merci de ne pas répondre à ce mail</i> | <a href='https://assos.utc.fr/leboncup'>LeBonCup</a>";
 
             if($iduser=="tout_le_monde")
