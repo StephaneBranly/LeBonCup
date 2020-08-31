@@ -80,6 +80,28 @@
      $nbr_users_query_users_month=$res_count_query_users_month[0];
 
 
+
+     $query_new_day = mysqli_query($connect, 
+    "SELECT COUNT(*) FROM `users` WHERE `creation_account` >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+    ");
+    $res_count_query_new_day = mysqli_fetch_array($query_new_day);
+    $nbr_users_query_new_day=$res_count_query_new_day[0];
+
+    $query_new_week = mysqli_query($connect, 
+     "SELECT COUNT(*) FROM `users` WHERE `creation_account` >= DATE_SUB(NOW(), INTERVAL 7 DAY) 
+     ");
+     $res_count_query_new_week = mysqli_fetch_array($query_new_week);
+     $nbr_users_query_new_week=$res_count_query_new_week[0];
+
+     $query_new_month = mysqli_query($connect, 
+     "SELECT COUNT(*) FROM `users` WHERE `creation_account` >= DATE_SUB(NOW(), INTERVAL 1 MONTH) 
+     ");
+     $res_count_query_new_month = mysqli_fetch_array($query_new_month);
+     $nbr_users_query_new_month=$res_count_query_new_month[0];
+
+
+
+
      $query_ads_day = mysqli_query($connect, 
      "SELECT COUNT(*) FROM `ads` WHERE `last_refresh` >= DATE_SUB(NOW(), INTERVAL 1 DAY)
      ");
@@ -99,6 +121,10 @@
       $nbr_ads_query_ads_month=$res_count_query_ads_month[0];
 
      $description = "<b>$nbr_users</b> comptes créés !<br/>
+     <br/>Derniers créés (1 jour)    : <b>$nbr_users_query_new_day</b>
+     <br/>Derniers créés (1 semaine) : <b>$nbr_users_query_new_week</b>
+     <br/>Derniers créés (1 mois)    : <b>$nbr_users_query_new_month</b><br/><br/>
+     
      <br/>Derniers connectés (1 jour)    : <b>$nbr_users_query_users_day</b>
      <br/>Derniers connectés (1 semaine) : <b>$nbr_users_query_users_week</b>
      <br/>Derniers connectés (1 mois)    : <b>$nbr_users_query_users_month</b><br/><br/>
