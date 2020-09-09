@@ -2,8 +2,8 @@
 
 <?php include_once("../lib/start_session.php");?>
 <!DOCTYPE html>
-<base href="http://localhost/LeBonCup/pages/"; />
-<!--<base href="https://assos.utc.fr/leboncup/pages/"; />-->
+<!--<base href="http://localhost/LeBonCup/pages/"; />-->
+<base href="https://assos.utc.fr/leboncup/pages/"; />
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">
 	<link href="../admin/admin.css" rel="stylesheet" media="all" type="text/css">
@@ -103,40 +103,69 @@
 
 
      $query_ads_day = mysqli_query($connect, 
-     "SELECT COUNT(*) FROM `ads` WHERE `last_refresh` >= DATE_SUB(NOW(), INTERVAL 1 DAY)
+     "SELECT COUNT(*) FROM `ads` WHERE `publish_date` >= DATE_SUB(NOW(), INTERVAL 1 DAY)
      ");
      $res_count_query_ads_day = mysqli_fetch_array($query_ads_day);
      $nbr_ads_query_ads_day=$res_count_query_ads_day[0];
  
      $query_ads_week = mysqli_query($connect, 
-      "SELECT COUNT(*) FROM `ads` WHERE `last_refresh` >= DATE_SUB(NOW(), INTERVAL 7 DAY) 
+      "SELECT COUNT(*) FROM `ads` WHERE `publish_date` >= DATE_SUB(NOW(), INTERVAL 7 DAY) 
       ");
       $res_count_query_ads_week = mysqli_fetch_array($query_ads_week);
       $nbr_ads_query_ads_week=$res_count_query_ads_week[0];
  
       $query_ads_month = mysqli_query($connect, 
-      "SELECT COUNT(*) FROM `ads` WHERE `last_refresh` >= DATE_SUB(NOW(), INTERVAL 1 MONTH) 
+      "SELECT COUNT(*) FROM `ads` WHERE `publish_date` >= DATE_SUB(NOW(), INTERVAL 1 MONTH) 
       ");
       $res_count_query_ads_month = mysqli_fetch_array($query_ads_month);
       $nbr_ads_query_ads_month=$res_count_query_ads_month[0];
 
-     $description = "<b>$nbr_users</b> comptes créés !<br/>
-     <br/>Derniers créés (1 jour)    : <b>$nbr_users_query_new_day</b>
-     <br/>Derniers créés (1 semaine) : <b>$nbr_users_query_new_week</b>
-     <br/>Derniers créés (1 mois)    : <b>$nbr_users_query_new_month</b><br/><br/>
-     
-     <br/>Derniers connectés (1 jour)    : <b>$nbr_users_query_users_day</b>
-     <br/>Derniers connectés (1 semaine) : <b>$nbr_users_query_users_week</b>
-     <br/>Derniers connectés (1 mois)    : <b>$nbr_users_query_users_month</b><br/><br/>
-     <b>$nbr_ads_to_sell</b> annonces disponibles !<br/>
-     <br/>Derniers annonces (1 jour)    : <b>$nbr_ads_query_ads_day</b>
-     <br/>Derniers annonces (1 semaine) : <b>$nbr_ads_query_ads_week</b>
-     <br/>Derniers annonces (1 mois)    : <b>$nbr_ads_query_ads_month</b><br/><br/>
 
-     <b>$nbr_ads_sold</b> achats conclus !<br/>
-     <b>$nbr_ads_views</b> annonces vues !<br/>
-     <b>$nbr_ads_likes</b> annonces en favories !<br/>
-     <b>$sum_sold €</b> dépensés !<br/>";
+
+      $query_ads_sold_day = mysqli_query($connect, 
+      "SELECT COUNT(*) FROM `ads` WHERE `last_refresh` >= DATE_SUB(NOW(), INTERVAL 1 DAY) AND `status`='sold'
+      ");
+      $res_count_query_ads_sold_day = mysqli_fetch_array($query_ads_sold_day);
+      $nbr_ads_query_ads_sold_day=$res_count_query_ads_sold_day[0];
+  
+      $query_ads_sold_week = mysqli_query($connect, 
+       "SELECT COUNT(*) FROM `ads` WHERE `last_refresh` >= DATE_SUB(NOW(), INTERVAL 7 DAY)  AND `status`='sold'
+       ");
+       $res_count_query_ads_sold_week = mysqli_fetch_array($query_ads_sold_week);
+       $nbr_ads_query_ads_sold_week=$res_count_query_ads_sold_week[0];
+  
+       $query_ads_sold_month = mysqli_query($connect, 
+       "SELECT COUNT(*) FROM `ads` WHERE `last_refresh` >= DATE_SUB(NOW(), INTERVAL 1 MONTH)  AND `status`='sold'
+       ");
+       $res_count_query_ads_sold_month = mysqli_fetch_array($query_ads_sold_month);
+       $nbr_ads_query_ads_sold_month=$res_count_query_ads_sold_month[0];
+
+    //  $description = "<b>$nbr_users</b> comptes créés !<br/>
+    //  <br/>Derniers comptes créés (1 jour)    : <b>$nbr_users_query_new_day</b>
+    //  <br/>Derniers comptes créés (1 semaine) : <b>$nbr_users_query_new_week</b>
+    //  <br/>Derniers comptes créés (1 mois)    : <b>$nbr_users_query_new_month</b><br/><br/>
+     
+    //  <br/>Derniers comptes connectés (1 jour)    : <b>$nbr_users_query_users_day</b>
+    //  <br/>Derniers comptes connectés (1 semaine) : <b>$nbr_users_query_users_week</b>
+    //  <br/>Derniers comptes connectés (1 mois)    : <b>$nbr_users_query_users_month</b><br/><br/>
+    //  <b>$nbr_ads_to_sell</b> annonces disponibles !<br/>
+    //  <br/>Dernières annonces crées (1 jour)    : <b>$nbr_ads_query_ads_day</b>
+    //  <br/>Dernières annonces crées (1 semaine) : <b>$nbr_ads_query_ads_week</b>
+    //  <br/>Dernières annonces crées (1 mois)    : <b>$nbr_ads_query_ads_month</b><br/><br/>
+     
+    //  <b>$nbr_ads_sold</b> annonces conclues !<br/>
+    //  <br/>Dernières annonces conclues (1 jour)    : <b>$nbr_ads_query_ads_sold_day</b>
+    //  <br/>Dernières annonces conclues (1 semaine) : <b>$nbr_ads_query_ads_sold_week</b>
+    //  <br/>Dernières annonces conclues (1 mois)    : <b>$nbr_ads_query_ads_sold_month</b><br/><br/>
+    
+    //  <b>$nbr_ads_views</b> annonces vues !<br/>
+    //  <b>$nbr_ads_likes</b> annonces en favories !<br/>
+    //  <b>$sum_sold €</b> dépensés !<br/>";
+
+    $description = "<table>
+    <tr><th class='name'>Proprieté</th><th>Moins d'1 jour</th><th>Moins d'1 semaine</th><th>Moins d'1 mois</th><th class='total'>TOTAL</th></tr>
+    
+    </table>";
    
      echo "<p>$description</p>";
         echo"<a href='../admin/home'>Retour</a>
