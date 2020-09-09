@@ -56,9 +56,14 @@
 }
 #admin table {
   display: inline-block;
+  overflow: hidden;
   border-radius: 15px;
   background-color: rgb(182, 182, 182);
   box-shadow: 2px 2px 15px rgb(144, 144, 144);
+}
+#admin table td,
+#admin table th {
+  padding: 5px;
 }
 #admin table th {
   background-color: rgb(104, 139, 253);
@@ -66,6 +71,12 @@
 #admin table th .name,
 #admin table th .total {
   color: rgb(231, 116, 8);
+}
+#admin table tr:nth-child(even) {
+  background: rgba(206, 205, 201, 0.1);
+}
+#admin table tr:nth-child(odd) {
+  background: rgba(11, 31, 209, 0.1);
 }
 
 @media all and (max-device-width: 480px) {
