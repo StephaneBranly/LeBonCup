@@ -37,7 +37,7 @@
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
             
-            $message=secure_post('content'),1;
+            $message=secure_post('content');
             $message=$message."<br/><br/><br/><i>Merci de ne pas répondre à ce mail</i> | <a href='https://assos.utc.fr/leboncup'>LeBonCup</a>";
 
             if($iduser=="tout_le_monde")
@@ -72,7 +72,7 @@
                 <option value='tout_le_monde' selected>Tout le monde</option>";
                 $query = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
                 while($res = mysqli_fetch_array($query))
-                    echo "<option value='$res[iduser]'>$res[iduser]</option>";
+                    echo "<option value='$res[iduser]'>$res[iduser] ($res[mail])</option>";
             echo"</select>
             <h2>Titre</h2><input type='text' name='title' maxlenght='190'/><br/>
             <h2>Contenu</h2><textarea type='text' name='content' maxlenght='1000'/></textarea><br/>
