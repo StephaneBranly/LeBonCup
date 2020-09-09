@@ -32,6 +32,11 @@
      $nbr_users=$res_count[0];
 
      $query = mysqli_query($connect, 
+     "SELECT COUNT(*) FROM `ads` WHERE 1=1");
+     $res_count = mysqli_fetch_array($query);
+     $nbr_qds=$res_count[0];
+
+     $query = mysqli_query($connect, 
      "SELECT COUNT(*) FROM `ads` WHERE ads.status = 'to_sell'");
      $res_count = mysqli_fetch_array($query);
      $nbr_ads_to_sell=$res_count[0];
@@ -140,32 +145,23 @@
        $res_count_query_ads_sold_month = mysqli_fetch_array($query_ads_sold_month);
        $nbr_ads_query_ads_sold_month=$res_count_query_ads_sold_month[0];
 
-    //  $description = "<b>$nbr_users</b> comptes créés !<br/>
-    //  <br/>Derniers comptes créés (1 jour)    : <b>$nbr_users_query_new_day</b>
-    //  <br/>Derniers comptes créés (1 semaine) : <b>$nbr_users_query_new_week</b>
-    //  <br/>Derniers comptes créés (1 mois)    : <b>$nbr_users_query_new_month</b><br/><br/>
      
-    //  <br/>Derniers comptes connectés (1 jour)    : <b>$nbr_users_query_users_day</b>
-    //  <br/>Derniers comptes connectés (1 semaine) : <b>$nbr_users_query_users_week</b>
-    //  <br/>Derniers comptes connectés (1 mois)    : <b>$nbr_users_query_users_month</b><br/><br/>
-    //  <b>$nbr_ads_to_sell</b> annonces disponibles !<br/>
-    //  <br/>Dernières annonces crées (1 jour)    : <b>$nbr_ads_query_ads_day</b>
-    //  <br/>Dernières annonces crées (1 semaine) : <b>$nbr_ads_query_ads_week</b>
-    //  <br/>Dernières annonces crées (1 mois)    : <b>$nbr_ads_query_ads_month</b><br/><br/>
-     
-    //  <b>$nbr_ads_sold</b> annonces conclues !<br/>
-    //  <br/>Dernières annonces conclues (1 jour)    : <b>$nbr_ads_query_ads_sold_day</b>
-    //  <br/>Dernières annonces conclues (1 semaine) : <b>$nbr_ads_query_ads_sold_week</b>
-    //  <br/>Dernières annonces conclues (1 mois)    : <b>$nbr_ads_query_ads_sold_month</b><br/><br/>
-    
-    //  <b>$nbr_ads_views</b> annonces vues !<br/>
-    //  <b>$nbr_ads_likes</b> annonces en favories !<br/>
-    //  <b>$sum_sold €</b> dépensés !<br/>";
+
 
     $description = "<table>
     <tr><th class='name'>Proprieté</th><th>Moins d'1 jour</th><th>Moins d'1 semaine</th><th>Moins d'1 mois</th><th class='total'>TOTAL</th></tr>
+    <tr><td class='name'>Comptes créés</td><td>$nbr_users_query_new_day</td><td>$nbr_users_query_new_week</td><td>$nbr_users_query_new_month</td><td class='total'>$nbr_users</td></tr>
+    <tr><td class='name'>Comptes connectés</td><td>$nbr_users_query_users_day</td><td>$nbr_users_query_users_week</td><td>$nbr_users_query_users_month</td><td class='total'>--</td></tr>
+    <tr><td class='name'>Annonces créées</td><td>$nbr_ads_query_ads_day</td><td>$nbr_ads_query_ads_week</td><td>$nbr_ads_query_ads_month</td><td class='total'>$nbr_qds</td></tr>
+    <tr><td class='name'>Annonces conclues</td><td>$nbr_ads_query_ads_sold_day</td><td>$nbr_ads_query_ads_sold_week</td><td>$nbr_ads_query_ads_sold_month</td><td class='total'>$nbr_ads_sold</td></tr>  
+    </table>
     
-    </table>";
+    <br/>
+    <b>$nbr_ads_to_sell</b> annonces disponibles !<br/>
+     <b>$nbr_ads_views</b> annonces vues !<br/>
+     <b>$nbr_ads_likes</b> annonces en favories !<br/>
+     <b>$sum_sold €</b> dépensés !<br/>";
+    
    
      echo "<p>$description</p>";
         echo"<a href='../admin/home'>Retour</a>
