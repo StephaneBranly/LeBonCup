@@ -9,10 +9,11 @@
         <?php
             include_once("../lib/google_analytics.php");
             $nom_page='Accueil';
-            $description_page="Page d'accueil du site LeBonCup, site ayant pour but de permettre la revente d'objets d'occasions, de services, etc, afin de favoriser la seconde main.";
+            $description_page="Vendez, achetez, échangez, donnez.   LeBonCup est la plateforme dédiée pour trouver ou ajouter des annonces sur des biens et services !";
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">
+        <meta property='og:image'  content='https://assos.utc.fr/leboncup/ressources/images/logo.png'/>
 	</head>
     <?php include_once("../components/components_include.php");?>
 	<body>
