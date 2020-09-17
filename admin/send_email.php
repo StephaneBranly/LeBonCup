@@ -1,8 +1,4 @@
-<?php
-    
-?> 
-
-<?php include_once("../lib/start_session.php");?>
+ <?php include_once("../lib/start_session.php");?>
 <!DOCTYPE html>
 <base href="http://localhost/LeBonCup/pages/"; />
 <!--<base href="https://assos.utc.fr/leboncup/pages/"; />-->
@@ -28,9 +24,12 @@
 
         if(!empty($_POST))
         {
-            $iduser = SQLProtect(secure_post('iduser'),1);
+            $validation=SQLProtect(secure_post('validation'),1);
+            if($validation)
+            {
+                $iduser = SQLProtect(secure_post('iduser'),1);
 
-            $subject = "LeBonCup - ".secure_post('title');
+                $subject = "LeBonCup - ".secure_post('title');
 
             $headers = "From: leboncup@assos.utc.fr \r\n";
             $headers .= "Reply-To: stephane.branly@etu.utc.fr \r\n";
@@ -55,32 +54,41 @@
             padding-bottom: 5px;
             display: inline-block;\">LeBonCup</h1>
             <p>".secure_post('content')."
-            <p><br/><p><i>Merci de ne pas répondre à ce mail</i> | <a href='https://assos.utc.fr/leboncup'>LeBonCup</a></p></div></div>";
+            <p><br/><p><i>Merci de ne pas répondre à ce mail</i> | <a href='https://assos.utc.fr/leboncup'>LeBonCup</a> | <a href='https://assos.utc.fr/leboncup/unsubscribe/[iduser]/news/[code]'>Se désabonner de la mailing list News</a></p></div></div>";
 
-            if($iduser=="tout_le_monde")
-            {
-                $query = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
-                while($res = mysqli_fetch_array($query))
-                    if($res['mail']!='')
+                if($iduser=="tout_le_monde")
+                {
+                    $query = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
+                    while($res = mysqli_fetch_array($query))
+                        if($res['mail']!='' && $res['mail_news'])
+                        {
+                            $message_copy=$message;
+                            $message_copy=str_replace("[username]",$res['username'], $message_copy);
+                            $message_copy=str_replace("[iduser]",$res['iduser'], $message_copy);
+                            $message_copy=str_replace("[code]",$res['mail_news'], $message_copy);
+                            mail($res['mail'], $subject, $message_copy, $headers);
+                        }
+                    echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à tout le monde','5000');</script>";  
+                }
+                else
+                {
+                    $query = mysqli_query($connect,"SELECT * FROM `users` WHERE `iduser`='$iduser'");
+                    $res = mysqli_fetch_array($query);
+                    if($res['mail']!='' && $res['mail_news'])
                     {
                         $message_copy=$message;
                         $message_copy=str_replace("[username]",$res['username'], $message_copy);
+                        $message_copy=str_replace("[iduser]",$res['iduser'], $message_copy);
+                        $message_copy=str_replace("[code]",$res['mail_news'], $message_copy);
                         mail($res['mail'], $subject, $message_copy, $headers);
+                        echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à $res[mail]','5000');</script>";
                     }
-                echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à tout le monde','5000');</script>";  
-            }
-            else
-            {
-                $query = mysqli_query($connect,"SELECT * FROM `users` WHERE `iduser`='$iduser'");
-                $res = mysqli_fetch_array($query);
-                if($res['mail']!='')
-                {
-                    $message_copy=$message;
-                    $message_copy=str_replace("[username]",$res['username'], $message_copy);
-                    mail($res['mail'], $subject, $message_copy, $headers);
-                    echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à $res[mail]','5000');</script>";
+                    else 
+                        echo "<script type='text/javascript'>write_notification('icon-exclamation','Mail non envoyé','5000');</script>";
                 }
             }
+            else
+                echo "<script type='text/javascript'>write_notification('icon-exclamation','Il faut valider avant d envoyer un mail','5000');</script>";
         }
         echo"<section id='admin'>
         <h1>Envoie de mail</h1>
@@ -91,8 +99,9 @@
                 while($res = mysqli_fetch_array($query))
                     echo "<option value='$res[iduser]'>$res[iduser] ($res[mail])</option>";
             echo"</select>
-            <h2>Titre</h2><input type='text' name='title' maxlenght='190'/><br/>
-            <h2>Contenu</h2><textarea type='text' name='content' maxlenght='1000'/></textarea><br/>
+            <h2>Titre</h2><input required type='text' name='title' maxlenght='190'/><br/>
+            <h2>Contenu</h2><textarea required type='text' name='content' maxlenght='1000'/></textarea><br/>
+            Validation : <input required name='validation' type='checkbox'/>
             <button type='submit'>Envoyer mail<i class='icon-paper-plane'></i></button>
         </form>
         <a href='../admin/home'>Retour</a>

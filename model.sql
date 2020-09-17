@@ -193,3 +193,10 @@ INSERT INTO `categories` (`idcat`, `category`, `category_cleaned`, `icon`, `pare
 (23, 'Annales', 'annales', '', 20, '', 'every_one'),
 (24, 'Fournitures', 'fournitures', '', 20, '', 'every_one'),
 (25, 'Autres', 'autres', 'icon-menu', NULL, '', 'every_one');
+
+
+ALTER TABLE `users` ADD `mail_news` INT( 10 ) NOT NULL; 
+UPDATE `users` SET `mail_news` = FLOOR( 10000 + RAND( ) *89999 ) WHERE 1=1;
+
+ALTER TABLE `users` ADD `mail_ads` INT( 10 ) NOT NULL; 
+UPDATE `users` SET `mail_ads` = FLOOR( 10000 + RAND( ) *89999 ) WHERE 1=1;

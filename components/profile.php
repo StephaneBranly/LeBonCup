@@ -199,8 +199,18 @@
                 <tr><td class='payment'><i class='icon-beer'></i>Bière</td><td class='opinion'><input name='check_beer' $beer type='checkbox'/></td>
                 </table>
                 <button type='submit' id='button_submit'>VALIDER<i class='icon-ok-circled2'></i></button>
-                </form>
-                </section>";
+                </form><br/>";
+                if($res['mail_news'])
+                    echo "<a target='_blank' class='mailing_list' href='../unsubscribe/$user/news/$res[mail_news]'>Se désabonner de la newsletter</a>";
+                else
+                    echo "<a target='_blank' class='mailing_list' href='../subscribe/$user/news'>S'abonner à la newsletter</a>";
+
+                if($res['mail_ads'])
+                    echo "<a target='_blank' class='mailing_list' href='../unsubscribe/$user/ads/$res[mail_ads]'>Se désabonner de la adsletter</a>";
+                else
+                    echo "<a target='_blank' class='mailing_list' href='../subscribe/$user/ads'>S'abonner à la adsletter</a>";
+                
+                echo "</section>";
             }
             else
             {
