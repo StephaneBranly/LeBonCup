@@ -83,6 +83,8 @@
                         mail($res['mail'], $subject, $message_copy, $headers);
                         echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à $res[mail]','5000');</script>";
                     }
+                    else 
+                        echo "<script type='text/javascript'>write_notification('icon-exclamation','Mail non envoyé','5000');</script>";
                 }
             }
             else
@@ -97,9 +99,9 @@
                 while($res = mysqli_fetch_array($query))
                     echo "<option value='$res[iduser]'>$res[iduser] ($res[mail])</option>";
             echo"</select>
-            <h2>Titre</h2><input type='text' name='title' maxlenght='190'/><br/>
-            <h2>Contenu</h2><textarea type='text' name='content' maxlenght='1000'/></textarea><br/>
-            Validation : <input name='validation' type='checkbox'/>
+            <h2>Titre</h2><input required type='text' name='title' maxlenght='190'/><br/>
+            <h2>Contenu</h2><textarea required type='text' name='content' maxlenght='1000'/></textarea><br/>
+            Validation : <input required name='validation' type='checkbox'/>
             <button type='submit'>Envoyer mail<i class='icon-paper-plane'></i></button>
         </form>
         <a href='../admin/home'>Retour</a>
