@@ -43,10 +43,12 @@
                 {
                     $query = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
                     while($res = mysqli_fetch_array($query))
-                        if($res['mail']!='')
+                        if($res['mail']!='' && $res['mail_news'])
                         {
                             $message_copy=$message;
                             $message_copy=str_replace("[username]",$res['username'], $message_copy);
+                            $message_copy=str_replace("[iduser]",$res['iduser'], $message_copy);
+                            $message_copy=str_replace("[code]",$res['mail_news'], $message_copy);
                             mail($res['mail'], $subject, $message_copy, $headers);
                         }
                     echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à tout le monde','5000');</script>";  
@@ -55,7 +57,7 @@
                 {
                     $query = mysqli_query($connect,"SELECT * FROM `users` WHERE `iduser`='$iduser'");
                     $res = mysqli_fetch_array($query);
-                    if($res['mail']!='')
+                    if($res['mail']!='' && $res['mail_news'])
                     {
                         $message_copy=$message;
                         $message_copy=str_replace("[username]",$res['username'], $message_copy);

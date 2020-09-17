@@ -64,7 +64,7 @@
                     $_SESSION['notification_icon']='icon-floppy';
                     $_SESSION['notification_new']=true;
                     $_SESSION['notification_content']="Vous êtes désormais désabonné !";
-                    article("Vous êtes désormais désabonné à la mailing list !","Vous êtes désormais désabonné à la mailing list !");
+                    article("Vous êtes désormais désabonné de la mailing list !","Vous êtes désormais désabonné de la mailing list !");
                     echo "<script type='text/javascript'>RedirectionJavascript('accueil',1000);</script>";
                 }
                 else if($resp[0]==0)
