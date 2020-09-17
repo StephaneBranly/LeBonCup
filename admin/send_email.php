@@ -37,7 +37,7 @@
                 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
                 
                 $message=secure_post('content');
-                $message=$message."<br/><br/><br/><i>Merci de ne pas répondre à ce mail</i> | <a href='https://assos.utc.fr/leboncup'>LeBonCup</a>";
+                $message=$message."<br/><br/><br/><i>Merci de ne pas répondre à ce mail</i> | <a href='https://assos.utc.fr/leboncup'>LeBonCup</a> | <a href=https://assos.utc.fr/leboncup/unsubscribe/[iduser]/news/[code]'>Se désabonner de la mailing list News</a>";
 
                 if($iduser=="tout_le_monde")
                 {
@@ -59,6 +59,8 @@
                     {
                         $message_copy=$message;
                         $message_copy=str_replace("[username]",$res['username'], $message_copy);
+                        $message_copy=str_replace("[iduser]",$res['iduser'], $message_copy);
+                        $message_copy=str_replace("[code]",$res['mail_news'], $message_copy);
                         mail($res['mail'], $subject, $message_copy, $headers);
                         echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à $res[mail]','5000');</script>";
                     }
