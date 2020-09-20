@@ -54,7 +54,7 @@
                     $_SESSION['notification_icon']='icon-cup';
                     $_SESSION['username']=$user;
                     $_SESSION['notification_content']="Bienvenue $user ! Ton compte a été créé !";
-                    $query = mysqli_query($connect,"INSERT INTO `users` (iduser,username,creation_account,last_connexion,mail) VALUES ('$user','$user','$date','$date','$mail')");
+                    $query = mysqli_query($connect,"INSERT INTO `users` (iduser,username,creation_account,last_connexion,mail,mail_news,mail_ads) VALUES ('$user','$user','$date','$date','$mail',FLOOR( 10000 + RAND( ) *89999 ),FLOOR( 10000 + RAND( ) *89999 ))");
                     echo "<script type='text/javascript'>RedirectionJavascript('profile/$user-edit',2000);</script>";
                 }
                 else
