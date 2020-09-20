@@ -16,5 +16,10 @@
         </script>";
     }
     else
+    {
         echo "Error";
+        echo "<script type='text/javascript'>
+            document.location.href = '../../accueil'
+        </script>";
+    }
 ?>
