@@ -288,9 +288,6 @@
     font-size: 35px;
     padding-left: 30px;
   }
-  #complete_ad .left .details .date_post {
-    display: none;
-  }
   #complete_ad h1 {
     font-size: 50px;
   }
@@ -305,6 +302,6 @@
   #update_ad button,
   #update_ad select {
     font-size: 45px;
-    display: block;
+    display: inline-block;
   }
 }
