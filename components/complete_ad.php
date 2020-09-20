@@ -83,6 +83,34 @@
                     }
                 }
             }
+            if(is_admin())
+            {
+                echo "<form id='update_cat' method='post' action='../components/services/change_category.php?idad=$id'><select name='category' class='category'>";
+                $query3 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent` IS NULL ORDER BY `category` ASC");
+                while($res3 = mysqli_fetch_array($query3))
+                {
+                    $category_cleaned = clean_string($res3['category']);
+                    $query2 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent`=$res3[idcat] ORDER BY `category` ASC");
+
+                    if($category_cleaned!="Toutes-categories")
+                    {
+                        if(mysqli_num_rows($query2))
+                        {
+                            echo "<optgroup class='a_category' label=\"$res3[category]\">";
+                            while($res2 = mysqli_fetch_array($query2))
+                            {
+                                $category_cleaned = clean_string($res2['category']);
+                                echo"<option class='a_subcategory' value='$category_cleaned'>$res2[category]</option>";
+                            }
+                            echo "</optgroup>";
+                        }
+                        else
+                        echo"<option class='a_category' value='$category_cleaned'><i class='$res3[icon]'></i>$res3[category]</option>";
+                    }
+                }
+                echo"</select>
+                <button type='submit'>MAJ catégorie<i class='icon-edit'></i></button></form>";
+            }
             if($res['status']=='sold')
                 echo"<form id='update_ad'>
                    <i class='icon-cancel-circled2'></i> Annonce déclarée comme vendue.</form>";
