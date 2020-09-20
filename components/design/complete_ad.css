@@ -245,6 +245,9 @@
   #update_ad button i {
     padding: 5px;
   }
+  #complete_ad #user {
+    text-decoration: underline;
+  }
 }
 @media all and (max-device-width: 480px) {
   #complete_ad {
