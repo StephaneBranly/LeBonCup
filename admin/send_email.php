@@ -1,4 +1,5 @@
  <?php include_once("../lib/start_session.php");?>
+<script type="text/javascript" src="./admin.js"></script>
 <!DOCTYPE html>
 <base href="http://localhost/LeBonCup/pages/"; />
 <!--<base href="https://assos.utc.fr/leboncup/pages/"; />-->
@@ -100,10 +101,11 @@
                     echo "<option value='$res[iduser]'>$res[iduser] ($res[mail])</option>";
             echo"</select>
             <h2>Titre</h2><input required type='text' name='title' maxlenght='190'/><br/>
-            <h2>Contenu</h2><textarea required type='text' name='content' maxlenght='1000'/></textarea><br/>
+            <h2>Contenu</h2><textarea id='content_email' required type='text' name='content' maxlenght='1000'/></textarea><br/>
             Validation : <input required name='validation' type='checkbox'/>
             <button type='submit'>Envoyer mail<i class='icon-paper-plane'></i></button>
         </form>
+        <button onclick='preview_email()'>Prévisualiser mail<i class='icon-eye'></i></button>
         <a href='../admin/home'>Retour</a>
         </section>";
     }
