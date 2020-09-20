@@ -1,4 +1,3 @@
-<script type="text/javascript" src="./simple_ad.js"></script>
 <?php
     include_once('../../lib/start_session.php');
     if(is_admin()){
