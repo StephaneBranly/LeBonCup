@@ -146,7 +146,25 @@
        $nbr_ads_query_ads_sold_month=$res_count_query_ads_sold_month[0];
 
      
+       $query_mailinglist_news_sub = mysqli_query($connect, 
+       "SELECT COUNT(*) FROM `users` WHERE mail_news <> 0");
+       $res_count_query_mailinglist_news_sub = mysqli_fetch_array($query_mailinglist_news_sub);
+       $nbr_mailinglist_news_sub=$res_count_query_mailinglist_news_sub[0];
 
+       $query_mailinglist_news_un = mysqli_query($connect, 
+       "SELECT COUNT(*) FROM `users` WHERE mail_news = 0");
+       $res_count_query_mailinglist_news_un = mysqli_fetch_array($query_mailinglist_news_un);
+       $nbr_mailinglist_news_un=$res_count_query_mailinglist_news_un[0];
+
+       $query_mailinglist_ads_sub = mysqli_query($connect, 
+       "SELECT COUNT(*) FROM `users` WHERE mail_ads <> 0");
+       $res_count_query_mailinglist_ads_sub = mysqli_fetch_array($query_mailinglist_ads_sub);
+       $nbr_mailinglist_ads_sub=$res_count_query_mailinglist_ads_sub[0];
+
+       $query_mailinglist_ads_un = mysqli_query($connect, 
+       "SELECT COUNT(*) FROM `users` WHERE mail_ads = 0");
+       $res_count_query_mailinglist_ads_un = mysqli_fetch_array($query_mailinglist_ads_un);
+       $nbr_mailinglist_ads_un=$res_count_query_mailinglist_ads_un[0];
 
     $description = "<table>
     <tr><th class='name'>Proprieté</th><th>Moins d'1 jour</th><th>Moins d'1 semaine</th><th>Moins d'1 mois</th><th class='total'>TOTAL</th></tr>
@@ -160,8 +178,10 @@
     <b>$nbr_ads_to_sell</b> annonces disponibles !<br/>
      <b>$nbr_ads_views</b> annonces vues !<br/>
      <b>$nbr_ads_likes</b> annonces en favories !<br/>
-     <b>$sum_sold €</b> dépensés !<br/>";
-    
+     <b>$sum_sold €</b> dépensés !<br/><br/>
+     <b>$nbr_mailinglist_news_sub</b> abonnés à la mailist news ! ($nbr_mailinglist_news_un non abonnés)<br/>
+     <b>$nbr_mailinglist_ads_sub</b> abonnés à la mailist ads ! ($nbr_mailinglist_ads_un non abonnés)<br/>";
+
    
      echo "<p>$description</p>";
         echo"<a href='../admin/home'>Retour</a>
