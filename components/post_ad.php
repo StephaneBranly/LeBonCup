@@ -131,7 +131,8 @@
         }
 
         echo "<section id='post_anad'>
-        <button onclick='import_vinted()'>Importer depuis Vinted</button><input id='import_vinted_url' type='text />
+        <button onclick='load_user_vinted()'>Importer depuis Vinted</button><input id='import_vinted_url' placeholder='https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean' type='text />
+        <select id='import_vinted_select'></select><br/>
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
             <h1><input name='title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
             <h2>Photos</h2>
