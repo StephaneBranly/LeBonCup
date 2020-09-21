@@ -39,6 +39,7 @@
 
 <script type="text/javascript" src="../components/services/complete_ad.js"></script>
 <script type="text/javascript" src="../components/services/header.js"></script>
+<script type="text/javascript" src="../components/services/import_vinted.js"></script>
 <script type="text/javascript" src="../components/services/messages.js"></script>
 <script type="text/javascript" src="../components/services/notifications.js"></script>
 <script type="text/javascript" src="../components/services/post_anad.js"></script>
