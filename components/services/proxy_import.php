@@ -18,31 +18,33 @@
         header('Access-Control-Allow-Origin: *');  
         header('Content-Type: application/json');
         $url = secure_get('url');
-        $ch = curl_init();
-
-        $header[0] = "Accept: text/xml,application/xml,application/xhtml+xml,";
-        $header[0] .= "text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5";
-        $header[] = "Cache-Control: max-age=0";
-        $header[] = "Connection: keep-alive";
-        $header[] = "Keep-Alive: 300";
-        $header[] = "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
-        $header[] = "Access-Control-Allow-Origin: *";
-        $header[] = "Accept-Language: en-us,en;q=0.5";
-        $header[] = "Pragma: "; //browsers keep this blank.
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        // curl_setopt($ch, CURLOPT_USERAGENT, 'LeBoncup, asso étudiante (https://assos.utc.fr/leboncup/)');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-        $result = curl_exec ($ch);
-        curl_close($ch);
-
+       
         $patternVinted = "/^https?:\/\/www.vinted/i";
         if(preg_match($patternVinted, $url))
         {   
+            $ch = curl_init();
+
+            $header[0] = "Accept: text/xml,application/xml,application/xhtml+xml,";
+            $header[0] .= "text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5";
+            $header[] = "Cache-Control: max-age=0";
+            $header[] = "Connection: keep-alive";
+            $header[] = "Keep-Alive: 300";
+            $header[] = "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+            $header[] = "Access-Control-Allow-Origin: *";
+            $header[] = "Accept-Language: en-us,en;q=0.5";
+            $header[] = "Pragma: "; //browsers keep this blank.
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            // curl_setopt($ch, CURLOPT_USERAGENT, 'LeBoncup, asso étudiante (https://assos.utc.fr/leboncup/)');
+            curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3');
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+            $result = curl_exec ($ch);
+            curl_close($ch);
+
+    
             $ad->importedFrom = "Vinted";
             $ad->description = "";
             $ad->title = "";
@@ -74,19 +76,7 @@
             $pattern = "/item-photo--3(.*)data-src=\"(.*)\" data-item-id/i";
             if(preg_match($pattern, $result, $img3))
             $ad->img3 = $img3[2];
-                //item-photo--1
-
-            if($ad->img1)
-           {
-
-            $imgurl = $ad->img1;
-            $imagename= basename($imgurl);
-            if(file_exists('./tmp/'.$imagename)){continue;} 
-            $image = getimg($imgurl); 
-            $fp = fopen("./testd.jpg", "w");
-            fwrite($fp, $image);
-            fclose($fp);
-           }        
+                 
             $response->status="OK";
         }
         else
@@ -102,27 +92,27 @@
     $jsonData = json_encode($response);
     echo $jsonData."\n";
     
-    function getimg($url) {    
-        $ch = curl_init();
+    // function getimg($url) {    
+    //     $ch = curl_init();
 
-        $headers[] = 'Accept: image/gif, image/x-bitmap, image/jpeg, image/pjpeg';              
-        $header[] = "Cache-Control: max-age=0";
-        $header[] = "Connection: keep-alive";
-        $header[] = "Keep-Alive: 300";
-        $header[] = "Access-Control-Allow-Origin: *";
-        $header[] = "Pragma: "; //browsers keep this blank.
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        // curl_setopt($ch, CURLOPT_USERAGENT, 'LeBoncup, asso étudiante (https://assos.utc.fr/leboncup/)');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3');
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    //     $headers[] = 'Accept: image/gif, image/x-bitmap, image/jpeg, image/pjpeg';              
+    //     $header[] = "Cache-Control: max-age=0";
+    //     $header[] = "Connection: keep-alive";
+    //     $header[] = "Keep-Alive: 300";
+    //     $header[] = "Access-Control-Allow-Origin: *";
+    //     $header[] = "Pragma: "; //browsers keep this blank.
+    //     curl_setopt($ch, CURLOPT_URL, $url);
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    //     // curl_setopt($ch, CURLOPT_USERAGENT, 'LeBoncup, asso étudiante (https://assos.utc.fr/leboncup/)');
+    //     curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3');
+    //     curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+    //     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       
-        $return = curl_exec($ch);         
-        curl_close($ch);         
-        echo $return;
-        return $return;     
-    } 
+    //     $return = curl_exec($ch);         
+    //     curl_close($ch);         
+    //     echo $return;
+    //     return $return;     
+    // } 
     
 ?>
