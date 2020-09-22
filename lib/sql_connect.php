@@ -15,4 +15,8 @@ function SQLProtect($var,$bool){
     return intval($var);
   }
 }
+
+function SQLProtectPrice($var){
+  return round($var,2);
+}
  ?>
