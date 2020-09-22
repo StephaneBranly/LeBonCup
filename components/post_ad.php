@@ -1,7 +1,7 @@
 <?php
+    header('Access-Control-Allow-Origin: *');  
     function post_anad()
     {
-        
         if(secure_session('connected'))
         {
             global $connect;
@@ -130,14 +130,23 @@
            
         }
 
+        echo "<section id='import_anad'><span id='flex'>
+            <input onchange='handleImport();' placeholder='Importer avec un lien annonce Vinted' onkeypress='import_ad();' id='input_import' type='text'/>
+            <div id='icon_import'><span onclick='import_ad()'><i class='icon-plus' ></i></span></div>   
+        </span></section>";
+
+        echo "<section id='import_beta_message'>L'importation est en version bêta, merci d'ajouter manuellement la catégorie ainsi que les images de votre annonce. 
+        <span id='import_beta_button'><button><i class='icon-photo'></i>Télécharger les images de votre annonce Vinted</button></span>
+        </section>";
+            
         echo "<section id='post_anad'>
+        
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
-            <h1><input name='title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
+            <h1><input name='title' id='ad_title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
             <h2>Photos</h2>
             <input name='f1' type='file'/>
             <input name='f2' type='file'/>
             <input name='f3' type='file'/>
-
             <!--
             <div id='image_f1' class='preview_image'><input id='input_f1' name='f1' onchange=\"updateImage('f1');\" type='file'/></div>
             <div id='image_f2' class='preview_image'><input id='input_f2' name='f2' onchange=\"updateImage('f2');\" type='file'/></div>
@@ -145,7 +154,9 @@
             -->
         
             <h2>Détails de l'annonce</h2>
+
             <div class='an_input'><input type='number' min='0.00' step='0.01' name='price' value='$price'/><i class='icon-euro'></i></div>
+
             <div class='an_input'>
                 <select name='visibility' class='visibility'>";
                     if($visibility=='connected_user')
@@ -184,11 +195,11 @@
                 }
             echo"</select><i class='icon-menu'></i>
             </div>
-            <textarea name='description' placeholder='Description annonce' maxlenght='3000'/>$description</textarea>
+            <textarea id='ad_description' name='description' placeholder='Description annonce' maxlenght='3000'/>$description</textarea>
             
           
             <button type='submit' id='button_submit'>PUBLIER<i class='icon-paper-plane'></i></button>
-            </form>
+           </form>
             </section>";
         }
     }
