@@ -131,10 +131,10 @@
         }
 
         echo "<section id='post_anad'>
-        <button onclick='import_vinted()'>Importer depuis Vinted</button><input id='import_vinted_url' placeholder='https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean' type='text />
+        <button onclick='import_ad()'>Importer depuis Vinted</button><input id='import_ad_url' placeholder='https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean' type='text />
         <select id='import_vinted_select'></select><br/>
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
-            <h1><input name='title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
+            <h1><input name='title' id='ad_title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
             <h2>Photos</h2>
             <input name='f1' type='file'/>
             <input name='f2' type='file'/>
@@ -147,7 +147,7 @@
             -->
         
             <h2>Détails de l'annonce</h2>
-            <div class='an_input'><input type='number' min='0' name='price' value='$price'/><i class='icon-euro'></i></div>
+            <div class='an_input'><input id='ad_price' type='number' min='0' name='price' value='$price'/><i class='icon-euro'></i></div>
             <div class='an_input'>
                 <select name='visibility' class='visibility'>";
                     if($visibility=='connected_user')
@@ -186,7 +186,7 @@
                 }
             echo"</select><i class='icon-menu'></i>
             </div>
-            <textarea name='description' placeholder='Description annonce' maxlenght='3000'/>$description</textarea>
+            <textarea id='ad_description' name='description' placeholder='Description annonce' maxlenght='3000'/>$description</textarea>
             
           
             <button type='submit' id='button_submit'>PUBLIER<i class='icon-paper-plane'></i></button>

@@ -18,7 +18,6 @@
         header('Access-Control-Allow-Origin: *');  
         header('Content-Type: application/json');
         $url = secure_get('url');
-        $ws = secure_get('ws');
         $ch = curl_init();
 
         $header[0] = "Accept: text/xml,application/xml,application/xhtml+xml,";
@@ -42,7 +41,7 @@
         curl_close($ch);
 
         $patternVinted = "/^https?:\/\/www.vinted/i";
-        if($ws == 'vinted' && preg_match($patternVinted, $url))
+        if(preg_match($patternVinted, $url))
         {   
             $ad->importedFrom = "vinted";
             $ad->description = "";
@@ -62,15 +61,17 @@
             $ad->title = $title[1];
 
             $response->status="OK";
-
-
         }
         else
         {
             $response->status="KO_unvalide_website";
         }
     }
-
+    else
+    {
+        $response->status="KO_unvalide_website";
+    }
+    
     $jsonData = json_encode($response);
     echo $jsonData."\n";
     
