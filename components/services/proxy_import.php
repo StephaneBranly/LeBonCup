@@ -43,14 +43,14 @@
         $patternVinted = "/^https?:\/\/www.vinted/i";
         if(preg_match($patternVinted, $url))
         {   
-            $ad->importedFrom = "vinted";
+            $ad->importedFrom = "Vinted";
             $ad->description = "";
             $ad->title = "";
             $ad->price = "";
 
             $pattern = "/property=\"og:description\" content=\"([^\/]*)\"/i";
             if(preg_match($pattern, $result, $description))
-            $ad->description = $description[1];
+            $ad->description = $description[1]."\n\nAnnonce importée de Vinted - ($url)";
 
             $pattern = "/property=\"og:price:amount\" content=\"([^\/]*)\"/i";
             if(preg_match($pattern, $result, $price))

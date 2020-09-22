@@ -14,13 +14,19 @@ function import_ad() {
 
   xhr.onload = function() {
     const response = JSON.parse(xhr.responseText);
-    if ((response.status = "OK")) {
+    if (response.status == "OK") {
       const ad = response.ad;
-      alert(ad);
       input_ad_description.value = ad.description;
       input_ad_title.value = ad.title;
       input_ad_price.value = ad.price;
-    }
+
+      write_notification(
+        "icon-down-circle",
+        "Annonce importée de " + ad.importedFrom,
+        10000
+      );
+    } else
+      write_notification("icon-cancel-circled", "Erreur importation", 10000);
   };
   xhr.send();
 
