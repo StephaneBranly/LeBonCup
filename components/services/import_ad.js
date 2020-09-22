@@ -1,6 +1,8 @@
 function import_ad() {
   const input = document.getElementById("input_import");
   const icon = document.getElementById("icon_import");
+  const import_beta_message = document.getElementById("import_beta_message");
+  const import_beta_button = document.getElementById("import_beta_button");
 
   const input_ad_price = document.getElementById("ad_price");
   const input_ad_title = document.getElementById("ad_title");
@@ -20,16 +22,25 @@ function import_ad() {
       input_ad_description.value = ad.description;
       input_ad_title.value = ad.title;
       input_ad_price.value = ad.price;
+      import_beta_message.style.display = "inline-block";
+      import_beta_button.innerHTML =
+        "<button onclick=\"openImages('" +
+        ad.img1 +
+        "','" +
+        ad.img2 +
+        "','" +
+        ad.img3 +
+        "')\"><i class='icon-photo'></i>Ouvrir les images de votre annonce Vinted (nouvel onglet)</button>";
 
       write_notification(
-        "icon-down-circle",
+        "icon-ok-circled2",
         "Annonce importée de " + ad.importedFrom,
         10000
       );
     } else
       write_notification("icon-cancel-circled", "Erreur importation", 10000);
     icon.innerHTML =
-      "<span onclick='import_ad()'><i class='icon-search' ></i></span>";
+      "<span onclick='import_ad()'><i class='icon-plus' ></i></span>";
   };
   xhr.send();
 

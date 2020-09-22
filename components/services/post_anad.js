@@ -36,3 +36,13 @@ function handleImport() {
     container.classList.remove("vinted");
   }
 }
+
+function openImages(img1, img2, img3) {
+  if (img1) openImage("image1-Vinted.jpg", img1);
+  if (img2) openImage("image2-Vinted.jpg", img2);
+  if (img3) openImage("image3-Vinted.jpg", img3);
+}
+
+function openImage(filename, text) {
+  window.open(text, "_blank");
+}

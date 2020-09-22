@@ -47,6 +47,9 @@
             $ad->description = "";
             $ad->title = "";
             $ad->price = "";
+            $ad->img1 = "";
+            $ad->img2 = "";
+            $ad->img3 = "";
 
             $pattern = "/property=\"og:description\" content=\"([^\/]*)\"/i";
             if(preg_match($pattern, $result, $description))
@@ -60,6 +63,30 @@
             if(preg_match($pattern, $result, $title))
             $ad->title = $title[1];
 
+            $pattern = "/item-photo--1(.*)data-src=\"(.*)\" data-item-id/i";
+            if(preg_match($pattern, $result, $img1))
+            $ad->img1 = $img1[2];
+
+            $pattern = "/item-photo--2(.*)data-src=\"(.*)\" data-item-id/i";
+            if(preg_match($pattern, $result, $img2))
+            $ad->img2 = $img2[2];
+
+            $pattern = "/item-photo--3(.*)data-src=\"(.*)\" data-item-id/i";
+            if(preg_match($pattern, $result, $img3))
+            $ad->img3 = $img3[2];
+                //item-photo--1
+
+            if($ad->img1)
+           {
+
+            $imgurl = $ad->img1;
+            $imagename= basename($imgurl);
+            if(file_exists('./tmp/'.$imagename)){continue;} 
+            $image = getimg($imgurl); 
+            $fp = fopen("./testd.jpg", "w");
+            fwrite($fp, $image);
+            fclose($fp);
+           }        
             $response->status="OK";
         }
         else
@@ -74,5 +101,28 @@
     
     $jsonData = json_encode($response);
     echo $jsonData."\n";
+    
+    function getimg($url) {    
+        $ch = curl_init();
+
+        $headers[] = 'Accept: image/gif, image/x-bitmap, image/jpeg, image/pjpeg';              
+        $header[] = "Cache-Control: max-age=0";
+        $header[] = "Connection: keep-alive";
+        $header[] = "Keep-Alive: 300";
+        $header[] = "Access-Control-Allow-Origin: *";
+        $header[] = "Pragma: "; //browsers keep this blank.
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // curl_setopt($ch, CURLOPT_USERAGENT, 'LeBoncup, asso étudiante (https://assos.utc.fr/leboncup/)');
+        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.2.3) Gecko/20100401 Firefox/3.6.3');
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      
+        $return = curl_exec($ch);         
+        curl_close($ch);         
+        echo $return;
+        return $return;     
+    } 
     
 ?>
