@@ -29,7 +29,7 @@ function load_user_vinted() {
 
 function import_vinted() {
   const input = document.getElementById("import_vinted_url");
-  const url = "../components/services/proxy.php?url=" + input.value;
+  const url = "../components/services/proxy.php?ws=vinted&url=" + input.value;
 
   var xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
