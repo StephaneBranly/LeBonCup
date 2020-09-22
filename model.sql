@@ -200,3 +200,5 @@ UPDATE `users` SET `mail_news` = FLOOR( 10000 + RAND( ) *89999 ) WHERE 1=1;
 
 ALTER TABLE `users` ADD `mail_ads` INT( 10 ) NOT NULL; 
 UPDATE `users` SET `mail_ads` = FLOOR( 10000 + RAND( ) *89999 ) WHERE 1=1;
+
+ALTER TABLE `ads` MODIFY COLUMN `price` DOUBLE NOT NULL;
