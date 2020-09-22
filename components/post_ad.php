@@ -1,7 +1,7 @@
 <?php
+    header('Access-Control-Allow-Origin: *');  
     function post_anad()
     {
-        
         if(secure_session('connected'))
         {
             global $connect;
@@ -131,7 +131,7 @@
         }
 
         echo "<section id='post_anad'>
-        <button onclick='load_user_vinted()'>Importer depuis Vinted</button><input id='import_vinted_url' placeholder='https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean' type='text />
+        <button onclick='import_vinted()'>Importer depuis Vinted</button><input id='import_vinted_url' placeholder='https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean' type='text />
         <select id='import_vinted_select'></select><br/>
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
             <h1><input name='title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>

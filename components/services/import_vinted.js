@@ -5,20 +5,21 @@ function load_user_vinted() {
   const regex = /member\/([0-9]*)/g;
   var found = input.value.match(regex);
   const iduser = found[0].replace("member/", "");
-  url = "https://www.vinted.fr/api/v2/users/" + iduser + "/items";
-  xhr = new XMLHttpRequest();
+  var url = "https://www.vinted.fr/api/v2/users/" + iduser + "/items";
 
+  xhr = new XMLHttpRequest({ mozSystem: true });
   $.ajax({
     url: url,
+    crossDomain: true,
     type: "GET",
     datatype: "json",
     success: function() {
       alert("Success");
     },
-    error: function() {
+    error: function(data) {
       alert("Failed!");
-    },
-    beforeSend: setHeader
+      console.log(data);
+    }
   });
 
   //   var select = document.getElementById("import_vinted_select");
@@ -27,11 +28,34 @@ function load_user_vinted() {
 }
 
 function import_vinted() {
-  var input = document.getElementById("import_vinted_url");
+  const input = document.getElementById("import_vinted_url");
+  const url = "../components/services/proxy.php?url=" + input.value;
 
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+  xhr.setRequestHeader("Content-type", "application/json");
+  xhr.setRequestHeader("Access-Control-Allow-Methods", "GET");
+
+  xhr.onload = function() {
+    console.log(xhr.responseText);
+  };
+  xhr.send();
+
+  // $.ajax({
+  //   url: url,
+  //   method: "GET",
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*"
+  //   },
+  //   success: function(data) {
+  //     alert("Success");
+  //     console.log(data);
+  //   },
+  //   error: function(data) {
+  //     alert("Failed!");
+  //     console.log(data);
+  //   }
+  // });
   // url model : https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean
-}
-
-function setHeader(xhr) {
-  xhr.setRequestHeader("Access-Control-Request-Headers", "Origin");
 }
