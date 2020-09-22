@@ -1,5 +1,6 @@
 function import_ad() {
-  const input = document.getElementById("import_ad_url");
+  const input = document.getElementById("input_import");
+  const icon = document.getElementById("icon_import");
 
   const input_ad_price = document.getElementById("ad_price");
   const input_ad_title = document.getElementById("ad_title");
@@ -11,7 +12,7 @@ function import_ad() {
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   xhr.setRequestHeader("Content-type", "application/json");
   xhr.setRequestHeader("Access-Control-Allow-Methods", "GET");
-
+  icon.innerHTML = "<span><i class='icon-spinner animate-spin ' ></i></span>";
   xhr.onload = function() {
     const response = JSON.parse(xhr.responseText);
     if (response.status == "OK") {
@@ -27,6 +28,8 @@ function import_ad() {
       );
     } else
       write_notification("icon-cancel-circled", "Erreur importation", 10000);
+    icon.innerHTML =
+      "<span onclick='import_ad()'><i class='icon-search' ></i></span>";
   };
   xhr.send();
 

@@ -130,9 +130,12 @@
            
         }
 
+        echo "<section id='import_anad'><span id='flex'>
+            <input onchange='handleImport();' placeholder='Importer avec un lien annonce Vinted ou Leboncoin' onkeypress='enter_header(event);' id='input_import' type='text'/>
+            <div id='icon_import'><span onclick='import_ad()'><i class='icon-search' ></i></span></div>   
+        </span></section>";
         echo "<section id='post_anad'>
-        <button onclick='import_ad()'>Importer depuis Vinted</button><input id='import_ad_url' placeholder='https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean' type='text />
-        <select id='import_vinted_select'></select><br/>
+        
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
             <h1><input name='title' id='ad_title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
             <h2>Photos</h2>
@@ -190,7 +193,7 @@
             
           
             <button type='submit' id='button_submit'>PUBLIER<i class='icon-paper-plane'></i></button>
-            </form>
+           </form>
             </section>";
         }
     }

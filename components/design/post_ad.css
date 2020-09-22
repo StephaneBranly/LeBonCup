@@ -141,12 +141,61 @@
     border-radius: 5px;
     border: 1px solid rgb(255, 98, 0);
   }
+
+  #import_anad {
+    background-color: rgb(250, 250, 250);
+    width: 50%;
+    display: inline-block;
+    margin: 0px;
+    box-shadow: 5px 0px 10px rgb(221, 221, 221);
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  #import_anad #flex {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  #import_anad #icon_import {
+    display: inline-block;
+    border-left: 1px solid rgb(210, 210, 210);
+    font-size: 1.1em;
+  }
+  #import_anad #icon_import i {
+    display: inline-block;
+    font-size: 1.5em;
+  }
+  #import_anad.vinted {
+    background-color: rgb(10, 187, 195);
+    color: rgb(255, 255, 255);
+  }
+  #import_anad.vinted #input_import {
+    color: rgb(255, 255, 255);
+  }
+  #import_anad #input_import {
+    display: flex;
+    font-size: 1.1em;
+    width: 80%;
+    align-items: stretch;
+    height: 30px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px solid rgba(0, 0, 0, 0);
+  }
 }
 @media all and (max-device-width: 480px) {
-  #post_anad {
+  #post_anad,
+  #import_anad {
     width: 97%;
     padding: 0px;
     border: 0px solid rgba(0, 0, 0, 0);
+  }
+  #import_anad #input_import {
+    font-size: 1.3em;
+    padding: 10px;
   }
   #post_anad i {
     font-size: 45px;

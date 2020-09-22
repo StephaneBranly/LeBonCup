@@ -24,3 +24,15 @@ function readURL(input, name) {
 function imgDeleteImage() {
   $("#diplay_img").attr("src", "not-any-img.jpg");
 }
+
+function handleImport() {
+  const input = document.getElementById("input_import");
+  const container = document.getElementById("import_anad");
+  const url = input.value;
+  const patternVintedRegex = new RegExp(/^https?:\/\/www.vinted/, "i");
+  if (url.match(patternVintedRegex)) {
+    container.classList.add("vinted");
+  } else {
+    container.classList.remove("vinted");
+  }
+}
