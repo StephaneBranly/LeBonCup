@@ -1,10 +1,22 @@
 <?php
     
     include('../../lib/start_session.php');
+    class Ad{
+
+    }
+    class Response{
+
+    }
+    $response = new Response;
+    $ad = new Ad;
+    $response->ad = $ad;
+
     if(secure_session('connected'))
     {
-        header('Access-Control-Allow-Origin: *');  
+      
 
+        header('Access-Control-Allow-Origin: *');  
+        header('Content-Type: application/json');
         $url = secure_get('url');
         $ws = secure_get('ws');
         $ch = curl_init();
@@ -29,21 +41,37 @@
         $result = curl_exec ($ch);
         curl_close($ch);
 
-        if($ws == 'vinted')
-        {
+        $patternVinted = "/^https?:\/\/www.vinted/i";
+        if($ws == 'vinted' && preg_match($patternVinted, $url))
+        {   
+            $ad->importedFrom = "vinted";
+            $ad->description = "";
+            $ad->title = "";
+            $ad->price = "";
+
             $pattern = "/property=\"og:description\" content=\"([^\/]*)\"/i";
-            preg_match($pattern, $result, $description);
-            echo $description[0];
+            if(preg_match($pattern, $result, $description))
+            $ad->description = $description[1];
+
             $pattern = "/property=\"og:price:amount\" content=\"([^\/]*)\"/i";
-            preg_match($pattern, $result, $price);
-            echo $price[0];
+            if(preg_match($pattern, $result, $price))
+            $ad->price = $price[1];
+
             $pattern = "/property=\"og:title\" content=\"([^\/]*)\"/i";
-            preg_match($pattern, $result, $title);
-            echo $title[0];
-            //echo $result;
+            if(preg_match($pattern, $result, $title))
+            $ad->title = $title[1];
+
+            $response->status="OK";
+
 
         }
-
+        else
+        {
+            $response->status="KO_unvalide_website";
+        }
     }
+
+    $jsonData = json_encode($response);
+    echo $jsonData."\n";
     
 ?>
