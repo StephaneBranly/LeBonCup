@@ -19,7 +19,7 @@
             $description=nl2br(SQLProtect(remove_balise(secure_post('description')),1));
             $visibility=SQLProtect(secure_post('visibility'),1);
             $category=strtolower(SQLProtect(secure_post('category'),1));
-            $price=SQLProtect(secure_post('price'),0);
+            $price=SQLProtectPrice(secure_post('price'),0);
             
             if(strlen ($title)>30 || $title=="")
             {
@@ -154,7 +154,9 @@
             -->
         
             <h2>Détails de l'annonce</h2>
-            <div class='an_input'><input id='ad_price' type='number' min='0' name='price' value='$price'/><i class='icon-euro'></i></div>
+
+            <div class='an_input'><input type='number' min='0.00' step='0.01' name='price' value='$price'/><i class='icon-euro'></i></div>
+
             <div class='an_input'>
                 <select name='visibility' class='visibility'>";
                     if($visibility=='connected_user')

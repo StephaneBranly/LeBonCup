@@ -25,7 +25,7 @@
                 $id_session=$id_session.secure_session('user');
 
             if($res['price'])
-                $price=$res['price']."€";
+                $price=round($res['price'],2)."€";
             else
                 $price="gratuit";
 
