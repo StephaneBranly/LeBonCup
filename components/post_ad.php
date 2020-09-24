@@ -131,7 +131,7 @@
         }
 
         echo "<section id='import_anad'><span id='flex'>
-            <input onchange='handleImport();' placeholder='Importer avec un lien annonce Vinted' onkeypress='import_ad();' id='input_import' type='text'/>
+            <input onchange='handleImport();' placeholder='Importer avec un lien annonce Vinted' onkeypress='handleInputImport(event);' id='input_import' type='text'/>
             <div id='icon_import'><span onclick='import_ad()'><i class='icon-plus' ></i></span></div>   
         </span></section>";
 
@@ -155,7 +155,7 @@
         
             <h2>Détails de l'annonce</h2>
 
-            <div class='an_input'><input type='number' min='0.00' step='0.01' name='price' value='$price'/><i class='icon-euro'></i></div>
+            <div class='an_input'><input type='number' id='ad_price' min='0.00' step='0.01' name='price' value='$price'/><i class='icon-euro'></i></div>
 
             <div class='an_input'>
                 <select name='visibility' class='visibility'>";
