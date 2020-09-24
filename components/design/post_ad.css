@@ -170,6 +170,9 @@
     display: inline-block;
     font-size: 1.5em;
   }
+  #import_anad #icon_import i:hover {
+    cursor: pointer;
+  }
   #import_anad.vinted {
     background-color: rgb(10, 187, 195);
     color: rgb(255, 255, 255);
