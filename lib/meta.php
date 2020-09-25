@@ -4,7 +4,7 @@
     {
         echo"<title>LeBonCup - $nom_page</title>
         <meta name='Language' content='fr'/>
-        <meta name='Description' content=\"$description_page, du site\"/>
+        <meta name='Description' content=\"$description_page\"/>
         <meta name='Keywords' content='$nom_page, leboncup, annonces, ads, utc, assos.utc.fr, assos, revente'>
         <meta name='Robots' content='all'>";
     }
