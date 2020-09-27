@@ -1,5 +1,5 @@
 function updateImage(name) {
-  nameInput = "input_" + name;
+  const nameInput = "input_" + name;
   e = document.getElementById(nameInput);
   var imgLivePath = e.value;
   var img_extions = imgLivePath
@@ -13,14 +13,33 @@ function readURL(input, name) {
     var reader = new FileReader();
     reader.readAsDataURL(input.files[0]);
     reader.onload = function(e) {
-      name = "image_" + name;
-      div = document.getElementById(name);
-      div.style.backgroundImage = "url('" + e.target.result + ")";
-      alert(e.target.result);
-      alert("MAJ");
+      nameDiv = "image_" + name;
+      const div = document.getElementById(nameDiv);
+      div.style.backgroundImage = "url('" + e.target.result + "')";
+      div.classList.add("remove");
+      div.classList.remove("add");
+      div.innerHTML =
+        "<i class='icon-cancel-circled2' onclick=\"imgDeleteImage('" +
+        name +
+        "');\"></i>";
     };
   }
 }
-function imgDeleteImage() {
-  $("#diplay_img").attr("src", "not-any-img.jpg");
+function imgDeleteImage(name) {
+  const nameInput = "input_" + name;
+  const nameDiv = "image_" + name;
+  input = document.getElementById(nameInput);
+  div = document.getElementById(nameDiv);
+  div.style.backgroundImage = "url('')";
+  // check to remove the current file in the input.
+  div.classList.remove("remove");
+  div.classList.add("add");
+  div.innerHTML = "<i class=' icon-plus'></i>";
+  setTimeout(() => {
+    input.value = "";
+  }, 100);
+}
+function adImage(id) {
+  const input = document.getElementById("input_" + id);
+  if (!input.files || !input.files[0]) input.click();
 }
