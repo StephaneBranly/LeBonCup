@@ -1,0 +1,16 @@
+{
+  "versions": [
+    {
+      "version": "1.0.0",
+      "title": "Ajout indicateur d'updates",
+      "description": "Possibilité de voir les dernières updates.",
+      "news": ["Rectifications", "Here"]
+    },
+    {
+      "version": "0.0.0",
+      "title": "Premier ajout",
+      "description": "Début du site LeBonCup",
+      "news": []
+    }
+  ]
+}

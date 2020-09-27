@@ -23,8 +23,12 @@
 
      
     
-     $description_a_propos = "Site créé par Stéphane BRANLY<br/>Code disponible en Opensource sur <a class='link' href='https://github.com/StephaneBranly/LeBonCup'>Github</a>.<br/>Plus d'informations sur l'association LeBonCup sur le <a class='link' href='https://assos.utc.fr/assos/leboncup'>portail des assos</a>.<br/>Icones issues de <a class='link' href='http://fontello.com/'>fontello.com</a>.";
-    article("A propos",$description_a_propos);
+        $description_a_propos = "Site créé par Stéphane BRANLY<br/>Code disponible en Opensource sur <a class='link' href='https://github.com/StephaneBranly/LeBonCup'>Github</a>.<br/>Plus d'informations sur l'association LeBonCup sur le <a class='link' href='https://assos.utc.fr/assos/leboncup'>portail des assos</a>.<br/>Icones issues de <a class='link' href='http://fontello.com/'>fontello.com</a>.";
+        article("A propos",$description_a_propos);
+        article("Historique des mises à jour","<p id ='updates_content'></p>");
+
+        echo "<script type='text/javascript'>write_updates(0);</script>";
+
     _footer(); ?>
     </body>
 	

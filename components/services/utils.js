@@ -131,3 +131,41 @@ function updateResults() {
   xhr.open("GET", url);
   xhr.send("");
 }
+
+function write_updates(first) {
+  var xhr = new XMLHttpRequest();
+  let content = "";
+  let content_div = document.getElementById("updates_content");
+  url = "../ressources/updates.json";
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      data = JSON.parse(readBody(xhr));
+
+      if (first) {
+        version = data["versions"][0];
+        content += "<h3>" + version.version + " - " + version.title + "</h3>";
+        content += "<p>" + version.description + "</p>";
+        content += "<ul>";
+        for (j = 0; j < version["news"].length; j++)
+          content += "<li>" + version["news"][j] + "</li>";
+        content += "</ul>";
+        content +=
+          "<a class='link' href='../a-propos'>Voir le contenu de toutes les mises à jour</a>";
+      } else {
+        for (i = 0; i < data["versions"].length; i++) {
+          version = data["versions"][i];
+          content += "<h3>" + version.version + " - " + version.title + "</h3>";
+          content += "<p>" + version.description + "</p>";
+          content += "<ul>";
+          for (j = 0; j < version["news"].length; j++)
+            content += "<li>" + version["news"][j] + "</li>";
+          content += "</ul>";
+        }
+      }
+
+      content_div.innerHTML = content;
+    }
+  };
+  xhr.open("GET", url);
+  xhr.send("");
+}
