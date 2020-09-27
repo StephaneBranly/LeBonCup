@@ -29,6 +29,10 @@
     margin-bottom: 15px;
     width: 20%;
   }
+  .article #updates_content {
+    text-align: left;
+    margin-left: 15px;
+  }
 }
 @media all and (max-device-width: 480px) {
   .article {

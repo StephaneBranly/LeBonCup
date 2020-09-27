@@ -13,6 +13,7 @@
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">
+        <meta property='og:image'  content='https://assos.utc.fr/leboncup/ressources/images/logo.png'/>
 	</head>
     <?php include_once("../components/components_include.php");?>
 	<body>

@@ -7,6 +7,7 @@
 	<link rel="icon" href="../ressources/images/favicon.ico" type="image/x-icon"/>
     <head>
         <?php
+            include_once("../components/components_include.php");
             $id=secure_get('id');
             $id=strtolower(SQLProtect($id,true));
             $query = mysqli_query($connect,"SELECT * FROM `ads` WHERE `idad`=$id");
@@ -14,7 +15,13 @@
             if (count($res) != 0) 
             {
                 $title=$res['title'];
-                    $nbr_images=0;
+                $show_descripton = remove_balise($res['description']);
+                if($res['price'])
+                    $price=round($res['price'],2)."€";
+                else
+                    $price="gratuit";
+
+                $nbr_images=0;
                 if($res['image1'])
                     $nbr_images++;
                 if($res['image2'])
@@ -27,15 +34,21 @@
                     $img="nan_".$res['category'].".png";
                 echo "<meta property='og:image'  content='https://assos.utc.fr/leboncup/ressources/images-ad/$img'/>";
              }
-              else $title = "Annonce";
+              else 
+              {
+                  $title = "Annonce";
+                  $show_descripton = "Description annonce";
+                  $price="";
+              }
+            if(strlen($show_descripton)>197)
+                $show_descripton=substr($show_descripton,0,197)."...";
             include_once("../lib/google_analytics.php");
-            $nom_page=$title;
-            $description_page="Section du site de l'association LeBonCup permettant de visualiser une annonce.";
+            $nom_page="$title ($price)";
+            $description_page=$show_descripton;
             include_once("../lib/meta.php");
               ?>
         <meta charset="UTF-8">
 	</head>
-    <?php include_once("../components/components_include.php");?>
 	<body>
     <?php
         $_SESSION['last_uri'] = $_SERVER['REQUEST_URI'];

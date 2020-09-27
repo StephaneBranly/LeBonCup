@@ -14,6 +14,7 @@
             include_once("../lib/meta.php");
         ?>
         <meta charset="UTF-8">
+        <meta property='og:image'  content='https://assos.utc.fr/leboncup/ressources/images/user.png'/>
 	</head>
     <?php include_once("../components/components_include.php");?>
 	<body>
@@ -27,7 +28,7 @@
         if (count($res) != 0)
         {
             profile($user);
-            $query2 = mysqli_query($connect,"SELECT `idad`,`visibility` FROM `ads` WHERE `seller`='$user'");
+            $query2 = mysqli_query($connect,"SELECT `idad`,`visibility` FROM `ads` WHERE `seller`='$user' ORDER BY `last_refresh` ASC");
             while($res2 = mysqli_fetch_array($query2))
             {
                 if($res2['visibility']=='every_one' || ($res2['visibility']=='connected_user' && secure_session('connected')==true))

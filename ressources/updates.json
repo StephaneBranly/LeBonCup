@@ -1,0 +1,38 @@
+{
+  "versions": [
+    {
+      "version": "1.1.0",
+      "date": "27/09/2020",
+      "title": "Correctifs",
+      "description": "Ensemble des correctifs depuis le lancement de la version bêta",
+      "news": [
+        "Design amélioré : général et reponsive",
+        "Ajout licence MIT",
+        "Ajout panel admin",
+        "Possibilité d'importer des annonces Vinted (en bêta)",
+        "Création mailing list avec désinscription possible",
+        "Correction metas pour bon affichage lors du partage d'une annonce / du site"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "date": "01/07/2020",
+      "title": "Version bêta",
+      "description": "Lancement de la version bêta",
+      "news": [
+        "Page d'accueil",
+        "Fonction rechercher",
+        "Création de compte via le CAS",
+        "Ajout d'annonces",
+        "Page de profil"
+      ]
+    },
+    {
+      "version": "0.0.0",
+      "date": "28/04/2020",
+      "title": "Début du projet",
+      "description": "",
+      "news": ["Création du repo GitHub"]
+    }
+  ]
+}

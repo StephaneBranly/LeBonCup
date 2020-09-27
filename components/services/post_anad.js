@@ -39,7 +39,6 @@ function imgDeleteImage(name) {
     input.value = "";
   }, 100);
 }
-
 function adImage(id) {
   const input = document.getElementById("input_" + id);
   if (!input.files || !input.files[0]) input.click();
