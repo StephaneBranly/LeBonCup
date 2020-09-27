@@ -296,4 +296,7 @@
   #post_anad h1 {
     display: block;
   }
+  #post_anad .preview_image {
+    width: 70%;
+  }
 }

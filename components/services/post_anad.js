@@ -32,10 +32,12 @@ function imgDeleteImage(name) {
   div = document.getElementById(nameDiv);
   div.style.backgroundImage = "url('')";
   // check to remove the current file in the input.
-
   div.classList.remove("remove");
   div.classList.add("add");
   div.innerHTML = "<i class=' icon-plus'></i>";
+  setTimeout(() => {
+    input.value = "";
+  }, 100);
 }
 
 function adImage(id) {
