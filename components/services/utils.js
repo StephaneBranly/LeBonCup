@@ -143,7 +143,14 @@ function write_updates(first) {
 
       if (first) {
         version = data["versions"][0];
-        content += "<h3>" + version.version + " - " + version.title + "</h3>";
+        content +=
+          "<h3>" +
+          version.version +
+          " (" +
+          version.date +
+          ") - " +
+          version.title +
+          "</h3>";
         content += "<p>" + version.description + "</p>";
         content += "<ul>";
         for (j = 0; j < version["news"].length; j++)
@@ -154,7 +161,14 @@ function write_updates(first) {
       } else {
         for (i = 0; i < data["versions"].length; i++) {
           version = data["versions"][i];
-          content += "<h3>" + version.version + " - " + version.title + "</h3>";
+          content +=
+            "<h3>" +
+            version.version +
+            " (" +
+            version.date +
+            ") - " +
+            version.title +
+            "</h3>";
           content += "<p>" + version.description + "</p>";
           content += "<ul>";
           for (j = 0; j < version["news"].length; j++)
