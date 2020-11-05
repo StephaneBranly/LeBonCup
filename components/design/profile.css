@@ -169,21 +169,29 @@
     padding: 5px;
   }
 
-  #profile #modify {
+  #profile #owner {
     color: rgb(95, 95, 95);
     width: 100%;
     text-align: right;
   }
-  #profile #modify span {
+  #profile #owner #share_facebook,
+  #profile #owner a {
+    text-decoration: none;
+  }
+  #profile #owner #share_facebook:hover {
+    color: rgb(35, 35, 189);
+    cursor: pointer;
+  }
+  #profile #owner span {
     margin-left: 5px;
     padding-left: 5px;
     border-left: 1px solid rgb(95, 95, 95);
   }
-  #profile #modify span:hover {
+  #profile #owner span:hover {
     color: rgb(129, 129, 129);
     cursor: pointer;
   }
-  #profile #modify i {
+  #profile #owner i {
     margin-right: 5px;
   }
   #profile .mailing_list {
@@ -248,7 +256,7 @@
   #profile h1 {
     display: block;
   }
-  #profile #modify span {
+  #profile #owner span {
     font-size: 35px;
     background-color: rgba(255, 98, 0, 0.2);
     padding: 15px;
