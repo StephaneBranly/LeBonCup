@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "version": "1.1.1",
+      "date": "05/11/2020",
+      "title": "Ajouts médians",
+      "description": "",
+      "news": [
+        "Possiblité de partager des annonces et son profil sur Facebook",
+        "Correction problème avec titre contenant un \""
+      ]
+    },
+    {
       "version": "1.1.0",
       "date": "27/09/2020",
       "title": "Correctifs",
