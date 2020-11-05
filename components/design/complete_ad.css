@@ -125,6 +125,14 @@
     color: rgb(129, 129, 129);
     cursor: pointer;
   }
+  #complete_ad .left .details #share_facebook,
+  #complete_ad .left .details a {
+    text-decoration: none;
+  }
+  #complete_ad .left .details #share_facebook:hover {
+    color: rgb(35, 35, 189);
+    cursor: pointer;
+  }
   #complete_ad .left .details #likes:hover {
     color: rgb(233, 21, 21);
     fill: rgb(233, 21, 21);

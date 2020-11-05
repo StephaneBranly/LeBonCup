@@ -140,6 +140,8 @@
                             echo "<span id='likes' onclick=\"LikeAd($id);\"><el>$likes</el><i class='icon-heart'></i></span>";
                         else
                             echo "<span id='likes' onclick=\"LikeAd($id);\"><el  class='liked'>$likes</el><i class='icon-heart liked'></i></span>";
+                        $share_link = 'http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; 
+                        echo "<a href='http://www.facebook.com/sharer.php?u=$share_link&t=$share_link' target='_blank'><span id='share_facebook'><el>Partager</el><i class='icon-facebook'></i></span></a>";
                     echo "</div>
                 <p>$description</p>
             </div>
