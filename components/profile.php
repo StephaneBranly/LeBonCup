@@ -217,7 +217,9 @@
                 echo "<section id='profile'>";
                 if($user==secure_session('user'))
                 {
-                    echo"<div id='modify'><span onclick=\"open_link('../profile/$user-edit');\"><i class='icon-pencil'></i>Editer le profil</span></div>";
+                    $share_link = 'http://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; 
+                    echo"<div id='owner'><a href='http://www.facebook.com/sharer.php?u=$share_link&t=$share_link' target='_blank'><span id='share_facebook'><i class='icon-facebook'></i><el>Partager</el></span></a>
+                    <span onclick=\"open_link('../profile/$user-edit');\"><i class='icon-pencil'></i>Editer le profil</span></div>";
                 }
                 $query_count_ads = mysqli_query($connect,"SELECT COUNT(*) FROM `ads` WHERE `seller`='$user' AND `status`='to_sell'");
                 $nbr_ads_array = mysqli_fetch_array($query_count_ads);
