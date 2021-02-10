@@ -35,7 +35,7 @@
                 $id_user=secure_session('user');
                 $query3 = mysqli_query($connect, "SELECT * FROM `users_ad-views-likes` WHERE `idad`= $id AND `iduser`='$id_user'");
                 $res_views_likes = mysqli_fetch_array($query3);
-                if (count($res_views_likes) == 0)
+                if ($res_views_likes && count($res_views_likes) == 0)
                     $query4 = mysqli_query($connect, "INSERT INTO `users_ad-views-likes` (idad,iduser) VALUES ('$id','$id_user')");
                 else
                 {

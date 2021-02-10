@@ -1,4 +1,4 @@
- <?php include_once("../lib/start_session.php");?>
+<?php include_once("../lib/start_session.php");?>
 <script type="text/javascript" src="./admin.js"></script>
 <!DOCTYPE html>
 <base href="http://localhost/LeBonCup/pages/"; />

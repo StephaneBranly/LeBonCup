@@ -1,5 +1,3 @@
-
-
 <?php include_once("../lib/start_session.php");?>
 <!DOCTYPE html>
 <base href="http://localhost/LeBonCup/pages/"; />

@@ -5,7 +5,7 @@
     $idcat=SQLProtect(secure_get('idcat'),0);
     $text=SQLProtect(secure_get('text'),1);
     $like_filter=SQLProtect(secure_get('like_filter'),1);
-    list($filter_column, $filter_order) = split('[-]', $filter);
+    list($filter_column, $filter_order) = explode('-', $filter);
     $filter_order=strtoupper($filter_order);
 
     $user = secure_session('user');
@@ -35,7 +35,6 @@
                 ads.visibility = 'every_one'
                 ORDER BY ads.$filter_column $filter_order");
         }
-            
     }
     else
     {
@@ -67,7 +66,6 @@
         }  
             
     }
-
     
     $number_results=mysqli_num_rows($query);
     if($number_results)

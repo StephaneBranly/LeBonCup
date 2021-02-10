@@ -1,7 +1,5 @@
 <?php include_once("../lib/start_session.php");?>
 <!DOCTYPE html>
-<base href="http://localhost/LeBonCup/pages/"; />
-<!--<base href="https://assos.utc.fr/leboncup/pages/"; />-->
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">
 	<link rel="icon" href="../ressources/images/favicon.ico" type="image/x-icon"/>
@@ -19,9 +17,7 @@
     <?php
         $_SESSION['last_uri'] = $_SERVER['REQUEST_URI'];
 
-     _header(true);
-
-     
+        _header(true);
     
         $description_a_propos = "Site créé par Stéphane BRANLY<br/>Code disponible en Opensource sur <a class='link' href='https://github.com/StephaneBranly/LeBonCup'>Github</a>.<br/>Plus d'informations sur l'association LeBonCup sur le <a class='link' href='https://assos.utc.fr/assos/leboncup'>portail des assos</a>.<br/>Icones issues de <a class='link' href='http://fontello.com/'>fontello.com</a>.";
         article("A propos",$description_a_propos);
