@@ -7,7 +7,8 @@
 ## Install
 
 - Clone the repository
-- Update the file `/lib/sql_connect.php`
+- Update the file `/lib/sql_connect_template.php` with your own database
+- Rename the file as `/lib/sql_connect.php`
 - Create a database with the same structure as `model.sql`
 
 ## Licence
