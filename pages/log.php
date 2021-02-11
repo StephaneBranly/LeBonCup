@@ -1,5 +1,6 @@
 <?php 
     include_once("../lib/start_session.php");
+
     $myUrl = "http://".$_SERVER['HTTP_HOST'].strtok($_SERVER["REQUEST_URI"],'?');
     $casUrl = "https://cas.utc.fr/cas/";
     require_once('../lib/xml.php');
@@ -66,7 +67,8 @@
         echo "<script type='text/javascript'>RedirectionJavascript('accueil',100);</script>";
     }
 ?>
-
+   
+<?php include_once("../lib/document_base.php"); ?>
 <!DOCTYPE html>
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">
