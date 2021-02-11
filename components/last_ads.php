@@ -27,8 +27,7 @@
             else
                 $price="gratuit";
             $title_cleaned=clean_string($res['title']);
-            echo "
-            <section title='$res[title]' onclick=\"load_ad('$res[category]','$title_cleaned','$res[idad]');\" class='last_ad'>
+            echo "<section title='$res[title]' onclick=\"load_ad('$res[category]','$title_cleaned','$res[idad]');\" class='last_ad'>
             <img src='../ressources/images-ad/$img' alt='image annonce'/>
             <span class='ad_price'><i class='icon-tag'></i>$price</span></section>";
         }
