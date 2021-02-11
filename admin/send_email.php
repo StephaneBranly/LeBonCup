@@ -1,8 +1,7 @@
 <?php include_once("../lib/start_session.php");?>
 <script type="text/javascript" src="./admin.js"></script>
+<?php include_once("../lib/document_base.php"); ?>
 <!DOCTYPE html>
-<base href="http://localhost/LeBonCup/pages/"; />
-<!--<base href="https://assos.utc.fr/leboncup/pages/"; />-->
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">
 	<link href="../admin/admin.css" rel="stylesheet" media="all" type="text/css">
@@ -105,7 +104,7 @@
             Validation : <input required name='validation' type='checkbox'/>
             <button type='submit'>Envoyer mail<i class='icon-paper-plane'></i></button>
         </form>
-        <button onclick='preview_email()'>Prévisualiser mail<i class='icon-eye'></i></button>
+        <button onclick='preview_email(\"news\")'>Prévisualiser mail<i class='icon-eye'></i></button>
         <a href='../admin/home'>Retour</a>
         </section>";
     }

@@ -1,7 +1,6 @@
 <?php include_once("../lib/start_session.php");?>
+<?php include_once("../lib/document_base.php"); ?>
 <!DOCTYPE html>
-<base href="http://localhost/LeBonCup/pages/"; />
-<!--<base href="https://assos.utc.fr/leboncup/pages/"; />-->
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">
 	<link href="../admin/admin.css" rel="stylesheet" media="all" type="text/css">
