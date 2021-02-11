@@ -4,7 +4,6 @@
         global $connect;
         $annonces = "";
         $query2 = mysqli_query($connect,"SELECT * FROM `ads` INNER JOIN `users` WHERE users.iduser = ads.seller AND `idad`=$idad");
-        echo "SELECT * FROM `ads` INNER JOIN `users` WHERE users.iduser = ads.seller AND `idad`=$idad";
         $res = mysqli_fetch_array($query2);
         
         $nbr_images=0;

@@ -136,9 +136,6 @@
   #post_anad .preview_image {
     width: 20%;
     display: flex;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     align-content: center;
     height: 100px;
     border-radius: 5px;
@@ -270,7 +267,7 @@
   #import_anad,
   #import_beta_message {
     width: 97%;
-    padding: 0px;
+    padding: 10px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
   #import_anad #input_import {
@@ -307,7 +304,16 @@
   #post_anad h1 {
     display: block;
   }
+  #post_anad #images_form{
+    flex-direction: column;
+    text-align: center;
+    vertical-align: baseline;
+    display: inline-block;
+  }
   #post_anad .preview_image {
-    width: 70%;
+    width: 90%;
+    height: 300px;
+    display: inline-flex;
+
   }
 }
