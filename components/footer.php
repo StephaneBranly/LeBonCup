@@ -2,7 +2,7 @@
     function _footer(){
         echo"<footer>
         <div>
-        <p>LeBonCup-Bêta 2020 - <a class='link' href='../a-propos'>A propos</a> - <a class='link' href='../mentions-legales'>Mentions légales</a></p>
+        <p>LeBonCup-Bêta 2020-2021 - <a class='link' href='../a-propos'>A propos</a> - <a class='link' href='../mentions-legales'>Mentions légales</a></p>
         </div>
         </footer>";
 
