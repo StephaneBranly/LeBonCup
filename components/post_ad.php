@@ -73,6 +73,7 @@
                             {
                                 if(move_uploaded_file($_FILES[$name]["tmp_name"], $dirDestination.$nametmp))
                                 {
+                                    resize_img($dirDestination.$nametmp,$dirDestination.$nametmp, 900);
                                     echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Fichier déplacé',10000)</script>";
                                     if($nameDestination1=="")
                                     {
