@@ -119,18 +119,15 @@
             echo "<section id='complete_ad'>
             <h1><span class='price'><i class='icon-tag'></i>$price</span>$title</h1>
             
-            <div id='photo' style=\"background-image: url('../ressources/images-ad/$img');\">
-                <span id='enlarge' onclick='enlarge_photo();'><i class='icon-resize-full'></i></span>
-            </div>
-            <div id='viewer_enlarge' style='display:none;'>
-                <span id='back' onclick='back_photo();'><i class='icon-resize-small'></i></span>
-            </div>
+            <img id='photo' onclick='enlarge_photo();' src='../ressources/images-ad/$img' alt='Image annonce'></img>
+            
+            <img id='viewer_enlarge' onclick='back_photo();' style='display:none;'>
             <div id='photos'>
-                <div onclick=\"change_photo('../ressources/images-ad/$img');\" class='miniature_photo' style=\"background-image: url('../ressources/images-ad/$img');\"></div>";
+                <img onclick=\"change_photo('../ressources/images-ad/$img');\" class='miniature_photo' src='../ressources/images-ad/$img' alt='image 1'/>";
                 if($res['image2'])
-                    echo"<div onclick=\"change_photo('../ressources/images-ad/$res[image2]')\" class='miniature_photo' style=\"background-image: url('../ressources/images-ad/$res[image2]');\"></div>";
+                    echo"<img onclick=\"change_photo('../ressources/images-ad/$res[image2]')\" class='miniature_photo' src='../ressources/images-ad/$res[image2]' alt='image 2'/>";
                 if($res['image3'])
-                    echo"<div onclick=\"change_photo('../ressources/images-ad/$res[image3]')\" class='miniature_photo' style=\"background-image: url('../ressources/images-ad/$res[image3]');\"></div>";
+                    echo"<img onclick=\"change_photo('../ressources/images-ad/$res[image3]')\" class='miniature_photo' src='../ressources/images-ad/$res[image3]' alt='image 3'/>";
             echo "</div>
             <div class='left' >
                 <div class='details'>

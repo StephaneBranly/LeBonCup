@@ -1,6 +1,15 @@
 {
   "versions": [
     {
+      "version": "1.2.0",
+      "date": "11/02/2021",
+      "title": "Modifications avant P21",
+      "description": "Pas mal d'ajouts avant P21 afin d'offrir plus de fonctionnalités et de lancer LeBonCup en profitant d'un retour en présentiel progressif",
+      "news": [
+        "Rectification du bug des images non visibles (suivant le navigateur utilisé)"
+      ]
+    },
+    {
       "version": "1.1.1",
       "date": "05/11/2020",
       "title": "Ajouts médians",

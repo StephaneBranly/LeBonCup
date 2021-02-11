@@ -31,41 +31,27 @@
     display: inline-block;
     width: 100%;
     height: 550px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    object-fit: contain;
     text-align: right;
     vertical-align: bottom;
     margin-bottom: 10px;
+    background-color: 3px solid red;
   }
-  #complete_ad #photo #enlarge,
-  #complete_ad #viewer_enlarge #back {
-    color: white;
-    border-radius: 5px;
-    margin: 20px;
-    padding: 4px;
-    font-size: 2em;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  #complete_ad #photo #enlarge:hover,
-  #complete_ad #viewer_enlarge #back:hover {
-    background-color: rgba(255, 98, 0, 0.5);
-    cursor: pointer;
+  #complete_ad #photo:hover{
+    cursor: zoom-in;
   }
   #complete_ad #viewer_enlarge {
     position: fixed;
     z-index: 10;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-align: right;
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    height: 96%;
+    object-fit: contain;
   }
-
+  #complete_ad #viewer_enlarge:hover{
+    cursor: zoom-out;
+  }
   #complete_ad #photos {
     display: inline-block;
     width: 100%;
@@ -80,9 +66,7 @@
     margin-right: 5px;
     width: 15%;
     height: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    object-fit: contain;
     border: 1px solid rgb(136, 136, 136);
     border-radius: 5px;
   }
@@ -111,6 +95,7 @@
   #complete_ad .left p {
     text-align: left;
     padding: 10px;
+    white-space: pre-wrap;
   }
   #complete_ad .left .details span {
     color: rgb(95, 95, 95);
@@ -306,7 +291,8 @@
   #complete_ad h1 {
     font-size: 50px;
   }
-  #update_ad {
+  #update_ad,
+  #update_cat {
     width: 97%;
     border: 0px solid rgba(0, 0, 0, 0);
     font-size: 60px;
@@ -315,7 +301,9 @@
     padding-bottom: 10px;
   }
   #update_ad button,
-  #update_ad select {
+  #update_ad select,
+  #update_cat button,
+  #update_cat select {
     font-size: 45px;
     display: inline-block;
   }

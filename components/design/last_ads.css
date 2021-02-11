@@ -12,18 +12,15 @@
     vertical-align: bottom;
     overflow: hidden;
   }
-  .last_ad .img {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  .last_ad img {
+    width: 100%;
     height: 100px;
+    object-fit: cover;
   }
-  .view_all div {
-    background-image: url("../../ressources/images/view_all.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  .view_all img {
     height: 100px;
+    width: 100%;
+    object-fit: cover;
   }
   .view_all {
     background-color: rgb(35, 35, 189);
@@ -69,8 +66,8 @@
     margin-right: 1.5%;
     margin-bottom: 1.5%;
   }
-  .last_ad .img,
-  .view_all div {
+  .last_ad img,
+  .view_all img {
     height: 400px;
   }
   .last_ad .ad_price,
