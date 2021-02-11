@@ -223,6 +223,13 @@
   #import_anad.vinted #input_import {
     color: rgb(255, 255, 255);
   }
+  #import_anad.leboncoin {
+    background-color: rgb(250, 116, 6);
+    color: rgb(255, 255, 255);
+  }
+  #import_anad.leboncoin #input_import {
+    color: rgb(255, 255, 255);
+  }
   #import_anad #input_import {
     display: flex;
     font-size: 1.1em;

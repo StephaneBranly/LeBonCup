@@ -38,7 +38,8 @@ function import_ad() {
   };
   xhr.send();
 
-  // url model : https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean
+  // url model Vinted : https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean
+  // url model Leboncoin : https://www.leboncoin.fr/commerces_marches/1926814793.htm?ac=206978287
 }
 
 function handleImport() {
@@ -46,10 +47,17 @@ function handleImport() {
   const container = document.getElementById("import_anad");
   const url = input.value;
   const patternVintedRegex = new RegExp(/^https?:\/\/www.vinted/, "i");
+  const patternLeboncoinRegex = new RegExp(/^https?:\/\/www.leboncoin/, "i");
+
   if (url.match(patternVintedRegex)) {
     container.classList.add("vinted");
   } else {
     container.classList.remove("vinted");
+  }
+  if (url.match(patternLeboncoinRegex)) {
+    container.classList.add("leboncoin");
+  } else {
+    container.classList.remove("leboncoin");
   }
 }
 
