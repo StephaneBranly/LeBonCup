@@ -69,7 +69,7 @@ function generate_new_ads_email($connect)
                         <span class='seller'>postée par $res[username]</span>
                         <span class='date_post'>$res[last_refresh]</span>
                         <span class='views'>$res[views] vue.s</span>
-                        <span class='likes'>$likes favs</span>
+                        <span class='likes'>$likes fav.s</span>
                     </div>
                 </td>
             </tr>
