@@ -9,7 +9,8 @@
         "Rectification du bug des images non visibles (suivant le navigateur utilisé)",
         "Redimensionnement des photos pour qu'elles ne soient pas trop lourdes à charger",
         "Ajout d'un flux RSS disponible à l'url '/RSS' afin de faciliter l'intégration de liens vers les annonces depuis d'autres sites assos",
-        "Possibilité d'envoyer des mails pour notifier des dernières annonces (admin)"
+        "Possibilité d'envoyer des mails pour notifier des dernières annonces (admin)",
+        "Importation des annonces Vinted complet et fonctionnel"
       ]
     },
     {

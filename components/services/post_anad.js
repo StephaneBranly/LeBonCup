@@ -38,11 +38,15 @@ function imgDeleteImage(name) {
   div.innerHTML = "<img id='image_"+name+"_img' /><i class=' icon-plus'></i>";
   const img = document.getElementById(nameDiv+'_img');
   img.src = "";
+
+  const input_extern = document.getElementById("input_extern_"+name);
   setTimeout(() => {
     input.value = "";
+    input_extern.value = "";
   }, 100);
 }
 function adImage(id) {
+  const input_extern = document.getElementById("input_extern_"+id);
   const input = document.getElementById("input_" + id);
-  if (!input.files || !input.files[0]) input.click();
+  if ((!input.files || !input.files[0]) && input_extern.value == "") input.click();
 }

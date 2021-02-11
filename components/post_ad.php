@@ -52,6 +52,7 @@
                 $inputImages = array("f1","f1","f3");
 
                 $dirDestination = "../ressources/images-ad/";
+                $dirDestinationCopy = "/leboncup/ressources/images-ad/";
                 $maxSize = 50000000;
 
                 $namefiles = array('f1','f2','f3');
@@ -61,6 +62,43 @@
                 $nameDestination3="";
                 foreach($namefiles as $name)
                 {
+                    $input_extern = 'input_extern_'.$name;
+                    $input_extern_value = secure_post($input_extern);
+                    if($input_extern_value != "")
+                    {
+                        if(preg_match('/^(.*\.(?!(jpg|jpeg|png)$))?[^.]*$/',$input_extern_value,$result))
+                        {
+                            $nametmp = secure_session('user')."_".date("YmdHis")."_".$id."_img".$name.".jpeg";
+                            $newfile = $dirDestination.$nametmp;
+                            if (copy($input_extern_value, $newfile)){
+                                if($nameDestination1=="")
+                                {
+                                    $nameDestination1=$nametmp;
+                                }
+                                else
+                                {
+                                    if($nameDestination2=="")
+                                    {
+                                        $nameDestination2=$nametmp;
+                                    }
+                                    else
+                                    {
+                                        $nameDestination3=$nametmp;
+                                    }
+                                }
+                            }else{
+                                echo "Copy failed.";
+                                echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Problème d'importation de la photo externe...',10000)</script>";
+                                $redirect=false;   
+                            }
+                        }
+                        else
+                        {
+                            echo "<script type='text/javascript'>write_notification('icon-cancel-circled','Un document semble ne pas être une photo...',10000)</script>";
+                            $redirect=false;
+                        }  
+                    }
+                    
                     $namef1 = $_FILES[$name]['name'];
                     $image1Name = pathinfo($namef1);
                     if($namef1!="")
@@ -135,8 +173,7 @@
             <div id='icon_import'><span onclick='import_ad()'><i class='icon-plus' ></i></span></div>   
         </span></section>";
 
-        echo "<section id='import_beta_message'>L'importation est en version bêta, merci d'ajouter manuellement la catégorie ainsi que les images de votre annonce. 
-        <span id='import_beta_button'><button><i class='icon-photo'></i>Télécharger les images de votre annonce Vinted</button></span>
+        echo "<section id='import_beta_message'>L'importation est en version bêta, merci de signaler si vous rencontrez des problèmes ! 
         </section>";
             
         echo "<section id='post_anad'>
@@ -144,11 +181,11 @@
         <form enctype='multipart/form-data' action='../new_ad' method='post'>
             <h1><input name='title' id='ad_title' placeholder='Titre annonce' value='$title' type='text' maxlenght='30'/></h1>
             <h2>Photos</h2>
-            <!--
-            <input name='f1' type='file'/>
-            <input name='f2' type='file'/>
-            <input name='f3' type='file'/>
-            -->
+            
+            <input id='input_extern_f1' name='input_extern_f1' type='text' style=\"display: none;\"/>
+            <input id='input_extern_f2' name='input_extern_f2' type='text' style=\"display: none;\"/>
+            <input id='input_extern_f3' name='input_extern_f3' type='text' style=\"display: none;\"/>
+
             <div id='images_form'>
                 <input id='input_f1' accept='.png,.jpg,.jpeg' name='f1' onchange=\"updateImage('f1');\" type='file'/><div id='image_f1' class='preview_image add' onclick=\"adImage('f1')\"><img id='image_f1_img' /><i class=' icon-plus'></i></div>
                 <input id='input_f2' accept='.png,.jpg,.jpeg' name='f2' onchange=\"updateImage('f2');\" type='file'/><div id='image_f2' class='preview_image add' onclick=\"adImage('f2')\"><img id='image_f2_img' /><i class=' icon-plus'></i></div>
