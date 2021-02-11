@@ -15,13 +15,14 @@ function readURL(input, name) {
     reader.onload = function(e) {
       nameDiv = "image_" + name;
       const div = document.getElementById(nameDiv);
-      div.style.backgroundImage = "url('" + e.target.result + "')";
       div.classList.add("remove");
       div.classList.remove("add");
       div.innerHTML =
-        "<i class='icon-cancel-circled2' onclick=\"imgDeleteImage('" +
+        "<img id='image_"+name+"_img' /><i class='icon-cancel-circled2' onclick=\"imgDeleteImage('" +
         name +
         "');\"></i>";
+        const img = document.getElementById(nameDiv+'_img');
+      img.src = e.target.result;
     };
   }
 }
@@ -29,12 +30,14 @@ function imgDeleteImage(name) {
   const nameInput = "input_" + name;
   const nameDiv = "image_" + name;
   input = document.getElementById(nameInput);
-  div = document.getElementById(nameDiv);
-  div.style.backgroundImage = "url('')";
+  const div = document.getElementById(nameDiv);
+  
   // check to remove the current file in the input.
   div.classList.remove("remove");
   div.classList.add("add");
-  div.innerHTML = "<i class=' icon-plus'></i>";
+  div.innerHTML = "<img id='image_"+name+"_img' /><i class=' icon-plus'></i>";
+  const img = document.getElementById(nameDiv+'_img');
+  img.src = "";
   setTimeout(() => {
     input.value = "";
   }, 100);

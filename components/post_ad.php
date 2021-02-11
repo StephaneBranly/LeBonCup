@@ -150,9 +150,9 @@
             <input name='f3' type='file'/>
             -->
             <div id='images_form'>
-                <input id='input_f1' accept='.png,.jpg,.jpeg' name='f1' onchange=\"updateImage('f1');\" type='file'/><div id='image_f1' onclick=\"adImage('f1')\" class='preview_image add'><i class=' icon-plus'></i></div>
-                <input id='input_f2' accept='.png,.jpg,.jpeg' name='f2' onchange=\"updateImage('f2');\" type='file'/><div id='image_f2' onclick=\"adImage('f2')\" class='preview_image add'><i class=' icon-plus'></i></div>
-                <input id='input_f3' accept='.png,.jpg,.jpeg' name='f3' onchange=\"updateImage('f3');\" type='file'/><div id='image_f3' onclick=\"adImage('f3')\" class='preview_image add'><i class=' icon-plus'></i></div>
+                <input id='input_f1' accept='.png,.jpg,.jpeg' name='f1' onchange=\"updateImage('f1');\" type='file'/><div id='image_f1' class='preview_image add' onclick=\"adImage('f1')\"><img id='image_f1_img' /><i class=' icon-plus'></i></div>
+                <input id='input_f2' accept='.png,.jpg,.jpeg' name='f2' onchange=\"updateImage('f2');\" type='file'/><div id='image_f2' class='preview_image add' onclick=\"adImage('f2')\"><img id='image_f2_img' /><i class=' icon-plus'></i></div>
+                <input id='input_f3' accept='.png,.jpg,.jpeg' name='f3' onchange=\"updateImage('f3');\" type='file'/><div id='image_f3' class='preview_image add' onclick=\"adImage('f3')\"><img id='image_f3_img' /><i class=' icon-plus'></i></div>
             </div>
         
             <h2>Détails de l'annonce</h2>
