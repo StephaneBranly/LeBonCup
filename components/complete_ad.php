@@ -85,9 +85,10 @@
                 }
             }
             if(secure_session('connected') && (secure_session('user')==$res['seller'] || is_admin()))
-                echo"<a id='link_edit' href='../ad/$category_link/$title_link-$id-edit'>Editer le contenu<i class='icon-pencil'></i></a>";
+                if($res['status']=='to_sell')
+                    echo"<a id='link_edit' href='../ad/$category_link/$title_link-$id-edit'>Editer le contenu<i class='icon-pencil'></i></a>";
 
-            if(is_admin())
+            if(is_admin() && $res['status']=='to_sell')
             {
                 echo "<form id='update_cat' method='post' action='../components/services/change_category.php?idad=$id'><select name='category' class='category'>";
                 $query3 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent` IS NULL ORDER BY `category` ASC");
