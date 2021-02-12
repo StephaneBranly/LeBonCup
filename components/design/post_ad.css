@@ -107,6 +107,8 @@
     transition: all 0.1s;
     margin-right: 10px;
     font-size: 1.2em;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
   }
   #post_anad #button_submit:hover {
     cursor: pointer;
@@ -116,10 +118,15 @@
       rgb(255, 113, 25)
     );
     border: 1px solid rgba(201, 80, 5, 0);
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #post_anad #button_submit i {
     padding: 5px;
+    display: inline-block;
+    transition: all 0.3s;
   }
+  #post_anad #button_submit:hover i{  transform: rotate(25deg); }
 
   #post_anad .category .a_category {
     color: rgb(255, 98, 0);
@@ -147,6 +154,11 @@
     );
     transition: all 0.1s;
   }
+  #post_anad .preview_image:hover{
+    cursor: pointer;
+    transform: scale(1.05) translateX(-5px) translateY(-5px);
+    box-shadow: 10px 5px 15px rgb(160, 160, 160);
+  }
   #post_anad .preview_image img{
     display: inline;
     object-fit: contain;
@@ -159,8 +171,12 @@
     border: 1px solid rgb(255, 98, 0);
     justify-content: center;
   }
+  #post_anad .preview_image.add:hover i{
+    color: rgb(255, 98, 0);
+  }
   #post_anad .preview_image i {
     display: inline;
+    transition: all 0.1s;
   }
   #post_anad .preview_image i.icon-plus {
     padding-top: 10px;
@@ -191,6 +207,7 @@
     border-radius: 5px;
     margin-bottom: 15px;
     transition: all 0.1s;
+    padding: 10px;
   }
   #import_anad #flex {
     display: flex;

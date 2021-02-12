@@ -27,7 +27,6 @@
 
   header #place_an_ad {
     color: rgb(255, 255, 255);
-    border: 1px solid rgba(201, 80, 5, 0);
     padding: 10px;
     border-radius: 5px;
     background-image: linear-gradient(
@@ -37,6 +36,8 @@
     );
     transition: all 0.1s;
     margin-right: 10px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
   }
   header #place_an_ad:hover {
     cursor: pointer;
@@ -45,11 +46,16 @@
       rgb(255, 98, 0),
       rgb(255, 113, 25)
     );
-    border: 1px solid rgb(14, 14, 14);
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   header #place_an_ad i {
     padding: 5px;
+    display: inline-block;
+    transition: all 0.3s;
   }
+  header #place_an_ad:hover i{ transform: rotate(90deg); }
+
   header #search {
     color: rgb(0, 0, 0);
     border: 1px solid rgb(210, 210, 210);
@@ -73,6 +79,12 @@
     padding: 5px;
     margin-left: 5px;
     border-left: 1px solid rgb(210, 210, 210);
+    animation: all 0.1s;
+    display: inline-block;
+  }
+  header #search:hover i{
+    color: rgb(255, 98, 0);
+    cursor: pointer;
   }
   header #search i:hover {
     color: rgb(255, 98, 0);

@@ -11,6 +11,7 @@
     text-align: right;
     vertical-align: bottom;
     overflow: hidden;
+    transition: all 0.1s ;
   }
   .last_ad img {
     width: 100%;
@@ -34,6 +35,7 @@
     overflow: hidden;
     text-align: right;
     vertical-align: bottom;
+    transition: all 0.1s ;
   }
   .last_ad .ad_price {
     background-color: rgba(0, 0, 0, 0.2);
@@ -56,6 +58,8 @@
   .last_ad:hover,
   .view_all:hover {
     cursor: pointer;
+    transform: scale(1.05) translateX(-5px) translateY(-5px);
+    box-shadow: 10px 5px 15px rgb(160, 160, 160);
   }
 }
 @media all and (max-device-width: 480px) {

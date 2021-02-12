@@ -69,10 +69,13 @@
     object-fit: contain;
     border: 1px solid rgb(136, 136, 136);
     border-radius: 5px;
+    animation: all 0.1s;
   }
   #complete_ad #photos .miniature_photo:hover {
     border: 1px solid rgb(255, 98, 0);
     cursor: pointer;
+    transform: scale(1.05) translateX(-5px) translateY(-5px);
+    box-shadow: 10px 5px 15px rgb(160, 160, 160);
   }
   #complete_ad .left {
     width: 60%;
