@@ -121,10 +121,17 @@
     color: rgb(35, 35, 189);
     cursor: pointer;
   }
+  #complete_ad .left .details #likes{
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    display: inline-block;
+  }
   #complete_ad .left .details #likes:hover {
     color: rgb(233, 21, 21);
     fill: rgb(233, 21, 21);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #complete_ad .left .details .liked {
     color: rgb(233, 21, 21);
@@ -146,6 +153,8 @@
     margin: 10px;
     width: 80%;
     display: inline-block;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
   }
   #complete_ad .center .private {
     background-color: rgb(136, 136, 136);
@@ -165,18 +174,26 @@
   #complete_ad .center #contact_phone:hover {
     background-color: rgb(10, 223, 28);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #complete_ad .center #contact_mail:hover {
     background-color: rgb(197, 12, 235);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #complete_ad .center #contact_facebook:hover {
     background-color: rgb(39, 17, 236);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #complete_ad .center #contact_pm:hover {
     background-color: rgb(241, 105, 20);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #complete_ad .center #preferences,
   #complete_ad .center #preferences tbody {
@@ -218,7 +235,8 @@
     padding: 10px;
   }
   #update_ad button,
-  #update_cat button {
+  #update_cat button,
+  #link_edit{
     color: rgb(255, 255, 255);
     border: 1px solid rgba(201, 80, 5, 0);
     padding: 10px;
@@ -230,9 +248,12 @@
     );
     transition: all 0.1s;
     margin-right: 10px;
+    text-decoration: none;
+    display: inline-block;
   }
   #update_ad button:hover,
-  #update_cat button:hover {
+  #update_cat button:hover,
+  #link_edit:hover{
     cursor: pointer;
     background-image: linear-gradient(
       45deg,
@@ -242,9 +263,13 @@
     border: 1px solid rgb(14, 14, 14);
   }
   #update_ad button i,
-  #update_cat button i {
+  #update_cat button i,
+  #link_edit i{
     padding: 5px;
+    display: inline-block;
+    transition: all 0.1s;
   }
+  #link_edit:hover i{  transform: rotate(-25deg); }
   #complete_ad #user {
     text-decoration: underline;
   }

@@ -71,7 +71,8 @@
                         <option value='sold'>Vendue</option>
                         <option value='deleted'>Supprimée</option>
                     </select>
-                    <button type='submit'>Mettre à jour<i class='icon-params'></i></button></form>";
+                    <button type='submit'>Mettre à jour<i class='icon-params'></i></button>
+                    </form>";
                     if(!empty($_POST))
                     {
                         $status=secure_post('status');
@@ -83,6 +84,9 @@
                     }
                 }
             }
+            if(secure_session('connected') && (secure_session('user')==$res['seller'] || is_admin()))
+                echo"<a id='link_edit' href='../ad/$category_link/$title_link-$id-edit'>Editer le contenu<i class='icon-pencil'></i></a>";
+
             if(is_admin())
             {
                 echo "<form id='update_cat' method='post' action='../components/services/change_category.php?idad=$id'><select name='category' class='category'>";
@@ -112,12 +116,12 @@
                 <button type='submit'>MAJ catégorie<i class='icon-edit'></i></button></form>";
             }
             if($res['status']=='sold')
-                echo"<form id='update_ad'>
-                   <i class='icon-cancel-circled2'></i> Annonce déclarée comme vendue.</form>";
-                else if($res['status']!='to_sell') echo"<form id='update_ad'>
-                <i class='icon-cancel-circled2'></i> Annonce déclarée comme non disponible.</form>";
-            echo "<section id='complete_ad'>
-            <h1><span class='price'><i class='icon-tag'></i>$price</span>$title</h1>
+                echo"<section id='status_ad'>
+                   <i class='icon-cancel-circled2'></i> Annonce déclarée comme vendue.</section>";
+                else if($res['status']!='to_sell') echo"<section id='status_ad'>
+                <i class='icon-cancel-circled2'></i> Annonce déclarée comme non disponible.</section>";
+            echo "<section id='complete_ad'>";
+            echo"<h1><span class='price'><i class='icon-tag'></i>$price</span>$title</h1>
             
             <img id='photo' onclick='enlarge_photo();' src='../ressources/images-ad/$img' alt='Image annonce'></img>
             

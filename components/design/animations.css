@@ -5,6 +5,11 @@
     100% { transform: scale(1); }
   }
 
+@keyframes borderBottomIn {
+  0%   { border-bottom: 0px solid rgb(255, 98, 0);}
+  100%   { border-bottom: 5px solid rgb(255, 98, 0);}
+}
+
 @-webkit-keyframes slide-left {
   0% {
     -webkit-transform: translateX(100px);
