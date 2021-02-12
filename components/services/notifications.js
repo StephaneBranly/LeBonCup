@@ -5,7 +5,7 @@ function write_notification(icon, content, tmp) {
   section_notifs.innerHTML =
     '<div onclick="remove_notification(' +
     unique_id +
-    ");\" class='notification' id='notification_" +
+    ");\" class='notification entrance' id='notification_" +
     unique_id +
     "'><i class='" +
     icon +
@@ -13,6 +13,7 @@ function write_notification(icon, content, tmp) {
     content +
     "</p></div>" +
     actual_content;
+  setTimeout("remove_tag(" + unique_id + ");", 800);
   if (tmp) {
     setTimeout("remove_notification(" + unique_id + ");", tmp);
   }
@@ -21,5 +22,12 @@ function write_notification(icon, content, tmp) {
 function remove_notification(id) {
   real_id = "notification_" + id;
   var notification = document.getElementById(real_id);
-  notification.parentNode.removeChild(notification);
+  notification.classList.add("delete");
+  notification.parentNode.removeChild(notification)
+}
+
+function remove_tag(id){
+  real_id = "notification_" + id;
+  var notification = document.getElementById(real_id);
+  notification.classList.remove("entrance");
 }

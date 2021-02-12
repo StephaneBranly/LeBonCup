@@ -1,7 +1,7 @@
 <?php    
     function notification($id,$content,$icon)
     {
-        echo"<div class='notification' id='notification_$id'
+        echo"<div class='notification entrance' id='notification_$id'
         onclick='remove_notification($id)'>
             <i class='$icon'></i>
             <p>$content</p>
