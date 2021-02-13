@@ -199,7 +199,7 @@
         padding-bottom: 5px;
         display: inline-block;\">LeBonCup</h1>
         <p>Bonjour $res[username] ! Ta nouvelle annonce a bien été ajoutée !</p>
-        <p>Tu peux partager ton annonce (<a href='$link' target='_blank'>$link</a>) ou bien ton profil si tu as plusieurs annonces ! (<a href='$link_profile' target='_blank'>$link_profile</a></p>
+        <p>Tu peux partager ton annonce (<a href='$link' target='_blank'>$link</a>) ou bien ton profil si tu as plusieurs annonces ! (<a href='$link_profile' target='_blank'>$link_profile</a>)</p>
         <p>N'oublie pas de mettre à jour le statut de l'annonce quand tu veux la faire remonter ou la déclarer comme vendue/supprimée.</p>
         <div>
         $annonce

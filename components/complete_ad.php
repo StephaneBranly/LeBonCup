@@ -58,13 +58,13 @@
                 $price="gratuit";
             $title = show_clean_string($res['title']);
             $description = show_clean_string($res['description']);
-           
+            $category_link=clean_string($res['category']);
+            $title_link=clean_string($res['title']);
             if(secure_session('connected') && secure_session('user')==$res['seller'])
             {
                 if($res['status']=='to_sell')
                 {
-                    $category_link=clean_string($res['category']);
-                    $title_link=clean_string($res['title']);
+                    
                     echo"<form id='update_ad' method='post' action='../ad/$category_link/$title_link-$id'>
                     <select name='status'>
                         <option value='to_sell'>A vendre - Refresh</option>
