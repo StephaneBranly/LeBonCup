@@ -10,6 +10,8 @@
             $redirect=true;
             $title=$res['title'];
             $description=$res['description'];
+            $description = str_replace("<br/>","",$description);
+            $description = str_replace("<br />","",$description);
             $visibility=$res['visibility'];
             $price=$res['price'];
             $nbr_images=0;
