@@ -45,7 +45,6 @@
             curl_setopt( $ch, CURLOPT_HEADER, 0 );      
             curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true);
             $result = curl_exec ($ch);
-            $ad->r = $result;
             if($result==false){
                 $ad->e1 = curl_error($ch);
                 $ad->e2 = curl_errno($ch);
