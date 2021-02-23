@@ -45,6 +45,8 @@
     margin: 10px;
     width: 40%;
     display: inline-block;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
   }
   #profile .private {
     background-color: rgb(136, 136, 136);
@@ -64,18 +66,26 @@
   #profile #contact_phone:hover {
     background-color: rgb(10, 223, 28);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #profile #contact_mail:hover {
     background-color: rgb(197, 12, 235);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #profile #contact_facebook:hover {
     background-color: rgb(39, 17, 236);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #profile #contact_pm:hover {
     background-color: rgb(241, 105, 20);
     cursor: pointer;
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #profile .label_input {
     width: 40%;

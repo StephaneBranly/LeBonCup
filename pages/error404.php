@@ -1,3 +1,4 @@
+<?php include_once("../lib/document_base.php");?>
 <!DOCTYPE html>
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">

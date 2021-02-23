@@ -30,40 +30,41 @@
             {
                 $iduser = SQLProtect(secure_post('iduser'),1);
 
-                $subject = "LeBonCup - ".secure_post('title');
+                $subject = "LeBonCup - Annonces recentes";
 
             $headers = "From: leboncup@assos.utc.fr \r\n";
             $headers .= "Reply-To: stephane.branly@etu.utc.fr \r\n";
             $headers .= "MIME-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-            
-            $message=generate_news_email(secure_post('content'));
-                if($iduser=="tout_le_monde")
+       
+            $message=generate_new_ads_email($connect);
+                
+            if($iduser=="tout_le_monde")
                 {
-                    $query = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
-                    while($res = mysqli_fetch_array($query))
-                        if($res['mail']!='' && $res['mail_news'])
+                    $query3 = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
+                    while($res3 = mysqli_fetch_array($query3))
+                        if($res3['mail']!='' && $res3['mail_ads'])
                         {
                             $message_copy=$message;
-                            $message_copy=str_replace("[username]",$res['username'], $message_copy);
-                            $message_copy=str_replace("[iduser]",$res['iduser'], $message_copy);
-                            $message_copy=str_replace("[code]",$res['mail_news'], $message_copy);
-                            mail($res['mail'], $subject, $message_copy, $headers);
+                            $message_copy=str_replace("[username]",$res3['username'], $message_copy);
+                            $message_copy=str_replace("[iduser]",$res3['iduser'], $message_copy);
+                            $message_copy=str_replace("[code]",$res3['mail_ads'], $message_copy);
+                            mail($res3['mail'], $subject, $message_copy, $headers);
                         }
                     echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à tout le monde','5000');</script>";  
                 }
                 else
                 {
-                    $query = mysqli_query($connect,"SELECT * FROM `users` WHERE `iduser`='$iduser'");
-                    $res = mysqli_fetch_array($query);
-                    if($res['mail']!='' && $res['mail_news'])
+                    $query3 = mysqli_query($connect,"SELECT * FROM `users` WHERE `iduser`='$iduser'");
+                    $res3 = mysqli_fetch_array($query3);
+                    if($res3['mail']!='' && $res3['mail_ads'])
                     {
                         $message_copy=$message;
-                        $message_copy=str_replace("[username]",$res['username'], $message_copy);
-                        $message_copy=str_replace("[iduser]",$res['iduser'], $message_copy);
-                        $message_copy=str_replace("[code]",$res['mail_news'], $message_copy);
-                        mail($res['mail'], $subject, $message_copy, $headers);
-                        echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à $res[mail]','5000');</script>";
+                        $message_copy=str_replace("[username]",$res3['username'], $message_copy);
+                        $message_copy=str_replace("[iduser]",$res3['iduser'], $message_copy);
+                        $message_copy=str_replace("[code]",$res3['mail_ads'], $message_copy);
+                        mail($res3['mail'], $subject, $message_copy, $headers);
+                        echo "<script type='text/javascript'>write_notification('icon-paper-plane','Mail envoyé à $res3[mail]','5000');</script>";
                     }
                     else 
                         echo "<script type='text/javascript'>write_notification('icon-exclamation','Mail non envoyé','5000');</script>";
@@ -74,19 +75,17 @@
         }
         echo"<section id='admin'>
         <h1>Envoie de mail</h1>
-        <form action='../admin/send_email' method='post'>
+        <form action='../admin/new_ads_email' method='post'>
             <select name='iduser'>
                 <option value='tout_le_monde' selected>Tout le monde</option>";
                 $query = mysqli_query($connect,"SELECT * FROM `users` ORDER BY `iduser` ASC");
                 while($res = mysqli_fetch_array($query))
                     echo "<option value='$res[iduser]'>$res[iduser] ($res[mail])</option>";
             echo"</select>
-            <h2>Titre</h2><input required type='text' name='title' maxlenght='190'/><br/>
-            <h2>Contenu</h2><textarea id='content_email' required type='text' name='content' maxlenght='1000'/></textarea><br/>
             Validation : <input required name='validation' type='checkbox'/>
             <button type='submit'>Envoyer mail<i class='icon-paper-plane'></i></button>
         </form>
-        <button onclick='preview_email(\"news\")'>Prévisualiser mail<i class='icon-eye'></i></button>
+        <button onclick='preview_email(\"ads\")'>Prévisualiser mail<i class='icon-eye'></i></button>
         <a href='../admin/home'>Retour</a>
         </section>";
     }

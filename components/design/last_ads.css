@@ -11,19 +11,17 @@
     text-align: right;
     vertical-align: bottom;
     overflow: hidden;
+    transition: all 0.1s ;
   }
-  .last_ad .img {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  .last_ad img {
+    width: 100%;
     height: 100px;
+    object-fit: cover;
   }
-  .view_all div {
-    background-image: url("../../ressources/images/view_all.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+  .view_all img {
     height: 100px;
+    width: 100%;
+    object-fit: cover;
   }
   .view_all {
     background-color: rgb(35, 35, 189);
@@ -37,6 +35,7 @@
     overflow: hidden;
     text-align: right;
     vertical-align: bottom;
+    transition: all 0.1s ;
   }
   .last_ad .ad_price {
     background-color: rgba(0, 0, 0, 0.2);
@@ -59,6 +58,8 @@
   .last_ad:hover,
   .view_all:hover {
     cursor: pointer;
+    transform: scale(1.05) translateX(-5px) translateY(-5px);
+    box-shadow: 10px 5px 15px rgb(160, 160, 160);
   }
 }
 @media all and (max-device-width: 480px) {
@@ -69,8 +70,8 @@
     margin-right: 1.5%;
     margin-bottom: 1.5%;
   }
-  .last_ad .img,
-  .view_all div {
+  .last_ad img,
+  .view_all img {
     height: 400px;
   }
   .last_ad .ad_price,

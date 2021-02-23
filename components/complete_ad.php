@@ -58,20 +58,21 @@
                 $price="gratuit";
             $title = show_clean_string($res['title']);
             $description = show_clean_string($res['description']);
-           
+            $category_link=clean_string($res['category']);
+            $title_link=clean_string($res['title']);
             if(secure_session('connected') && secure_session('user')==$res['seller'])
             {
                 if($res['status']=='to_sell')
                 {
-                    $category_link=clean_string($res['category']);
-                    $title_link=clean_string($res['title']);
+                    
                     echo"<form id='update_ad' method='post' action='../ad/$category_link/$title_link-$id'>
                     <select name='status'>
                         <option value='to_sell'>A vendre - Refresh</option>
                         <option value='sold'>Vendue</option>
                         <option value='deleted'>Supprimée</option>
                     </select>
-                    <button type='submit'>Mettre à jour<i class='icon-params'></i></button></form>";
+                    <button type='submit'>Mettre à jour<i class='icon-params'></i></button>
+                    </form>";
                     if(!empty($_POST))
                     {
                         $status=secure_post('status');
@@ -83,7 +84,11 @@
                     }
                 }
             }
-            if(is_admin())
+            if(secure_session('connected') && (secure_session('user')==$res['seller'] || is_admin()))
+                if($res['status']=='to_sell')
+                    echo"<a id='link_edit' href='../ad/$category_link/$title_link-$id-edit'>Editer le contenu<i class='icon-pencil'></i></a>";
+
+            if(is_admin() && $res['status']=='to_sell')
             {
                 echo "<form id='update_cat' method='post' action='../components/services/change_category.php?idad=$id'><select name='category' class='category'>";
                 $query3 = mysqli_query($connect,"SELECT * FROM `categories` WHERE `parent` IS NULL ORDER BY `category` ASC");
@@ -112,25 +117,22 @@
                 <button type='submit'>MAJ catégorie<i class='icon-edit'></i></button></form>";
             }
             if($res['status']=='sold')
-                echo"<form id='update_ad'>
-                   <i class='icon-cancel-circled2'></i> Annonce déclarée comme vendue.</form>";
-                else if($res['status']!='to_sell') echo"<form id='update_ad'>
-                <i class='icon-cancel-circled2'></i> Annonce déclarée comme non disponible.</form>";
-            echo "<section id='complete_ad'>
-            <h1><span class='price'><i class='icon-tag'></i>$price</span>$title</h1>
+                echo"<section id='status_ad'>
+                   <i class='icon-cancel-circled2'></i> Annonce déclarée comme vendue.</section>";
+                else if($res['status']!='to_sell') echo"<section id='status_ad'>
+                <i class='icon-cancel-circled2'></i> Annonce déclarée comme non disponible.</section>";
+            echo "<section id='complete_ad'>";
+            echo"<h1><span class='price'><i class='icon-tag'></i>$price</span>$title</h1>
             
-            <div id='photo' style=\"background-image: url('../ressources/images-ad/$img');\">
-                <span id='enlarge' onclick='enlarge_photo();'><i class='icon-resize-full'></i></span>
-            </div>
-            <div id='viewer_enlarge' style='display:none;'>
-                <span id='back' onclick='back_photo();'><i class='icon-resize-small'></i></span>
-            </div>
+            <img id='photo' onclick='enlarge_photo();' src='../ressources/images-ad/$img' alt='Image annonce'></img>
+            
+            <img id='viewer_enlarge' onclick='back_photo();' style='display:none;'>
             <div id='photos'>
-                <div onclick=\"change_photo('../ressources/images-ad/$img');\" class='miniature_photo' style=\"background-image: url('../ressources/images-ad/$img');\"></div>";
+                <img onclick=\"change_photo('../ressources/images-ad/$img');\" class='miniature_photo' src='../ressources/images-ad/$img' alt='image 1'/>";
                 if($res['image2'])
-                    echo"<div onclick=\"change_photo('../ressources/images-ad/$res[image2]')\" class='miniature_photo' style=\"background-image: url('../ressources/images-ad/$res[image2]');\"></div>";
+                    echo"<img onclick=\"change_photo('../ressources/images-ad/$res[image2]')\" class='miniature_photo' src='../ressources/images-ad/$res[image2]' alt='image 2'/>";
                 if($res['image3'])
-                    echo"<div onclick=\"change_photo('../ressources/images-ad/$res[image3]')\" class='miniature_photo' style=\"background-image: url('../ressources/images-ad/$res[image3]');\"></div>";
+                    echo"<img onclick=\"change_photo('../ressources/images-ad/$res[image3]')\" class='miniature_photo' src='../ressources/images-ad/$res[image3]' alt='image 3'/>";
             echo "</div>
             <div class='left' >
                 <div class='details'>
@@ -170,7 +172,7 @@
                     echo "<div id='contact_pm' onclick=\"start_conversation('$res[iduser]','$res[iduser]')\"><i class='icon-comment-alt'></i>Envoyer un message privé</div>";
                 else
                     echo "<div class='private'><i class='icon-cancel-circled'></i>Connectez vous pour envoyer un message privé</div>";*/
-                echo "<h1>Préférence de paiement</h1>";
+                echo "<h1>Préférences de paiement</h1>";
                 if($res['cash'])$cash='ok';else $cash='cancel';
                 if($res['visa'])$visa='ok';else $visa='cancel';
                 if($res['payut'])$payut='ok';else $payut='cancel';

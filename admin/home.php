@@ -1,7 +1,6 @@
 <?php include_once("../lib/start_session.php");?>
+<?php include_once("../lib/document_base.php"); ?>
 <!DOCTYPE html>
-<base href="http://localhost/LeBonCup/pages/"; />
-<!--<base href="https://assos.utc.fr/leboncup/pages/"; />-->
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">
 	<link href="../admin/admin.css" rel="stylesheet" media="all" type="text/css">
@@ -25,6 +24,7 @@
         <h1>Surface admin</h1>
         <a href='../admin/send_notification'>Envoyer une notification</a><br/>
         <a href='../admin/send_email'>Envoyer un mail</a><br/>
+        <a href='../admin/new_ads_email'>Notifier des nouvelles annonces</a><br/>
         <a href='../admin/view_suggestions'>Voir les suggestions</a><br/>
         <a href='../admin/stats'>Voir les stats</a><br/>
         

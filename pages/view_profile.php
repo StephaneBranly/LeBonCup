@@ -1,4 +1,5 @@
 <?php include_once("../lib/start_session.php");?>
+<?php include_once("../lib/document_base.php"); ?>
 <!DOCTYPE html>
 <html>
 	<link href="../ressources/design/body.css" rel="stylesheet" media="all" type="text/css">
@@ -26,7 +27,7 @@
         if (count($res) != 0)
         {
             profile($user);
-            $query2 = mysqli_query($connect,"SELECT `idad`,`visibility` FROM `ads` WHERE `seller`='$user' ORDER BY `last_refresh` ASC");
+            $query2 = mysqli_query($connect,"SELECT `idad`,`visibility` FROM `ads` WHERE `seller`='$user' ORDER BY `last_refresh` DESC");
             while($res2 = mysqli_fetch_array($query2))
             {
                 if($res2['visibility']=='every_one' || ($res2['visibility']=='connected_user' && secure_session('connected')==true))

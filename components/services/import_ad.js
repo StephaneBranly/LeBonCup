@@ -2,7 +2,6 @@ function import_ad() {
   const input = document.getElementById("input_import");
   const icon = document.getElementById("icon_import");
   const import_beta_message = document.getElementById("import_beta_message");
-  const import_beta_button = document.getElementById("import_beta_button");
 
   const input_ad_price = document.getElementById("ad_price");
   const input_ad_title = document.getElementById("ad_title");
@@ -23,15 +22,10 @@ function import_ad() {
       input_ad_title.value = ad.title;
       input_ad_price.value = ad.price;
       import_beta_message.style.display = "inline-block";
-      import_beta_button.innerHTML =
-        "<button onclick=\"openImages('" +
-        ad.img1 +
-        "','" +
-        ad.img2 +
-        "','" +
-        ad.img3 +
-        "')\"><i class='icon-photo'></i>Ouvrir les images de votre annonce Vinted (nouvel onglet)</button>";
-
+     
+      if (ad.img1) loadExternalImage("f1", ad.img1);
+      if (ad.img2) loadExternalImage("f2", ad.img2);
+      if (ad.img3) loadExternalImage("f3", ad.img3);
       write_notification(
         "icon-ok-circled2",
         "Annonce importée de " + ad.importedFrom,
@@ -44,7 +38,8 @@ function import_ad() {
   };
   xhr.send();
 
-  // url model : https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean
+  // url model Vinted : https://www.vinted.fr/femmes/vestes-en-jean/619102948-veste-en-jean
+  // url model Leboncoin : https://www.leboncoin.fr/commerces_marches/1926814793.htm?ac=206978287
 }
 
 function handleImport() {
@@ -52,10 +47,17 @@ function handleImport() {
   const container = document.getElementById("import_anad");
   const url = input.value;
   const patternVintedRegex = new RegExp(/^https?:\/\/www.vinted/, "i");
+  const patternLeboncoinRegex = new RegExp(/^https?:\/\/www.leboncoin/, "i");
+
   if (url.match(patternVintedRegex)) {
     container.classList.add("vinted");
   } else {
     container.classList.remove("vinted");
+  }
+  if (url.match(patternLeboncoinRegex)) {
+    container.classList.add("leboncoin");
+  } else {
+    container.classList.remove("leboncoin");
   }
 }
 
@@ -67,6 +69,22 @@ function openImages(img1, img2, img3) {
 
 function openImage(filename, text) {
   window.open(text, "_blank");
+}
+
+function loadExternalImage(name,url)
+{
+  nameDiv = "image_" + name;
+const div = document.getElementById(nameDiv);
+div.classList.add("remove");
+div.classList.remove("add");
+div.innerHTML =
+  "<img id='image_"+name+"_img' /><i class='icon-cancel-circled2' onclick=\"imgDeleteImage('" +
+  name +
+  "');\"></i>";
+  const input_extern = document.getElementById("input_extern_"+name);
+  input_extern.value = url;
+  const img = document.getElementById(nameDiv+'_img');
+  img.src = url;
 }
 
 function handleInputImport(event) {

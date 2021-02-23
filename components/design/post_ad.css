@@ -107,6 +107,8 @@
     transition: all 0.1s;
     margin-right: 10px;
     font-size: 1.2em;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
   }
   #post_anad #button_submit:hover {
     cursor: pointer;
@@ -116,10 +118,15 @@
       rgb(255, 113, 25)
     );
     border: 1px solid rgba(201, 80, 5, 0);
+    animation-name: zoomLoop;
+    animation-timing-function: linear;
   }
   #post_anad #button_submit i {
     padding: 5px;
+    display: inline-block;
+    transition: all 0.3s;
   }
+  #post_anad #button_submit:hover i{  transform: rotate(25deg); }
 
   #post_anad .category .a_category {
     color: rgb(255, 98, 0);
@@ -136,9 +143,6 @@
   #post_anad .preview_image {
     width: 20%;
     display: flex;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     align-content: center;
     height: 100px;
     border-radius: 5px;
@@ -150,22 +154,38 @@
     );
     transition: all 0.1s;
   }
+  #post_anad .preview_image:hover{
+    cursor: pointer;
+    transform: scale(1.05) translateX(-5px) translateY(-5px);
+    box-shadow: 10px 5px 15px rgb(160, 160, 160);
+  }
+  #post_anad .preview_image img{
+    display: inline;
+    object-fit: contain;
+  }
   #post_anad .preview_image.add {
     border: 1px solid rgb(210, 210, 210);
     justify-content: center;
   }
   #post_anad .preview_image.remove {
     border: 1px solid rgb(255, 98, 0);
-    justify-content: right;
+    justify-content: center;
+  }
+  #post_anad .preview_image.add:hover i{
+    color: rgb(255, 98, 0);
   }
   #post_anad .preview_image i {
     display: inline;
+    transition: all 0.1s;
   }
   #post_anad .preview_image i.icon-plus {
+    padding-top: 10px;
     font-size: 1.5em;
   }
   #post_anad .preview_image i.icon-cancel-circled2 {
     font-size: 1.5em;
+    padding-top: 10px;
+    background-color: rgba(0,0,0,0.1);
   }
   #post_anad .preview_image i.icon-cancel-circled2:hover {
     cursor: pointer;
@@ -187,6 +207,7 @@
     border-radius: 5px;
     margin-bottom: 15px;
     transition: all 0.1s;
+    padding: 10px;
   }
   #import_anad #flex {
     display: flex;
@@ -214,6 +235,13 @@
     color: rgb(255, 255, 255);
   }
   #import_anad.vinted #input_import {
+    color: rgb(255, 255, 255);
+  }
+  #import_anad.leboncoin {
+    background-color: rgb(250, 116, 6);
+    color: rgb(255, 255, 255);
+  }
+  #import_anad.leboncoin #input_import {
     color: rgb(255, 255, 255);
   }
   #import_anad #input_import {
@@ -256,7 +284,7 @@
   #import_anad,
   #import_beta_message {
     width: 97%;
-    padding: 0px;
+    padding: 10px;
     border: 0px solid rgba(0, 0, 0, 0);
   }
   #import_anad #input_import {
@@ -293,7 +321,16 @@
   #post_anad h1 {
     display: block;
   }
+  #post_anad #images_form{
+    flex-direction: column;
+    text-align: center;
+    vertical-align: baseline;
+    display: inline-block;
+  }
   #post_anad .preview_image {
-    width: 70%;
+    width: 90%;
+    height: 300px;
+    display: inline-flex;
+
   }
 }
