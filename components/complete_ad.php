@@ -124,15 +124,15 @@
             echo "<section id='complete_ad'>";
             echo"<h1><span class='price'><i class='icon-tag'></i>$price</span>$title</h1>
             
-            <img id='photo' onclick='enlarge_photo();' src='../ressources/images-ad/$img' alt='Image annonce'></img>
+            <img id='photo' onclick='enlarge_photo();' src='../ressources/images-clients/$img' alt='Image annonce'></img>
             
             <img id='viewer_enlarge' onclick='back_photo();' style='display:none;'>
             <div id='photos'>
-                <img onclick=\"change_photo('../ressources/images-ad/$img');\" class='miniature_photo' src='../ressources/images-ad/$img' alt='image 1'/>";
+                <img onclick=\"change_photo('../ressources/images-clients/$img');\" class='miniature_photo' src='../ressources/images-clients/$img' alt='image 1'/>";
                 if($res['image2'])
-                    echo"<img onclick=\"change_photo('../ressources/images-ad/$res[image2]')\" class='miniature_photo' src='../ressources/images-ad/$res[image2]' alt='image 2'/>";
+                    echo"<img onclick=\"change_photo('../ressources/images-clients/$res[image2]')\" class='miniature_photo' src='../ressources/images-clients/$res[image2]' alt='image 2'/>";
                 if($res['image3'])
-                    echo"<img onclick=\"change_photo('../ressources/images-ad/$res[image3]')\" class='miniature_photo' src='../ressources/images-ad/$res[image3]' alt='image 3'/>";
+                    echo"<img onclick=\"change_photo('../ressources/images-clients/$res[image3]')\" class='miniature_photo' src='../ressources/images-clients/$res[image3]' alt='image 3'/>";
             echo "</div>
             <div class='left' >
                 <div class='details'>

@@ -88,11 +88,11 @@
             <h2>Photos</h2>
 
             <div id='images_form'>
-                <div class='preview_image add' onclick=\"write_notification('icon-cancel-circled','Les images ne peuvent pas être modifiées',10000)\"><img src='../ressources/images-ad/$img' alt='image 1'/></div>";
+                <div class='preview_image add' onclick=\"write_notification('icon-cancel-circled','Les images ne peuvent pas être modifiées',10000)\"><img src='../ressources/images-clients/$img' alt='image 1'/></div>";
                 if($res['image2'])
-                    echo"<div class='preview_image add' onclick=\"write_notification('icon-cancel-circled','Les images ne peuvent pas être modifiées',10000)\"><img src='../ressources/images-ad/$res[image2]' alt='image 2'/></div>";
+                    echo"<div class='preview_image add' onclick=\"write_notification('icon-cancel-circled','Les images ne peuvent pas être modifiées',10000)\"><img src='../ressources/images-clients/$res[image2]' alt='image 2'/></div>";
                 if($res['image3'])
-                    echo"<div class='preview_image add' onclick=\"write_notification('icon-cancel-circled','Les images ne peuvent pas être modifiées',10000)\"><img src='../ressources/images-ad/$res[image3]' alt='image 3'/></div>";
+                    echo"<div class='preview_image add' onclick=\"write_notification('icon-cancel-circled','Les images ne peuvent pas être modifiées',10000)\"><img src='../ressources/images-clients/$res[image3]' alt='image 3'/></div>";
             echo "</div>
 
             <h2>Détails de l'annonce</h2>

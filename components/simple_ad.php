@@ -55,7 +55,7 @@
             <table>
                 <tr>
                     <td class='left'>
-                        <img src='../ressources/images-ad/$img' alt='image annonce'/>
+                        <img src='../ressources/images-clients/$img' alt='image annonce'/>
                         <span class='nb_photos'>$nbr_images<i class='icon-camera'></i></span>
                     </td>
                     <td class='center'>

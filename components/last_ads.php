@@ -28,7 +28,7 @@
                 $price="gratuit";
             $title_cleaned=clean_string($res['title']);
             echo "<section title='$res[title]' onclick=\"load_ad('$res[category]','$title_cleaned','$res[idad]');\" class='last_ad'>
-            <img src='../ressources/images-ad/$img' alt='image annonce'/>
+            <img src='../ressources/images-clients/$img' alt='image annonce'/>
             <span class='ad_price'><i class='icon-tag'></i>$price</span></section>";
         }
         echo "<section class='view_all' onclick=\"RedirectionJavascript('search/toutes-categories/');\"><img src='../ressources/images/view_all.png' alt='toutes les annonces'/><span class='text'><i class='icon-doc'></i>Tout voir</span></section>";

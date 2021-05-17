@@ -59,7 +59,7 @@ function generate_new_ads_email($connect)
         <table>
             <tr>
                 <td class='left'>
-                    <img src='https://assos.utc.fr/leboncup/ressources/images-ad/$img' alt='image annonce'/>
+                    <img src='https://assos.utc.fr/leboncup/ressources/images-clients/$img' alt='Photo du produit'/>
                     <span class='nb_photos'>$nbr_images photo.s</span>
                 </td>
                 <td class='center' >

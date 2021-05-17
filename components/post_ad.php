@@ -36,7 +36,7 @@
         <table>
             <tr>
                 <td class='left'>
-                    <img src='https://assos.utc.fr/leboncup/ressources/images-ad/$img' alt='image annonce'/>
+                    <img src='https://assos.utc.fr/leboncup/ressources/images-clients/$img' alt='image annonce'/>
                     <span class='nb_photos'>$nbr_images photo.s</span>
                 </td>
                 <td class='center' >
@@ -285,8 +285,8 @@
                 $extensions = array('png','jpg','jpeg');
                 $inputImages = array("f1","f1","f3");
 
-                $dirDestination = "../ressources/images-ad/";
-                $dirDestinationCopy = "/leboncup/ressources/images-ad/";
+                $dirDestination = "../ressources/images-clients/";
+                $dirDestinationCopy = "/leboncup/ressources/images-clients/";
                 $maxSize = 50000000;
 
                 $namefiles = array('f1','f2','f3');
