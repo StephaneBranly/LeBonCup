@@ -20,7 +20,7 @@
     while($res = mysqli_fetch_array($query))
     {
         $link = $myUrl."/ad/".$res['category_cleaned']."/".clean_string($res['title'])."-".$res['idad'];
-        $imageUrl = $myUrl."/ressources/images-ad/".$res['image1'];
+        $imageUrl = $myUrl."/ressources/images-clients/".$res['image1'];
         echo "<item>
             <title>$res[title]</title>
             <id>$res[idad]</id>

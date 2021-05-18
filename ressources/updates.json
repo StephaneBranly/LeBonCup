@@ -1,6 +1,13 @@
 {
   "versions": [
     {
+      "version": "1.2.1",
+      "date": "17/05/2021",
+      "title": "Problème images",
+      "description": "Correction du problème d'images ne s'affichant pas",
+      "news": []
+    },
+    {
       "version": "1.2.0",
       "date": "11/02/2021",
       "title": "Modifications avant P21",

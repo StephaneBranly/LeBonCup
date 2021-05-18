@@ -31,7 +31,7 @@
                     $img=$res['image1'];
                 else
                     $img="nan_".$res['category'].".png";
-                echo "<meta property='og:image'  content='https://assos.utc.fr/leboncup/ressources/images-ad/$img'/>";
+                echo "<meta property='og:image'  content='https://assos.utc.fr/leboncup/ressources/images-clients/$img'/>";
              }
               else 
               {
